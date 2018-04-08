@@ -1,0 +1,52 @@
+﻿@model MaltaMoviesMVCcore.Models.Scene
+
+@{
+
+    // Cannot pass method to helper, so declare as var and frf that instead
+    var locationPlaceAndSiteName = Model.LocationSite.LocationPlaceAndSiteName().ToString();
+    ViewData["Title"] = @Model.Title.Title + " - " + locationPlaceAndSiteName;
+}
+
+<h2> @Model.Title.TitleAndYear()</h2>
+
+<div>    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            
+        </dt>
+        <dd>
+            <img src="@($"/images/scenes/large/{@Model.SceneId}.jpg")" alt="@locationPlaceAndSiteName" title="@locationPlaceAndSiteName"/>
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LocationAlias)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LocationAlias.LocationAliasPlace)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LocationSite)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => locationPlaceAndSiteName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Notes)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Notes)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TitleList)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TitleList)
+        </dd>
+
+    </dl>
+</div>
+@*<div>
+    <a asp-action="Edit" asp-route-id="@Model.SceneId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>*@

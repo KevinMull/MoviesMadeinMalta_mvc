@@ -1,0 +1,101 @@
+﻿@model IEnumerable<MaltaMoviesMVCcore.Models.Movie>
+
+@{
+    ViewData["Title"] = "Movies";
+}
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#Title").autocomplete({
+            source: function (request, response) {
+                $.ajax({
+                    url: "/Movies/Autocomplete",
+                    type: "POST",
+                    dataType: "json",
+                    data: { term: request.term },
+                    success: function (data) {
+                        response($.map(data, function (item) {
+                            return { label: item.Title, value: item.Title };
+                        }))
+                    }
+                })
+            },
+            messages: {
+                noResults: "", results: ""
+            }
+        });
+    })
+</script>
+
+
+<h2>Movies</h2>
+
+<form asp-controller="Movies" asp-action="Index" method="get">
+
+    <p>
+        Search: <input type="text" id="txtSearch" name="SearchString">
+        <input type="submit" value="submit" />
+    </p>
+</form>
+    
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+}
+
+@{ string search = Context.Request.Query["SearchString"];
+    if (search != null)
+    {
+        <p>Results for '@search'. @Model.Count() record(s) found</p>;
+
+    }
+}
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TitleYear)
+            </th>
+            <th>
+
+            </th>
+
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.TitleId">@item.Title</a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TitleYear)
+                </td>
+                <td>
+                    <a href="@item.ImdbUrl" target="_blank"><img src="/images/imdb.png" alt=""></a>
+                </td>
+
+
+                <td>
+
+                    @*<a asp-action="Edit" asp-route-id="@item.TitleId">Edit</a> |*@
+                    @*<a asp-action="Details" asp-route-id="@item.TitleId">Details</a>*@
+
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

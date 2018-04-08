@@ -1,0 +1,69 @@
+﻿@model IEnumerable<MaltaMoviesMVCcore.Models.Scene>
+
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title.Summary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SceneOrder)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TitleList)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LocationAlias)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LocationSite)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Notes)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title.Summary)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.SceneOrder)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TitleList)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LocationAlias.LocationAliasCountry)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LocationSite.LocationSiteName)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Notes)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.SceneId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.SceneId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.SceneId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

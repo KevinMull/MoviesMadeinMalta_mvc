@@ -1,0 +1,49 @@
+﻿@model MaltaMoviesMVCcore.Models.LocationSite
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>LocationSite</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="LocationSiteName" class="control-label"></label>
+                <input asp-for="LocationSiteName" class="form-control" />
+                <span asp-validation-for="LocationSiteName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LocationPlaceId" class="control-label"></label>
+                <select asp-for="LocationPlaceId" class ="form-control" asp-items="ViewBag.LocationPlaceId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Latitude" class="control-label"></label>
+                <input asp-for="Latitude" class="form-control" />
+                <span asp-validation-for="Latitude" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Longitude" class="control-label"></label>
+                <input asp-for="Longitude" class="form-control" />
+                <span asp-validation-for="Longitude" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MapInfoHtml" class="control-label"></label>
+                <input asp-for="MapInfoHtml" class="form-control" />
+                <span asp-validation-for="MapInfoHtml" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

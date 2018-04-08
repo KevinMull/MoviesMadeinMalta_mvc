@@ -1,0 +1,94 @@
+﻿@model MaltaMoviesMVCcore.Models.Movie
+
+
+@{ ViewData["Title"] = @Model.Title;
+
+    var strWidth = "320px"; //widesdcreen default (2.35 = 354px, 1.85= 276px)
+    if (Model.Widescreen == false)
+    {
+
+        strWidth = "200px";
+    }
+
+
+}
+
+<script type="text/javascript">
+    //TODO: Place this js in a file 'this' issue
+   // getModalPopup(this);
+    $(function () {
+        // Initialize numeric spinner input boxes
+        //$(".numeric-spinner").spinedit();
+        // Initialize modal dialog
+        // attach modal-container bootstrap attributes to links with .modal-link class.
+        // when a link is clicked with these attributes, bootstrap will display the href content in a modal dialog.
+        $('body').on('click', '.modal-link', function (e) {
+            e.preventDefault();
+            $(this).attr('data-target', '#modal-container');
+            $(this).attr('data-toggle', 'modal');
+        });
+        // Attach listener to .modal-close-btn's so that when the button is pressed the modal dialog disappears
+        $('body').on('click', '.modal-close-btn', function () {
+            $('#modal-container').modal('hide');
+        });
+        //clear modal cache, so that new content can be loaded
+        $('#modal-container').on('hidden.bs.modal', function () {
+            $(this).removeData('bs.modal');
+        });
+        $('#CancelModal').on('click', function () {
+            return false;
+        });
+    });
+</script>
+
+
+<div class="jumbotron">
+    <div class="container-fluid">
+        <h2>@Model.TitleAndYear</h2>
+
+        <img src="@($"/images/titles/{@Model.TitleId}.jpg")" alt="@Model.Title" title="@Model.Title" />
+        <div>@Html.DisplayFor(model => model.Summary)</div>
+    </div>
+</div>
+
+@{if (Model.Scenes.Count() > 0)
+    {
+        <div id="modal-container" class="modal fade"
+             tabindex="-1" role="dialog">
+            <div class="modal-content">
+            </div>
+        </div>
+
+        <h2 class="movie-scenes">Scenes</h2>
+        <div class="jumbotron">
+            <div class="container-fluid">
+
+
+                @foreach (MaltaMoviesMVCcore.Models.Scene item in ViewBag.Scenes)
+                {
+                <div style=" margin:5px; float:left; height:150px; overflow:hidden; width:@strWidth;">
+
+                    @*Note 'Scene' is an alias mapped route in StartUp.cs for 'Details'*@
+                    <a class="modal-link"
+                       href="@Url.Action("Scene", "Scenes",new { id = item.SceneId })">
+
+                        <img src="@($"/images/scenes/thumbs/{item.SceneId}.jpg")"
+                             alt="@item.LocationSite.LocationPlaceAndSiteName" title="@item.LocationSite.LocationPlaceAndSiteName" width=@strWidth class="imgBox" />
+                    </a>
+                    @*@Html.ActionLink("Scene text ", "Scene", "Scenes",
+        new { id = item.SceneId }, new { @class = "modal-link btn btn-success" })*@
+
+
+                </div>
+
+                }
+            </div>
+        </div>
+    }
+}
+
+
+
+<a asp-action="Index">Back to Movie List</a>
+
+
