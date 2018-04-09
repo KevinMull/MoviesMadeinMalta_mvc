@@ -2,16 +2,11 @@
 
 @{
     ViewData["Title"] = "Location";
-   
+
+
 
 }
-@*TODO: set modal width the same as image width*@ 
-<style type="text/css">
-    .modal-content{
-        width:100%;
-    }
 
-</style>
 
 <script type="text/javascript">
     //TODO: Place this js in a file 'this' issue
@@ -41,40 +36,40 @@
     });
 </script>
 
-<div class="jumbotron">
-    <div class="container-fluid">
-        <h2>Malta Location - @Model.LocationPlaceAndSiteName</h2>
-
-        @*<img src="@($"/images/titles/{@Model.TitleId}.jpg")" alt="@Model.Title" title="@Model.Title" />
-        <div>@Html.DisplayFor(model => model.Summary)</div>*@
+<div id="modal-container" class="modal"
+     tabindex="-1" role="dialog">
+    <div class="modal-content">
     </div>
 </div>
 
+<div class="jumbotron">
+    <div class="container-fluid">
+        <h2>Malta Location - @Model.LocationPlaceAndSiteName</h2>       
+    </div>
+</div>
+
+
 @{if (Model.Scenes.Count() > 0)
     {
-        <div id="modal-container" class="modal fade"
-             tabindex="-1" role="dialog">
-            <div class="modal-content">
-            </div>
-        </div>
 
         <h2 class="movie-scenes">Scenes</h2>
         <div class="jumbotron">
             <div class="container-fluid">
 
+
                 @foreach (MaltaMoviesMVCcore.Models.Scene item in ViewBag.Scenes)
                 {
-                <div style=" margin:5px; float:left; height:150px; overflow:hidden; width:200px;">
-                  
-                    @*Note 'Scene' is an alias mapped route in StartUp.cs for 'Details'*@
-                    <a class="modal-link"
-                       href="@Url.Action("Scene", "Scenes",new { id = item.SceneId })">
+                    <div style=" margin:5px; float:left; height:150px; overflow:hidden;">
 
-                        <img src="@($"/images/scenes/thumbs/{item.SceneId}.jpg")"
-                             alt="@item.LocationSite.LocationPlaceAndSiteName" title="@item.LocationSite.LocationPlaceAndSiteName" width="200px" class="imgBox" />
-                    </a>
+                        @*Note 'Scene' is an alias mapped route in StartUp.cs for 'Details'*@
+                        <a class="modal-link"
+                            href="@Url.Action("Scene", "Scenes",new { id = item.SceneId })">                   
 
-                </div>
+                            <img src="@($"/images/scenes/thumbs/{item.SceneId}.jpg")"
+                                 alt="@item.LocationSite.LocationPlaceAndSiteName" title="@item.LocationSite.LocationPlaceAndSiteName" width="250px" class="imgBox" />
+                        </a>
+
+                    </div>
 
                 }
             </div>
@@ -83,5 +78,5 @@
 }
 <div>
 
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Back to Location List</a>
 </div>

@@ -108,9 +108,15 @@ img {
     background-color: white;
 }
 
-#search {
-    color: #ffffff;
-    margin-top:15px;
+
+.movie-title {
+    display: inline-block;
+    
+}
+
+.search-box {
+    display: inline-block;
+    vertical-align: text-bottom;
     
 }
 
