@@ -34,17 +34,10 @@
             <tr>
                 <th>
                     @Html.DisplayNameFor(model => model.LocationPlaceAndSiteName)
-                </th>
-                @*<th>
-                        @Html.DisplayNameFor(model => model.LocationPlace)
-                    </th>
-
-                    <th>
-                        @Html.DisplayNameFor(model => model.LocationSiteName)
-                    </th>*@
+                </th>     
 
 
-                <th></th>
+              
             </tr>
         </thead>
         <tbody>
@@ -53,15 +46,9 @@
                 <tr>
                     <td>
                         <a asp-action="Details" asp-route-id="@item.LocationSiteId">@item.LocationPlaceAndSiteName</a>
-                        @Html.DisplayFor(modelItem => item.LocationPlaceAndSiteName)
+                       
                     </td>
-                    @*<td>
-                            @Html.DisplayFor(modelItem => item.LocationPlace.LocationPlaceName)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.LocationSiteName)
-                        </td>*@
-
+               
                 </tr>
             }
         </tbody>
