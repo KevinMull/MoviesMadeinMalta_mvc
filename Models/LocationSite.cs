@@ -54,7 +54,7 @@ namespace MaltaMoviesMVCcore.Models
                 }
                 else
                 {
-                    return locationPlaceName + " - " + LocationSiteName;
+                    return locationPlaceName + ", " + LocationSiteName;
                 }
             }
         }
