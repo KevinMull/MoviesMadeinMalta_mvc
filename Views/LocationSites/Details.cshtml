@@ -44,7 +44,12 @@
 
 <div class="jumbotron">
     <div class="container-fluid">
-        <h2>Malta Location - @Model.LocationPlaceAndSiteName</h2>       
+        <h2>Malta Location - @Model.LocationPlaceAndSiteName</h2>
+        <a href="@($"/images/locations/hires/{Model.LocationSiteId}.jpg")">
+            <img src="@($"/images/locations/{Model.LocationSiteId}.jpg")"
+                 alt="@Model.LocationPlaceAndSiteName" title="@Model.LocationPlaceAndSiteName" />
+        </a>
+
     </div>
 </div>
 
@@ -52,24 +57,25 @@
 @{if (Model.Scenes.Count() > 0)
     {
 
-        <h2 class="movie-scenes">Scenes</h2>
+        <h2 class="movie-scenes">Scene Locations</h2>
         <div class="jumbotron">
             <div class="container-fluid">
 
 
                 @foreach (MaltaMoviesMVCcore.Models.Scene item in ViewBag.Scenes)
                 {
-                    <div style=" margin:5px; float:left; height:150px; overflow:hidden;">
+                <div style=" margin:5px; float:left; height:200px; overflow:hidden;">
+                   <h4> @item.Movie.Title</h4>
 
-                        @*Note 'Scene' is an alias mapped route in StartUp.cs for 'Details'*@
-                        <a class="modal-link"
-                            href="@Url.Action("Scene", "Scenes",new { id = item.SceneId })">                   
+                    @*Note 'Scene' is an alias mapped route in StartUp.cs for 'Details'*@
+                    <a class="modal-link"
+                       href="@Url.Action("Scene", "Scenes",new { id = item.SceneId })">
 
-                            <img src="@($"/images/scenes/thumbs/{item.SceneId}.jpg")"
-                                 alt="@item.LocationSite.LocationPlaceAndSiteName" title="@item.LocationSite.LocationPlaceAndSiteName" width="250px" class="imgBox" />
-                        </a>
+                        <img src="@($"/images/scenes/thumbs/{item.SceneId}.jpg")"
+                             alt="@item.LocationSite.LocationPlaceAndSiteName - @item.Movie.Title" title="@item.LocationSite.LocationPlaceAndSiteName - @item.Movie.Title" width="250px" class="imgBox" />
+                    </a>
 
-                    </div>
+                </div>
 
                 }
             </div>
