@@ -24,7 +24,7 @@ namespace MaltaMoviesMVCcore.Controllers
             var maltaMoviesContext = _context.Scenes
                 .Include(s => s.LocationAlias)
                 .Include(s => s.LocationSite)              
-                .Include(s => s.Title);
+                .Include(s => s.Movie);
                 
             return View(await maltaMoviesContext.ToListAsync());
 
@@ -42,7 +42,7 @@ namespace MaltaMoviesMVCcore.Controllers
                 .Include(s => s.LocationAlias)
                 .Include(s => s.LocationSite)
                 .Include(s => s.LocationSite.LocationPlace)                
-                .Include(s => s.Title)
+                .Include(s => s.Movie)                
                 .SingleOrDefaultAsync(m => m.SceneId == id);
             if (scene == null)
             {
