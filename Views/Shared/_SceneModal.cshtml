@@ -1,7 +1,7 @@
 ﻿@model MaltaMoviesMVCcore.Models.Scene
 
 @{
-     ViewData["Title"] = @Model.Title.Title + " - " + Model.LocationSite.LocationPlaceAndSiteName;
+     ViewData["Title"] = @Model.Movie.Title + " - " + Model.LocationSite.LocationPlaceAndSiteName;
 }
 <style type="text/css">
 /*Override bootstrap.css*/
@@ -80,7 +80,7 @@
 
     <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-    <h3 class="movie-title"> @Model.Title.TitleAndYear</h3>  
+    <h3 class="movie-title"> @Model.Movie.TitleAndYear</h3>  
     <h4 class="movie-title">
         <strong> -- 
             @Html.DisplayNameFor(model => model.LocationSite.LocationPlaceAndSiteName):
