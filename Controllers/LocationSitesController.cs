@@ -53,14 +53,28 @@ namespace MaltaMoviesMVCcore.Controllers
                 return NotFound();
             }
 
+            // LAMBDA
             var locationSite = await _context.LocationSites
                 .Include(l => l.LocationPlace)
-                .SingleOrDefaultAsync(m => m.LocationSiteId == id);
+                .SingleOrDefaultAsync(l => l.LocationSiteId == id);
+
             ViewBag.Scenes = _context.Scenes
-                .Where(s => s.LocationSiteId == id)
+                .Where(s => s.LocationSiteId == id)                
                 .Include(s => s.LocationSite)
                 .Include(s => s.LocationSite.LocationPlace)
+                .Include(s=> s.Movie)                
                 .OrderBy(s => s.SceneOrder).ToList();
+
+            //ViewBag.Scenes = from s in _context.Scenes
+            //                 orderby s.SceneOrder
+            //                 where s.LocationSiteId == id
+            //                 //join m in _context.Movies on s.TitleId equals m.TitleId
+            //                 select new {m.TitleId
+            //                      //, m.Title
+            //                     , s.SceneId                                 
+            //                     , s.LocationSite.LocationPlace
+            //                        };
+
             if (locationSite == null)
             {
                 return NotFound();
