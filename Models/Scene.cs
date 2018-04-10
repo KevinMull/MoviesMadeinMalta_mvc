@@ -19,6 +19,6 @@ namespace MaltaMoviesMVCcore.Models
 
         public LocationAlias LocationAlias { get; set; }
         public LocationSite LocationSite { get; set; }
-        public Movie Title { get; set; }
+        public Movie Movie { get; set; }
     }
 }
