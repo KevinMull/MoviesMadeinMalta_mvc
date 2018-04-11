@@ -6841,18 +6841,11 @@ button.close {
     opacity: 0.4;
     filter: alpha(opacity=40);
 }
-
-
-
-/*.grid-container {
-    display: grid;
-     grid-template-columns: 354px 354px 354px; 
-    /* grid-template-rows: 300px 175px; */
-grid-column-gap: 10px; grid-row-gap: 10px; 
+.imageContainer {
+    float: left;
+    margin-right:20px;
 }
-.grid-item {
-    border: 1px solid #222;
-    text-align: center;
-}*/
+
+
 
 /*# sourceMappingURL=bootstrap.css.map */
