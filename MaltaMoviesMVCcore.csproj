@@ -26,6 +26,7 @@
   <ItemGroup>
     <Folder Include="ViewModels\" />
     <Folder Include="wwwroot\images\carousel\" />
+    <Folder Include="wwwroot\images\locations\" />
   </ItemGroup>
 
 </Project>
