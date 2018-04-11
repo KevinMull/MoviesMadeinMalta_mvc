@@ -14,7 +14,15 @@
         https://www.aspsnippets.com/Articles/Implement-jQuery-AutoComplete-TextBox-in-ASPNet-MVC.aspx*@
     <link href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.9.2/themes/blitzer/jquery-ui.css"
           rel="Stylesheet" type="text/css" />
-    
+
+    @*Lightbox cssand js*@
+    <link href="~/lib/bootstrap/dist/css/lightbox.css" rel="stylesheet" />
+    <script src="~/lib/bootstrap/dist/js/lightbox.js"></script>
+
+    @*Google Maps API*@
+
+
+
 
     @*<link rel="stylesheet" href="css/blueimp-gallery.min.css">*@
 
@@ -26,7 +34,7 @@
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
-        
+
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -55,10 +63,10 @@
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
                     <li>
-                       
+
                     </li>
                 </ul>
-                
+
             </div>
         </div>
     </nav>
@@ -92,5 +100,7 @@
     </environment>
 
     @RenderSection("Scripts", required: false)
+   
 </body>
+
 </html>
