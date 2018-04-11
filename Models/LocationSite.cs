@@ -37,7 +37,7 @@ namespace MaltaMoviesMVCcore.Models
         public LocationPlace LocationPlace { get; set; }
         public ICollection<Scene> Scenes { get; set; }
 
-        [DisplayName("Malta Location")]
+        [DisplayName("Location Name")]
         public string LocationPlaceAndSiteName
         //Return a concat of Location place and LocastionSiteName
         //e.g. 'Valleta, Fort St Elmo'.
