@@ -57,7 +57,7 @@ namespace MaltaMoviesMVCcore
                 //Custom route for Location Details ('Location')
                 routes.MapRoute(
                    name: "Location",
-                   template: "LocationSites/Location/{id?}",
+                   template: "Locations/Location/{id?}",
                    defaults: new { controller = "LocationSites", action = "Details" }
                );
 
