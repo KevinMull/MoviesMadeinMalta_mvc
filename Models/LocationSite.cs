@@ -19,7 +19,7 @@ namespace MaltaMoviesMVCcore.Models
         [Required]
         public string LocationSiteName { get; set; }
         public int? LocationPlaceId { get; set; }
-       // public string GoogleMapUrl { get; set; }
+      
         public double? Latitude { get; set; }
         public double? Longitude { get; set; }
 

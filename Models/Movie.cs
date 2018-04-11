@@ -26,8 +26,7 @@ namespace MaltaMoviesMVCcore.Models
         //public bool? NewTitle { get; set; }
         public bool? ExcludeTitle { get; set; }
         public bool? Widescreen { get; set; }
-       // public string CoverArtWebPath { get; set; }
-       // public string CoverArtPhysicalPath { get; set; }
+
 
          [DisplayName("Title")]
         public string TitleAndYear
