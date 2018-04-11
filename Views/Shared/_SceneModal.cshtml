@@ -17,6 +17,8 @@
         display: block;
         width: auto;
         max-width: 1040px;
+        /*border: solid 15px;
+        border-color:white;*/
     }
 
     .modal {
@@ -95,8 +97,13 @@
         @Html.DisplayFor(model => model.LocationAlias.LocationAliasCountryAndPlace)
     </h4>
 
-
-    <img id="imgScene" class="modal-content" src="@($"/images/scenes/large/{@Model.SceneId}.jpg")" alt="@Model.LocationSite.LocationPlaceAndSiteName" title="@Model.LocationSite.LocationPlaceAndSiteName" />
+    <figure class="modal-content">
+        <img id="imgScene" class="modal-content"
+             src="@($"/images/scenes/large/{@Model.SceneId}.jpg")"
+             alt="@Model.LocationSite.LocationPlaceAndSiteName"
+             title="@Model.LocationSite.LocationPlaceAndSiteName" />
+        <figcaption align="center">Mikhael Tal smoking a cigarette</figcaption>
+    </figure>
 
 
 </div>
