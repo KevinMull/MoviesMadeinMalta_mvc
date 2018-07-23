@@ -23,7 +23,7 @@
         $('#CancelModal').on('click', function () {
             return false;
         });
-};
+}
 
 //Not used
 function getImageOrientation() {
