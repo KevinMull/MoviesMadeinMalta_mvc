@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<markers>
+	<marker>
+		<id>1</id>
+		<name>Billy Kwong</name>
+		<address>1/28 Macleay Street, Elizabeth Bay, NSW</address>
+		<lat>-33.869843</lat>
+		<lng>-151.225769</lng>
+	</marker>
+	<marker>
+	<id>2</id>
+	<name>Love.Fish</name>
+	<address>
+		580 Darling Street, Rozelle, NSW</address>
+	<lat>-33.861034</lat>
+	<lng>151.171936</lng>
+	</marker>
+	<marker>
+		<id>3</id>
+		<name>Young Henrys</name>
+		<address>
+			76 Wilford Street, Newtown, NSW
+		</address>
+		<lat>-33.898113</lat>
+		<lng>151.174469</lng>
+	</marker>	
+   
+</markers>
