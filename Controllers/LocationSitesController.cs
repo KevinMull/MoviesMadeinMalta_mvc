@@ -22,10 +22,11 @@ namespace MaltaMoviesMVCcore.Controllers
         //With optional search string
         public async Task<IActionResult> Index(string searchString)
         {
-            var locations = from l in _context.LocationSites
+            var locations = from l in _context.LocationSites                           
                             .Include("LocationPlace")
-                         //orderby l.LocationPlace.LocationPlaceName, l.LocationSiteName
-                         select l;
+                            //orderby l.LocationPlace.LocationPlaceName, l.LocationSiteName
+                            where l.LocationSiteId != 55 // Excl 'Behind the Scenes'
+                            select l;
 
             //LAMDA way
             //var locations = _context.LocationSites
@@ -59,11 +60,12 @@ namespace MaltaMoviesMVCcore.Controllers
                 .SingleOrDefaultAsync(l => l.LocationSiteId == id);
 
             ViewBag.Scenes = _context.Scenes
-                .Where(s => s.LocationSiteId == id)                
+                .Where(s => s.LocationSiteId == id)
                 .Include(s => s.LocationSite)
                 .Include(s => s.LocationSite.LocationPlace)
-                .Include(s=> s.Movie)                
-                .OrderBy(s => s.SceneOrder).ToList();
+                .Include(s => s.Movie)
+                .OrderBy(s => s.Movie.Title).ToList();
+               // .OrderBy(s => s.SceneOrder).ToList();
 
             //ViewBag.Scenes = from s in _context.Scenes
             //                 orderby s.SceneOrder

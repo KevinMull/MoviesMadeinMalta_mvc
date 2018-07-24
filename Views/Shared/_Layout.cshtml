@@ -19,7 +19,13 @@
     <link href="~/lib/bootstrap/dist/css/lightbox.css" rel="stylesheet" />
     <script src="~/lib/bootstrap/dist/js/lightbox.js"></script>
 
+    @*need share buttons*@    
+    <link href="~/lib/needShareButton/dist/needsharebutton.css" rel="stylesheet" />
+
     @*Google Maps API*@
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2NceVpHdaJdEUGVdWC8qM_0nYVl8RsSQ&callback=initMap">
+    </script>
 
 
 
@@ -66,16 +72,21 @@
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">MOVIES MADE IN MALTA</a></li>
                     <li><a asp-area="" asp-controller="Movies" asp-action="Index">Movie List</a></li>
                     <li><a asp-area="" asp-controller="LocationSites" asp-action="Index">Locations</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Moviemap">Movie Map</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                    <li>
-                        MOVIES MADE IN MALTA
-                    </li>
                 </ul>
 
+                <div id="share-button-1" class="need-share-button-default" data-share-icon-style="box"
+                     data-share-position="bottomCenter" data-share-networks="Mailto,Twitter,Pinterest,Facebook,Googleplus,linkedin">
+                </div>
             </div>
         </div>
+
+        <script src="~/lib/needShareButton/dist/needsharebutton.js"></script>
+        <script>
+            new needShareDropdown(document.getElementById('share-button-1'));
+        </script>
     </nav>
     <div class="container body-content">
         @RenderBody()
