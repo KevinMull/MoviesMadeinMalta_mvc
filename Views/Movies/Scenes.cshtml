@@ -6,12 +6,12 @@
 <table class="table">
     <thead>
         <tr>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.Title)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Title.Summary)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.SceneOrder)
             </th>
@@ -35,14 +35,14 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>
+                @*<td>
                     @Html.DisplayFor(modelItem => item.Title.Title)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Title.Summary)
-                </td>
+                </td>*@
 
-                <td>
+                @*<td>
                     @Html.DisplayFor(modelItem => item.SceneOrder)
                 </td>
                 <td>
@@ -62,7 +62,7 @@
                     <a asp-action="Edit" asp-route-id="@item.SceneId">Edit</a> |
                     <a asp-action="Details" asp-route-id="@item.SceneId">Details</a> |
                     <a asp-action="Delete" asp-route-id="@item.SceneId">Delete</a>
-                </td>
+                </td>*@
             </tr>
         }
     </tbody>

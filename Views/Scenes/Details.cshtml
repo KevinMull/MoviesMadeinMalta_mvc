@@ -3,15 +3,15 @@
 @{
 
     // Cannot pass method to helper, so declare as var and frf that instead
-    var locationPlaceAndSiteName = Model.LocationSite.LocationPlaceAndSiteName().ToString();
-    ViewData["Title"] = @Model.Title.Title + " - " + locationPlaceAndSiteName;
+  //  var locationPlaceAndSiteName = Model.LocationSite.LocationPlaceAndSiteName().ToString();
+  //  ViewData["Title"] = @Model.Title.Title + " - " + locationPlaceAndSiteName;
 }
 
-<h2> @Model.Title.TitleAndYear()</h2>
+@*<h2> @Model.Title.TitleAndYear()</h2>*@
 
 <div>    
     <hr />
-    <dl class="dl-horizontal">
+    @*<dl class="dl-horizontal">
         <dt>
             
         </dt>
@@ -44,7 +44,7 @@
             @Html.DisplayFor(model => model.TitleList)
         </dd>
 
-    </dl>
+    </dl>*@
 </div>
 @*<div>
     <a asp-action="Edit" asp-route-id="@Model.SceneId">Edit</a> |
