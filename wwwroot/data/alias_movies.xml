@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<aliaslocations>
+	<aliaslocation lat="41.9027" lng="12.4962">
+		<aliasid>2</aliasid>
+		<aliascountryandplace>Italy, Rome</aliascountryandplace>
+		<movie>
+			<titleid>16</titleid>
+			<title>Gladiator</title>
+			<maltalocation>
+				<locationsiteId>5</locationsiteId>
+				<locationplaceandsite>Vittoriosa</locationplaceandsite>
+			</maltalocation>
+			<maltalocation>
+				<locationsiteId>21</locationsiteId>
+				<locationplaceandsite>Fort Ricasoli, Kalkara</locationplaceandsite>
+			</maltalocation>
+			<maltalocation>
+				<locationsiteId>38</locationsiteId>
+				<locationplaceandsite>Valletta Ditch, St. Michael's Bastion, Valletta</locationplaceandsite>
+			</maltalocation>
+		</movie>
+		<movie>
+			<titleid>27</titleid>
+			<title>Munich</title>
+			<maltalocation>
+				<locationsiteId>152</locationsiteId>
+				<locationplaceandsite>Republic Square, Valletta</locationplaceandsite>
+			</maltalocation>
+			<maltalocation>
+				<locationsiteId>155</locationsiteId>
+				<locationplaceandsite>St Paul's Church, Rabat</locationplaceandsite>
+			</maltalocation>
+		</movie>
+	</aliaslocation>
+</aliaslocations>

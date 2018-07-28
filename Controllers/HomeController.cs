@@ -36,6 +36,12 @@ namespace MaltaMoviesMVCcore.Controllers
             return View();
         }
 
+        public IActionResult ALiasmap()
+        {
+
+            return View();
+        }
+
 
 
 

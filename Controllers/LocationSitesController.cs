@@ -65,7 +65,7 @@ namespace MaltaMoviesMVCcore.Controllers
                 .Include(s => s.LocationSite.LocationPlace)
                 .Include(s => s.Movie)
                 .OrderBy(s => s.Movie.Title).ToList();
-               // .OrderBy(s => s.SceneOrder).ToList();
+             //   .OrderBy(s => s.SceneOrder).ToList();
 
             //ViewBag.Scenes = from s in _context.Scenes
             //                 orderby s.SceneOrder
