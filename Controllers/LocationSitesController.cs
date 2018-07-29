@@ -22,10 +22,13 @@ namespace MaltaMoviesMVCcore.Controllers
         //With optional search string
         public async Task<IActionResult> Index(string searchString)
         {
-            var locations = from l in _context.LocationSites                           
-                            .Include("LocationPlace")
+            var locations = from l in _context.LocationSites
+                            //TODO: inner join on scnes
+                            //join s in _context.Scenes
+                            //on l.LocationSiteId equals s.LocationSiteId
+                            .Include("LocationPlace")                            
                             //orderby l.LocationPlace.LocationPlaceName, l.LocationSiteName
-                            where l.LocationSiteId != 55 // Excl 'Behind the Scenes'
+                            where l.LocationSiteId  != 55 // Excl 'Behind the Scenes'
                             where l.LocationSiteId != 94 // Excl 'N/A'
                             select l;
 

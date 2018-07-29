@@ -1,6 +1,7 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    overflow-y: scroll;
 }
 
 /* Wrapping element */
@@ -41,10 +42,3 @@
     float: left;
 }*/
 
-#map {
-    /*float: left;*/
-    /*width: 25%;
-    height: 25%;*/
-    /*border: solid black;*/
-    /*position: fixed !important;*/
-}
