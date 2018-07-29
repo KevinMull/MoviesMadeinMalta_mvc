@@ -146,7 +146,7 @@
 ***********************************************/
 .need-share-button-default .need-share-button_button {
   display: inline-block;
-  
+  margin-top:8px;
   margin-bottom: 0; 
   padding: 6px 12px;
 
