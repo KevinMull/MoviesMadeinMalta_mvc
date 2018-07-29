@@ -1,0 +1,48 @@
+﻿@model MaltaMoviesMVCcore.Models.Comment
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Comment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Ipaddress)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Ipaddress)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.UserEmail)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.UserEmail)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Comments)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Comments)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.CommentDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CommentDate)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.CommentId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

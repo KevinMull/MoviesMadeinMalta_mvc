@@ -28,22 +28,15 @@
 
                 var aliasid = markerElem.getElementsByTagName('aliasid')[0].childNodes[0];
                 var aliascountryandplace = markerElem.getElementsByTagName('aliascountryandplace')[0].childNodes[0];
-                //Build the  dynamic url for the infoWindow
-                // var locationurl = "<a href='/Locations/Location/" + siteid.nodeValue + "' target='_blank'>" + placeandsitename.nodeValue + "</a>";
-
-                //Build the image thumb url for the infoWindow
-                // var locationthumburl = "<a href='/Locations/Location/" + siteid.nodeValue + "' target='_blank'><img src='/images/locations/" + siteid.nodeValue + ".jpg' width='166' height='150'></a>";
-
+                
 
                 var point = new google.maps.LatLng(
                     parseFloat(markerElem.getAttribute('lat')),
                     parseFloat(markerElem.getAttribute('lng')));
 
-
-                //var movies = xml.documentElement.getElementsByTagName('movie');
-                var infowincontent = '<p><strong>\'' + aliascountryandplace.nodeValue + '\'</strong></p>';
-                // infowincontent += '<p>' + locationthumburl + '</p>';
-
+               
+                var infowincontent = '<p><strong>' + aliascountryandplace.nodeValue + '</strong></p>';
+              
                 // movie titles
                 var movies = markerElem.getElementsByTagName('movie');
                 if (movies.length > 0)
@@ -51,7 +44,7 @@
                 for (var i = 0; i < movies.length; i++) {
                     var title = movies[i].getElementsByTagName('title')[0].childNodes[0].nodeValue;
                     var titleid = movies[i].getElementsByTagName('titleid')[0].childNodes[0].nodeValue;
-                    var movietitleurl = "<a href='/Movies/Title/" + titleid + "' target='_blank'>" + title + "</a>";
+                    var movietitleurl = "<a href='/Movies/Title/" + titleid + "' target='_blank'>\'" + title + "\'</a>";
                     infowincontent += "<strong><li>" + movietitleurl + "</li></strong>";
 
                     // malta locations               

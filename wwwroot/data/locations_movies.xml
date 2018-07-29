@@ -140,6 +140,14 @@
 			<title>Trenchcoat</title>
 		</movie>
 	</location>
+	<location lat="35.8944" lng="14.534">
+		<siteid>7</siteid>
+		<placeandsitename>Kalkara, Mediterranean Film Studios</placeandsitename>
+	</location>
+	<location lat="35.8914" lng="14.532">
+		<siteid>8</siteid>
+		<placeandsitename>Kalkara</placeandsitename>
+	</location>
 	<location lat="35.8541" lng="14.4833">
 		<siteid>9</siteid>
 		<placeandsitename>Luqa Airport</placeandsitename>
@@ -319,6 +327,18 @@
 			<titleid>54</titleid>
 			<title>Revelation</title>
 		</movie>
+	</location>
+	<location lat="35.9241" lng="14.488">
+		<siteid>17</siteid>
+		<placeandsitename>Paceville, Casino</placeandsitename>
+	</location>
+	<location lat="35.8864" lng="14.4039">
+		<siteid>18</siteid>
+		<placeandsitename>Mdina, St Paul's Cathedral</placeandsitename>
+	</location>
+	<location lat="35.8925" lng="14.5027">
+		<siteid>19</siteid>
+		<placeandsitename>Floriana, Argotti Gardens</placeandsitename>
 	</location>
 	<location lat="35.8865" lng="14.4029">
 		<siteid>20</siteid>
@@ -856,6 +876,10 @@
 			<title>Malta Story</title>
 		</movie>
 	</location>
+	<location>
+		<siteid>50</siteid>
+		<placeandsitename>Malta Times Newspaper</placeandsitename>
+	</location>
 	<location lat="35.8821" lng="14.52">
 		<siteid>51</siteid>
 		<placeandsitename>Cospicua, Dry Docks</placeandsitename>
@@ -871,6 +895,10 @@
 			<titleid>27</titleid>
 			<title>Munich</title>
 		</movie>
+	</location>
+	<location lat="35.8807" lng="14.5218">
+		<siteid>52</siteid>
+		<placeandsitename>Cospicua</placeandsitename>
 	</location>
 	<location lat="35.8973" lng="14.5109">
 		<siteid>53</siteid>
@@ -896,6 +924,10 @@
 			<title>Midnight Express</title>
 		</movie>
 	</location>
+	<location>
+		<siteid>55</siteid>
+		<placeandsitename>Behind the Scenes</placeandsitename>
+	</location>
 	<location lat="35.8959" lng="14.5134">
 		<siteid>56</siteid>
 		<placeandsitename>Valletta, British Hotel</placeandsitename>
@@ -915,6 +947,14 @@
 			<titleid>32</titleid>
 			<title>Popeye </title>
 		</movie>
+	</location>
+	<location lat="35.8986" lng="14.5147">
+		<siteid>58</siteid>
+		<placeandsitename>Valletta, The Pub</placeandsitename>
+	</location>
+	<location lat="35.8949" lng="14.5094">
+		<siteid>59</siteid>
+		<placeandsitename>Valletta, Lascaris Ditch</placeandsitename>
 	</location>
 	<location lat="35.8847" lng="14.4034">
 		<siteid>60</siteid>
@@ -1021,6 +1061,10 @@
 		</movie>
 	</location>
 	<location lat="35.9141" lng="14.4228">
+		<siteid>71</siteid>
+		<placeandsitename>Mosta, Mosta Dome Church</placeandsitename>
+	</location>
+	<location lat="35.9141" lng="14.4228">
 		<siteid>72</siteid>
 		<placeandsitename>Mosta</placeandsitename>
 		<movie>
@@ -1099,6 +1143,10 @@
 			<titleid>33</titleid>
 			<title>Pulp</title>
 		</movie>
+	</location>
+	<location lat="36.0468" lng="14.24">
+		<siteid>82</siteid>
+		<placeandsitename>Gozo, Citadel</placeandsitename>
 	</location>
 	<location lat="35.885" lng="14.4036">
 		<siteid>83</siteid>
@@ -1228,6 +1276,10 @@
 			<title>Sweeney 2</title>
 		</movie>
 	</location>
+	<location lat="35.9694" lng="14.3742">
+		<siteid>95</siteid>
+		<placeandsitename>Mellieha, Mellieha Cliffs</placeandsitename>
+	</location>
 	<location lat="36.0101" lng="14.3356">
 		<siteid>96</siteid>
 		<placeandsitename>Comino Island, Comino Caves</placeandsitename>
@@ -1235,6 +1287,10 @@
 			<titleid>8</titleid>
 			<title>The Count of Monte Cristo</title>
 		</movie>
+	</location>
+	<location lat="35.8924" lng="14.5051">
+		<siteid>97</siteid>
+		<placeandsitename>Floriana, St Publius church</placeandsitename>
 	</location>
 	<location lat="36.0795" lng="14.2302">
 		<siteid>98</siteid>
@@ -1544,6 +1600,10 @@
 			<title>By The Sea</title>
 		</movie>
 	</location>
+	<location lat="36.0598" lng="14.2541">
+		<siteid>133</siteid>
+		<placeandsitename>Gozo, ta' frenc restaurant, Xaghra</placeandsitename>
+	</location>
 	<location lat="36.0602" lng="14.2089">
 		<siteid>134</siteid>
 		<placeandsitename>Gozo, Gharb</placeandsitename>
@@ -1632,6 +1692,14 @@
 			<title>The Devil's Double</title>
 		</movie>
 	</location>
+	<location lat="35.8259" lng="14.5013">
+		<siteid>145</siteid>
+		<placeandsitename>Zurrieq, Villa Blanche</placeandsitename>
+	</location>
+	<location lat="35.9077" lng="14.4752">
+		<siteid>146</siteid>
+		<placeandsitename>San Gwann</placeandsitename>
+	</location>
 	<location lat="35.8972" lng="14.5054">
 		<siteid>147</siteid>
 		<placeandsitename>Floriana, Grand Hotel Excelsior</placeandsitename>
@@ -1704,4 +1772,4 @@
 			<title>Munich</title>
 		</movie>
 	</location>
-	</locations>
+</locations>

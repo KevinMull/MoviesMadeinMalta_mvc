@@ -3,306 +3,94 @@
 	<aliaslocation lat="41.8902" lng="12.4922">
 		<aliasid>1</aliasid>
 		<aliascountryandplace>Italy, Rome, Colisseum</aliascountryandplace>
+		<movie>
+			<titleid>16</titleid>
+			<title>Gladiator</title>
+			<maltalocation>
+				<locationsiteId>21</locationsiteId>
+				<locationplaceandsite>Fort Ricasoli, Kalkara</locationplaceandsite>
+			</maltalocation>
+		</movie>
 	</aliaslocation>
 	<aliaslocation lat="41.9027" lng="12.4962">
 		<aliasid>2</aliasid>
 		<aliascountryandplace>Italy, Rome</aliascountryandplace>
+		<movie>
+			<titleid>16</titleid>
+			<title>Gladiator</title>
+			<maltalocation>
+				<locationsiteId>5</locationsiteId>
+				<locationplaceandsite>Vittoriosa</locationplaceandsite>
+			</maltalocation>
+			<maltalocation>
+				<locationsiteId>21</locationsiteId>
+				<locationplaceandsite>Fort Ricasoli, Kalkara</locationplaceandsite>
+			</maltalocation>
+			<maltalocation>
+				<locationsiteId>38</locationsiteId>
+				<locationplaceandsite>Valletta Ditch, St. Michael's Bastion, Valletta</locationplaceandsite>
+			</maltalocation>
+		</movie>
+		<movie>
+			<titleid>27</titleid>
+			<title>Munich</title>
+			<maltalocation>
+				<locationsiteId>152</locationsiteId>
+				<locationplaceandsite>Republic Square, Valletta</locationplaceandsite>
+			</maltalocation>
+			<maltalocation>
+				<locationsiteId>155</locationsiteId>
+				<locationplaceandsite>St Paul's Church, Rabat</locationplaceandsite>
+			</maltalocation>
+		</movie>
 	</aliaslocation>
 	<aliaslocation lat="41.0082" lng="28.9783">
 		<aliasid>3</aliasid>
 		<aliascountryandplace>Turkey, Istanbul</aliascountryandplace>
+		<movie>
+			<titleid>25</titleid>
+			<title>Midnight Express</title>
+			<maltalocation>
+				<locationsiteId>1</locationsiteId>
+				<locationplaceandsite>Valletta</locationplaceandsite>
+			</maltalocation>
+			<maltalocation>
+				<locationsiteId>53</locationsiteId>
+				<locationplaceandsite>Republic St, Valletta</locationplaceandsite>
+			</maltalocation>
+			<maltalocation>
+				<locationsiteId>54</locationsiteId>
+				<locationplaceandsite>St Sebastian Street, Valletta</locationplaceandsite>
+			</maltalocation>
+		</movie>
 	</aliaslocation>
 	<aliaslocation lat="41.0062" lng="28.9799">
 		<aliasid>4</aliasid>
 		<aliascountryandplace>Turkey, Sultanamet Prison</aliascountryandplace>
+		<movie>
+			<titleid>25</titleid>
+			<title>Midnight Express</title>
+			<maltalocation>
+				<locationsiteId>2</locationsiteId>
+				<locationplaceandsite>Fort St Elmo, Valletta</locationplaceandsite>
+			</maltalocation>
+		</movie>
 	</aliaslocation>
 	<aliaslocation lat="41.9029" lng="12.4534">
 		<aliasid>5</aliasid>
 		<aliascountryandplace>Italy, Rome, The Vatican</aliascountryandplace>
-	</aliaslocation>
-	<aliaslocation lat="43.2965" lng="5.36977">
-		<aliasid>6</aliasid>
-		<aliascountryandplace>France, Marseilles</aliascountryandplace>
-	</aliaslocation>
-	<aliaslocation lat="17.9368" lng="-76.8411">
-		<aliasid>7</aliasid>
-		<aliascountryandplace>Jamaica, Port Royal</aliascountryandplace>
-	</aliaslocation>
-	<aliaslocation lat="30.7623" lng="29.6963">
-		<aliasid>8</aliasid>
-		<aliascountryandplace>Egypt, Alexandria</aliascountryandplace>
-	</aliaslocation>
-	<aliaslocation>
-		<aliasid>9</aliasid>
-		<aliascountryandplace>South Atlantic, Atlantic Ocean</aliascountryandplace>
-	</aliaslocation>
-	<aliaslocation lat="-34.9117" lng="-56.1484">
-		<aliasid>10</aliasid>
-		<aliascountryandplace>Uruguay, Montevideo Harbour</aliascountryandplace>
-	</aliaslocation>
-	<aliaslocation lat="39.9564" lng="26.239">
-		<aliasid>11</aliasid>
-		<aliascountryandplace>Troy</aliascountryandplace>
-	</aliaslocation>
-	<aliaslocation lat="41.9027" lng="12.4962">
-		<aliasid>12</aliasid>
-		<aliascountryandplace>Italy, Road to Rome</aliascountryandplace>
-	</aliaslocation>
-	<aliaslocation lat="40.983" lng="28.8104">
-		<aliasid>13</aliasid>
-		<aliascountryandplace>Turkey, Istanbul Airport</aliascountryandplace>
-	</aliaslocation>
-	<aliaslocation lat="33.8938" lng="35.5018">
-		<aliasid>14</aliasid>
-		<aliascountryandplace>Lebanon, Beiruit</aliascountryandplace>
-	</aliaslocation>
-	<aliaslocation>
-		<aliasid>17</aliasid>
-		<aliascountryandplace>Greece, Pantos</aliascountryandplace>
-	</aliaslocation>
-	<aliaslocation lat="42.9269" lng="2.26422">
-		<aliasid>18</aliasid>
-		<aliascountryandplace>France, Aude, Rennes-le-Château</aliascountryandplace>
-	</aliaslocation>
-	<aliaslocation>
-		<aliasid>19</aliasid>
-		<aliascountryandplace>Turkey, Law Courts</aliascountryandplace>
-	</aliaslocation>
-	<aliaslocation lat="40.9924" lng="28.8639">
-		<aliasid>20</aliasid>
-		<aliascountryandplace>Turkey, Asylum</aliascountryandplace>
-	</aliaslocation>
-	<aliaslocation>
-		<aliasid>23</aliasid>
-		<aliascountryandplace>Scotland, Balcoven Castle</aliascountryandplace>
-	</aliaslocation>
-	<aliaslocation>
-		<aliasid>24</aliasid>
-		<aliascountryandplace>Holland</aliascountryandplace>
-	</aliaslocation>
-	<aliaslocation>
-		<aliasid>25</aliasid>
-		<aliascountryandplace>Sweethaven</aliascountryandplace>
-	</aliaslocation>
-	<aliaslocation>
-		<aliasid>26</aliasid>
-		<aliascountryandplace>Scab Island</aliascountryandplace>
-	</aliaslocation>
-	<aliaslocation lat="32.0493" lng="34.7584">
-		<aliasid>27</aliasid>
-		<aliascountryandplace>Israel, Jaffa (Joppa)</aliascountryandplace>
-	</aliaslocation>
-	<aliaslocation>
-		<aliasid>28</aliasid>
-		<aliascountryandplace>Greece</aliascountryandplace>
-	</aliaslocation>
-	<aliaslocation lat="37.0802" lng="22.4768">
-		<aliasid>29</aliasid>
-		<aliascountryandplace>Greece, Sparta</aliascountryandplace>
-	</aliaslocation>
-	<aliaslocation lat="39.0048" lng="22.9504">
-		<aliasid>30</aliasid>
-		<aliascountryandplace>Greece, Phtia</aliascountryandplace>
-	</aliaslocation>
-	<aliaslocation lat="37.7309" lng="22.7561">
-		<aliasid>31</aliasid>
-		<aliascountryandplace>Greece, Mycenae</aliascountryandplace>
-	</aliaslocation>
-	<aliaslocation lat="43.2798" lng="5.32508">
-		<aliasid>33</aliasid>
-		<aliascountryandplace>France, Chateau D'If, Marseille</aliascountryandplace>
-	</aliaslocation>
-	<aliaslocation lat="32.0948" lng="20.1879">
-		<aliasid>34</aliasid>
-		<aliascountryandplace>Libya, Benghazi</aliascountryandplace>
-	</aliaslocation>
-	<aliaslocation>
-		<aliasid>35</aliasid>
-		<aliascountryandplace>Libya, US Diplomatic Outpost, Benghazi</aliascountryandplace>
-	</aliaslocation>
-	<aliaslocation lat="32.0572" lng="20.0878">
-		<aliasid>36</aliasid>
-		<aliascountryandplace>Libya, CIA Annex Benghazi</aliascountryandplace>
-	</aliaslocation>
-	<aliaslocation lat="32.6694" lng="13.1567">
-		<aliasid>37</aliasid>
-		<aliascountryandplace>Libya, Tripoli Airport</aliascountryandplace>
-	</aliaslocation>
-	<aliaslocation lat="31.7683" lng="35.2137">
-		<aliasid>38</aliasid>
-		<aliascountryandplace>Israel, Jerusalem</aliascountryandplace>
-	</aliaslocation>
-	<aliaslocation lat="37.3891" lng="-5.98445">
-		<aliasid>39</aliasid>
-		<aliascountryandplace>Spain, Seville</aliascountryandplace>
-	</aliaslocation>
-	<aliaslocation lat="31.8631" lng="35.2174">
-		<aliasid>40</aliasid>
-		<aliascountryandplace>Israel, Atarot airport, Jerusalem</aliascountryandplace>
-	</aliaslocation>
-	<aliaslocation lat="-6.16591" lng="39.2026">
-		<aliasid>41</aliasid>
-		<aliascountryandplace>Africa, Zanzibar</aliascountryandplace>
-	</aliaslocation>
-	<aliaslocation lat="40.8518" lng="14.2681">
-		<aliasid>42</aliasid>
-		<aliascountryandplace>Italy, Naples</aliascountryandplace>
-	</aliaslocation>
-	<aliaslocation lat="40.5532" lng="14.2221">
-		<aliasid>43</aliasid>
-		<aliascountryandplace>Italy, Capri</aliascountryandplace>
-	</aliaslocation>
-	<aliaslocation lat="38.1157" lng="13.3613">
-		<aliasid>44</aliasid>
-		<aliascountryandplace>Sicily, Palermo</aliascountryandplace>
-	</aliaslocation>
-	<aliaslocation lat="43.2548" lng="6.63785">
-		<aliasid>45</aliasid>
-		<aliascountryandplace>France, French Riveria</aliascountryandplace>
-	</aliaslocation>
-	<aliaslocation lat="16.9371" lng="54.0123">
-		<aliasid>46</aliasid>
-		<aliascountryandplace>Oman, Salalah Port, Raysut</aliascountryandplace>
-	</aliaslocation>
-	<aliaslocation lat="37.2501" lng="15.2217">
-		<aliasid>47</aliasid>
-		<aliascountryandplace>Sicily, Augusta</aliascountryandplace>
-	</aliaslocation>
-	<aliaslocation lat="33.2232" lng="43.6793">
-		<aliasid>48</aliasid>
-		<aliascountryandplace>Iraq</aliascountryandplace>
-	</aliaslocation>
-	<aliaslocation lat="33.3128" lng="44.3615">
-		<aliasid>49</aliasid>
-		<aliascountryandplace>Iraq, Baghdad</aliascountryandplace>
-	</aliaslocation>
-	<aliaslocation lat="32.0659" lng="34.7628">
-		<aliasid>50</aliasid>
-		<aliascountryandplace>Israel, Tel Aviv</aliascountryandplace>
-	</aliaslocation>
-	<aliaslocation lat="37.9887" lng="23.7307">
-		<aliasid>51</aliasid>
-		<aliascountryandplace>Greece, Athens</aliascountryandplace>
-	</aliaslocation>
-	<aliaslocation lat="35.0197" lng="33.2265">
-		<aliasid>52</aliasid>
-		<aliascountryandplace>Cyprus, Olympic Hotel</aliascountryandplace>
-	</aliaslocation>
-	<aliaslocation lat="32.0085" lng="34.89">
-		<aliasid>53</aliasid>
-		<aliascountryandplace>Israel, Lod Airport</aliascountryandplace>
 		<movie>
-			<titleid>1</titleid>
-			<title>13 Hours: The Secret Soldiers of Benghazi</title>
-		</movie>
-		<movie>
-			<titleid>1</titleid>
-			<title>13 Hours: The Secret Soldiers of Benghazi</title>
-		</movie>
-		<movie>
-			<titleid>1</titleid>
-			<title>13 Hours: The Secret Soldiers of Benghazi</title>
-		</movie>
-		<movie>
-			<titleid>1</titleid>
-			<title>13 Hours: The Secret Soldiers of Benghazi</title>
-			<maltalocation>
-				<locationsiteId>1</locationsiteId>
-				<locationplaceandsite>Valletta</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>2</locationsiteId>
-				<locationplaceandsite>Fort St Elmo, Valletta</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>9</locationsiteId>
-				<locationplaceandsite>Luqa Airport</locationplaceandsite>
-			</maltalocation>
+			<titleid>54</titleid>
+			<title>Revelation</title>
 			<maltalocation>
 				<locationsiteId>16</locationsiteId>
 				<locationplaceandsite>Grandmaster's Palace, Valletta</locationplaceandsite>
 			</maltalocation>
-			<maltalocation>
-				<locationsiteId>42</locationsiteId>
-				<locationplaceandsite>UNKNOWN</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>44</locationsiteId>
-				<locationplaceandsite>Manoel Island, Gzira</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>108</locationsiteId>
-				<locationplaceandsite>Liesse Il-Belt Valletta,, Valletta</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>109</locationsiteId>
-				<locationplaceandsite>Flower Power Garden Centre, Attard</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>110</locationsiteId>
-				<locationplaceandsite>Tiq Durumblat, Attard</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>111</locationsiteId>
-				<locationplaceandsite>Triq il Bacir, Kordin</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>112</locationsiteId>
-				<locationplaceandsite>Triq Xu, Kordin</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>113</locationsiteId>
-				<locationplaceandsite>Kordin</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>114</locationsiteId>
-				<locationplaceandsite>Attard</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>115</locationsiteId>
-				<locationplaceandsite>Porte des Bombes, Floriana</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>116</locationsiteId>
-				<locationplaceandsite>Fort Manoel, Gzira</locationplaceandsite>
-			</maltalocation>
 		</movie>
-		<movie>
-			<titleid>3</titleid>
-			<title>The Battle of the River Plate</title>
-		</movie>
-		<movie>
-			<titleid>3</titleid>
-			<title>The Battle of the River Plate</title>
-			<maltalocation>
-				<locationsiteId>4</locationsiteId>
-				<locationplaceandsite>Delimara Point, Delimara</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>14</locationsiteId>
-				<locationplaceandsite>Grand Harbour, Valletta</locationplaceandsite>
-			</maltalocation>
-		</movie>
-		<movie>
-			<titleid>7</titleid>
-			<title>Clash of the Titans</title>
-			<maltalocation>
-				<locationsiteId>1</locationsiteId>
-				<locationplaceandsite>Valletta</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>2</locationsiteId>
-				<locationplaceandsite>Fort St Elmo, Valletta</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>42</locationsiteId>
-				<locationplaceandsite>UNKNOWN</locationplaceandsite>
-			</maltalocation>
-		</movie>
-		<movie>
-			<titleid>8</titleid>
-			<title>The Count of Monte Cristo</title>
-		</movie>
+	</aliaslocation>
+	<aliaslocation lat="43.2965" lng="5.36977">
+		<aliasid>6</aliasid>
+		<aliascountryandplace>France, Marseilles</aliascountryandplace>
 		<movie>
 			<titleid>8</titleid>
 			<title>The Count of Monte Cristo</title>
@@ -314,11 +102,11 @@
 				<locationsiteId>25</locationsiteId>
 				<locationplaceandsite>Vittoriosa waterfront, Vittoriosa</locationplaceandsite>
 			</maltalocation>
-			<maltalocation>
-				<locationsiteId>46</locationsiteId>
-				<locationplaceandsite>St Mary's Tower, Comino Island</locationplaceandsite>
-			</maltalocation>
 		</movie>
+	</aliaslocation>
+	<aliaslocation lat="17.9368" lng="-76.8411">
+		<aliasid>7</aliasid>
+		<aliascountryandplace>Jamaica, Port Royal</aliascountryandplace>
 		<movie>
 			<titleid>9</titleid>
 			<title>Cutthroat Island</title>
@@ -347,49 +135,21 @@
 				<locationplaceandsite>Greeks Gate, Mdina</locationplaceandsite>
 			</maltalocation>
 		</movie>
+	</aliaslocation>
+	<aliaslocation lat="30.7623" lng="29.6963">
+		<aliasid>8</aliasid>
+		<aliascountryandplace>Egypt, Alexandria</aliascountryandplace>
 		<movie>
-			<titleid>10</titleid>
-			<title>A Different Loyalty</title>
-			<maltalocation>
-				<locationsiteId>1</locationsiteId>
-				<locationplaceandsite>Valletta</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>2</locationsiteId>
-				<locationplaceandsite>Fort St Elmo, Valletta</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>42</locationsiteId>
-				<locationplaceandsite>UNKNOWN</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>108</locationsiteId>
-				<locationplaceandsite>Liesse Il-Belt Valletta,, Valletta</locationplaceandsite>
-			</maltalocation>
-		</movie>
-		<movie>
-			<titleid>16</titleid>
-			<title>Gladiator</title>
-		</movie>
-		<movie>
-			<titleid>16</titleid>
-			<title>Gladiator</title>
-		</movie>
-		<movie>
-			<titleid>16</titleid>
-			<title>Gladiator</title>
-			<maltalocation>
-				<locationsiteId>5</locationsiteId>
-				<locationplaceandsite>Vittoriosa</locationplaceandsite>
-			</maltalocation>
+			<titleid>53</titleid>
+			<title>Alexander</title>
 			<maltalocation>
 				<locationsiteId>14</locationsiteId>
 				<locationplaceandsite>Grand Harbour, Valletta</locationplaceandsite>
 			</maltalocation>
-			<maltalocation>
-				<locationsiteId>21</locationsiteId>
-				<locationplaceandsite>Fort Ricasoli, Kalkara</locationplaceandsite>
-			</maltalocation>
+		</movie>
+		<movie>
+			<titleid>67</titleid>
+			<title>Agora</title>
 			<maltalocation>
 				<locationsiteId>21</locationsiteId>
 				<locationplaceandsite>Fort Ricasoli, Kalkara</locationplaceandsite>
@@ -399,209 +159,37 @@
 				<locationplaceandsite>Valletta Ditch, St. Michael's Bastion, Valletta</locationplaceandsite>
 			</maltalocation>
 		</movie>
+	</aliaslocation>
+	<aliaslocation>
+		<aliasid>9</aliasid>
+		<aliascountryandplace>South Atlantic, Atlantic Ocean</aliascountryandplace>
 		<movie>
-			<titleid>17</titleid>
-			<title>Hell Boats</title>
+			<titleid>3</titleid>
+			<title>The Battle of the River Plate</title>
 			<maltalocation>
-				<locationsiteId>15</locationsiteId>
-				<locationplaceandsite>Blue Grotto</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>139</locationsiteId>
-				<locationplaceandsite>Wied iz-Zurrieq, Qrendi</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>140</locationsiteId>
-				<locationplaceandsite>Fort St Rocco, Kalkara</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>141</locationsiteId>
-				<locationplaceandsite>Wied Babu, Zurrieq</locationplaceandsite>
+				<locationsiteId>4</locationsiteId>
+				<locationplaceandsite>Delimara Point, Delimara</locationplaceandsite>
 			</maltalocation>
 		</movie>
+	</aliaslocation>
+	<aliaslocation lat="-34.9117" lng="-56.1484">
+		<aliasid>10</aliasid>
+		<aliascountryandplace>Uruguay, Montevideo Harbour</aliascountryandplace>
 		<movie>
-			<titleid>25</titleid>
-			<title>Midnight Express</title>
-		</movie>
-		<movie>
-			<titleid>25</titleid>
-			<title>Midnight Express</title>
-		</movie>
-		<movie>
-			<titleid>25</titleid>
-			<title>Midnight Express</title>
-		</movie>
-		<movie>
-			<titleid>25</titleid>
-			<title>Midnight Express</title>
-		</movie>
-		<movie>
-			<titleid>25</titleid>
-			<title>Midnight Express</title>
+			<titleid>3</titleid>
+			<title>The Battle of the River Plate</title>
 			<maltalocation>
-				<locationsiteId>1</locationsiteId>
-				<locationplaceandsite>Valletta</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>2</locationsiteId>
-				<locationplaceandsite>Fort St Elmo, Valletta</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>9</locationsiteId>
-				<locationplaceandsite>Luqa Airport</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>53</locationsiteId>
-				<locationplaceandsite>Republic St, Valletta</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>54</locationsiteId>
-				<locationplaceandsite>St Sebastian Street, Valletta</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>137</locationsiteId>
-				<locationplaceandsite>St Dominic's Priory, Rabat</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>138</locationsiteId>
-				<locationplaceandsite>Mediterranean Conference Centre (formerly Infirmary), Valletta</locationplaceandsite>
+				<locationsiteId>14</locationsiteId>
+				<locationplaceandsite>Grand Harbour, Valletta</locationplaceandsite>
 			</maltalocation>
 		</movie>
-		<movie>
-			<titleid>27</titleid>
-			<title>Munich</title>
-		</movie>
-		<movie>
-			<titleid>27</titleid>
-			<title>Munich</title>
-		</movie>
-		<movie>
-			<titleid>27</titleid>
-			<title>Munich</title>
-		</movie>
-		<movie>
-			<titleid>27</titleid>
-			<title>Munich</title>
-		</movie>
-		<movie>
-			<titleid>27</titleid>
-			<title>Munich</title>
-		</movie>
-		<movie>
-			<titleid>27</titleid>
-			<title>Munich</title>
-			<maltalocation>
-				<locationsiteId>1</locationsiteId>
-				<locationplaceandsite>Valletta</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>3</locationsiteId>
-				<locationplaceandsite>Sliema</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>9</locationsiteId>
-				<locationplaceandsite>Luqa Airport</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>51</locationsiteId>
-				<locationplaceandsite>Dry Docks, Cospicua</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>56</locationsiteId>
-				<locationplaceandsite>British Hotel, Valletta</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>108</locationsiteId>
-				<locationplaceandsite>Liesse Il-Belt Valletta,, Valletta</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>152</locationsiteId>
-				<locationplaceandsite>Republic Square, Valletta</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>153</locationsiteId>
-				<locationplaceandsite>Primera Hotel, Bugibba</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>154</locationsiteId>
-				<locationplaceandsite>Old docks, Cospicua</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>155</locationsiteId>
-				<locationplaceandsite>St Paul's Church, Rabat</locationplaceandsite>
-			</maltalocation>
-		</movie>
-		<movie>
-			<titleid>32</titleid>
-			<title>Popeye </title>
-		</movie>
-		<movie>
-			<titleid>32</titleid>
-			<title>Popeye </title>
-			<maltalocation>
-				<locationsiteId>27</locationsiteId>
-				<locationplaceandsite>Fifla Rock</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>41</locationsiteId>
-				<locationplaceandsite>Blue Lagoon, Comino Island</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>57</locationsiteId>
-				<locationplaceandsite>Popeye Village, Anchor Bay</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>91</locationsiteId>
-				<locationplaceandsite>Comino Island</locationplaceandsite>
-			</maltalocation>
-		</movie>
-		<movie>
-			<titleid>37</titleid>
-			<title>Shout at the Devil</title>
-			<maltalocation>
-				<locationsiteId>42</locationsiteId>
-				<locationplaceandsite>UNKNOWN</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>125</locationsiteId>
-				<locationplaceandsite>Church St, St Paul's Bay</locationplaceandsite>
-			</maltalocation>
-		</movie>
-		<movie>
-			<titleid>41</titleid>
-			<title>Swept Away </title>
-			<maltalocation>
-				<locationsiteId>5</locationsiteId>
-				<locationplaceandsite>Vittoriosa</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>25</locationsiteId>
-				<locationplaceandsite>Vittoriosa waterfront, Vittoriosa</locationplaceandsite>
-			</maltalocation>
-		</movie>
+	</aliaslocation>
+	<aliaslocation lat="39.9564" lng="26.239">
+		<aliasid>11</aliasid>
+		<aliascountryandplace>Troy</aliascountryandplace>
 		<movie>
 			<titleid>44</titleid>
 			<title>Troy</title>
-		</movie>
-		<movie>
-			<titleid>44</titleid>
-			<title>Troy</title>
-		</movie>
-		<movie>
-			<titleid>44</titleid>
-			<title>Troy</title>
-		</movie>
-		<movie>
-			<titleid>44</titleid>
-			<title>Troy</title>
-			<maltalocation>
-				<locationsiteId>11</locationsiteId>
-				<locationplaceandsite>Ghajn Tuffieha Bay</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>11</locationsiteId>
-				<locationplaceandsite>Ghajn Tuffieha Bay</locationplaceandsite>
-			</maltalocation>
 			<maltalocation>
 				<locationsiteId>11</locationsiteId>
 				<locationplaceandsite>Ghajn Tuffieha Bay</locationplaceandsite>
@@ -614,58 +202,66 @@
 				<locationsiteId>40</locationsiteId>
 				<locationplaceandsite>Golden Bay, Mellieha</locationplaceandsite>
 			</maltalocation>
-			<maltalocation>
-				<locationsiteId>41</locationsiteId>
-				<locationplaceandsite>Blue Lagoon, Comino Island</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>91</locationsiteId>
-				<locationplaceandsite>Comino Island</locationplaceandsite>
-			</maltalocation>
 		</movie>
+	</aliaslocation>
+	<aliaslocation lat="41.9027" lng="12.4962">
+		<aliasid>12</aliasid>
+		<aliascountryandplace>Italy, Road to Rome</aliascountryandplace>
 		<movie>
-			<titleid>49</titleid>
-			<title>Zeppelin</title>
-		</movie>
-		<movie>
-			<titleid>49</titleid>
-			<title>Zeppelin</title>
-			<maltalocation>
-				<locationsiteId>4</locationsiteId>
-				<locationplaceandsite>Delimara Point, Delimara</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>42</locationsiteId>
-				<locationplaceandsite>UNKNOWN</locationplaceandsite>
-			</maltalocation>
-		</movie>
-		<movie>
-			<titleid>53</titleid>
-			<title>Alexander</title>
+			<titleid>16</titleid>
+			<title>Gladiator</title>
 			<maltalocation>
 				<locationsiteId>14</locationsiteId>
 				<locationplaceandsite>Grand Harbour, Valletta</locationplaceandsite>
 			</maltalocation>
 		</movie>
+	</aliaslocation>
+	<aliaslocation lat="40.983" lng="28.8104">
+		<aliasid>13</aliasid>
+		<aliascountryandplace>Turkey, Istanbul Airport</aliascountryandplace>
 		<movie>
-			<titleid>54</titleid>
-			<title>Revelation</title>
-		</movie>
-		<movie>
-			<titleid>54</titleid>
-			<title>Revelation</title>
-		</movie>
-		<movie>
-			<titleid>54</titleid>
-			<title>Revelation</title>
+			<titleid>25</titleid>
+			<title>Midnight Express</title>
 			<maltalocation>
-				<locationsiteId>16</locationsiteId>
-				<locationplaceandsite>Grandmaster's Palace, Valletta</locationplaceandsite>
+				<locationsiteId>9</locationsiteId>
+				<locationplaceandsite>Luqa Airport</locationplaceandsite>
+			</maltalocation>
+		</movie>
+	</aliaslocation>
+	<aliaslocation lat="33.8938" lng="35.5018">
+		<aliasid>14</aliasid>
+		<aliascountryandplace>Lebanon, Beiruit</aliascountryandplace>
+		<movie>
+			<titleid>10</titleid>
+			<title>A Different Loyalty</title>
+			<maltalocation>
+				<locationsiteId>1</locationsiteId>
+				<locationplaceandsite>Valletta</locationplaceandsite>
 			</maltalocation>
 			<maltalocation>
-				<locationsiteId>20</locationsiteId>
-				<locationplaceandsite>Mdina</locationplaceandsite>
+				<locationsiteId>2</locationsiteId>
+				<locationplaceandsite>Fort St Elmo, Valletta</locationplaceandsite>
 			</maltalocation>
+			<maltalocation>
+				<locationsiteId>108</locationsiteId>
+				<locationplaceandsite>Liesse Il-Belt Valletta,, Valletta</locationplaceandsite>
+			</maltalocation>
+		</movie>
+		<movie>
+			<titleid>27</titleid>
+			<title>Munich</title>
+			<maltalocation>
+				<locationsiteId>154</locationsiteId>
+				<locationplaceandsite>Old docks, Cospicua</locationplaceandsite>
+			</maltalocation>
+		</movie>
+	</aliaslocation>
+	<aliaslocation>
+		<aliasid>17</aliasid>
+		<aliascountryandplace>Greece, Pantos</aliascountryandplace>
+		<movie>
+			<titleid>54</titleid>
+			<title>Revelation</title>
 			<maltalocation>
 				<locationsiteId>39</locationsiteId>
 				<locationplaceandsite>Mnajdra Temples</locationplaceandsite>
@@ -673,14 +269,6 @@
 			<maltalocation>
 				<locationsiteId>41</locationsiteId>
 				<locationplaceandsite>Blue Lagoon, Comino Island</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>42</locationsiteId>
-				<locationplaceandsite>UNKNOWN</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>42</locationsiteId>
-				<locationplaceandsite>UNKNOWN</locationplaceandsite>
 			</maltalocation>
 			<maltalocation>
 				<locationsiteId>87</locationsiteId>
@@ -695,14 +283,302 @@
 				<locationplaceandsite>Comino Island</locationplaceandsite>
 			</maltalocation>
 		</movie>
+	</aliaslocation>
+	<aliaslocation lat="42.9269" lng="2.26422">
+		<aliasid>18</aliasid>
+		<aliascountryandplace>France, Aude, Rennes-le-Château</aliascountryandplace>
 		<movie>
-			<titleid>62</titleid>
-			<title>Risen</title>
+			<titleid>54</titleid>
+			<title>Revelation</title>
 			<maltalocation>
-				<locationsiteId>42</locationsiteId>
-				<locationplaceandsite>UNKNOWN</locationplaceandsite>
+				<locationsiteId>20</locationsiteId>
+				<locationplaceandsite>Mdina</locationplaceandsite>
 			</maltalocation>
 		</movie>
+	</aliaslocation>
+	<aliaslocation>
+		<aliasid>19</aliasid>
+		<aliascountryandplace>Turkey, Law Courts</aliascountryandplace>
+		<movie>
+			<titleid>25</titleid>
+			<title>Midnight Express</title>
+			<maltalocation>
+				<locationsiteId>137</locationsiteId>
+				<locationplaceandsite>St Dominic's Priory, Rabat</locationplaceandsite>
+			</maltalocation>
+		</movie>
+	</aliaslocation>
+	<aliaslocation lat="40.9924" lng="28.8639">
+		<aliasid>20</aliasid>
+		<aliascountryandplace>Turkey, Asylum</aliascountryandplace>
+		<movie>
+			<titleid>25</titleid>
+			<title>Midnight Express</title>
+			<maltalocation>
+				<locationsiteId>138</locationsiteId>
+				<locationplaceandsite>Mediterranean Conference Centre (formerly Infirmary), Valletta</locationplaceandsite>
+			</maltalocation>
+		</movie>
+	</aliaslocation>
+	<aliaslocation>
+		<aliasid>23</aliasid>
+		<aliascountryandplace>Scotland, Balcoven Castle</aliascountryandplace>
+	</aliaslocation>
+	<aliaslocation>
+		<aliasid>24</aliasid>
+		<aliascountryandplace>Holland</aliascountryandplace>
+		<movie>
+			<titleid>49</titleid>
+			<title>Zeppelin</title>
+			<maltalocation>
+				<locationsiteId>4</locationsiteId>
+				<locationplaceandsite>Delimara Point, Delimara</locationplaceandsite>
+			</maltalocation>
+		</movie>
+	</aliaslocation>
+	<aliaslocation>
+		<aliasid>25</aliasid>
+		<aliascountryandplace>Sweethaven</aliascountryandplace>
+		<movie>
+			<titleid>32</titleid>
+			<title>Popeye </title>
+			<maltalocation>
+				<locationsiteId>57</locationsiteId>
+				<locationplaceandsite>Popeye Village, Anchor Bay</locationplaceandsite>
+			</maltalocation>
+		</movie>
+	</aliaslocation>
+	<aliaslocation>
+		<aliasid>26</aliasid>
+		<aliascountryandplace>Scab Island</aliascountryandplace>
+		<movie>
+			<titleid>32</titleid>
+			<title>Popeye </title>
+			<maltalocation>
+				<locationsiteId>27</locationsiteId>
+				<locationplaceandsite>Fifla Rock</locationplaceandsite>
+			</maltalocation>
+			<maltalocation>
+				<locationsiteId>41</locationsiteId>
+				<locationplaceandsite>Blue Lagoon, Comino Island</locationplaceandsite>
+			</maltalocation>
+			<maltalocation>
+				<locationsiteId>91</locationsiteId>
+				<locationplaceandsite>Comino Island</locationplaceandsite>
+			</maltalocation>
+		</movie>
+	</aliaslocation>
+	<aliaslocation lat="32.0493" lng="34.7584">
+		<aliasid>27</aliasid>
+		<aliascountryandplace>Israel, Jaffa (Joppa)</aliascountryandplace>
+		<movie>
+			<titleid>7</titleid>
+			<title>Clash of the Titans</title>
+			<maltalocation>
+				<locationsiteId>1</locationsiteId>
+				<locationplaceandsite>Valletta</locationplaceandsite>
+			</maltalocation>
+			<maltalocation>
+				<locationsiteId>2</locationsiteId>
+				<locationplaceandsite>Fort St Elmo, Valletta</locationplaceandsite>
+			</maltalocation>
+		</movie>
+	</aliaslocation>
+	<aliaslocation>
+		<aliasid>28</aliasid>
+		<aliascountryandplace>Greece</aliascountryandplace>
+		<movie>
+			<titleid>41</titleid>
+			<title>Swept Away </title>
+			<maltalocation>
+				<locationsiteId>5</locationsiteId>
+				<locationplaceandsite>Vittoriosa</locationplaceandsite>
+			</maltalocation>
+			<maltalocation>
+				<locationsiteId>25</locationsiteId>
+				<locationplaceandsite>Vittoriosa waterfront, Vittoriosa</locationplaceandsite>
+			</maltalocation>
+		</movie>
+	</aliaslocation>
+	<aliaslocation lat="37.0802" lng="22.4768">
+		<aliasid>29</aliasid>
+		<aliascountryandplace>Greece, Sparta</aliascountryandplace>
+		<movie>
+			<titleid>44</titleid>
+			<title>Troy</title>
+			<maltalocation>
+				<locationsiteId>41</locationsiteId>
+				<locationplaceandsite>Blue Lagoon, Comino Island</locationplaceandsite>
+			</maltalocation>
+			<maltalocation>
+				<locationsiteId>91</locationsiteId>
+				<locationplaceandsite>Comino Island</locationplaceandsite>
+			</maltalocation>
+		</movie>
+	</aliaslocation>
+	<aliaslocation lat="39.0048" lng="22.9504">
+		<aliasid>30</aliasid>
+		<aliascountryandplace>Greece, Phtia</aliascountryandplace>
+		<movie>
+			<titleid>44</titleid>
+			<title>Troy</title>
+			<maltalocation>
+				<locationsiteId>11</locationsiteId>
+				<locationplaceandsite>Ghajn Tuffieha Bay</locationplaceandsite>
+			</maltalocation>
+		</movie>
+	</aliaslocation>
+	<aliaslocation lat="37.7309" lng="22.7561">
+		<aliasid>31</aliasid>
+		<aliascountryandplace>Greece, Mycenae</aliascountryandplace>
+		<movie>
+			<titleid>44</titleid>
+			<title>Troy</title>
+			<maltalocation>
+				<locationsiteId>11</locationsiteId>
+				<locationplaceandsite>Ghajn Tuffieha Bay</locationplaceandsite>
+			</maltalocation>
+		</movie>
+	</aliaslocation>
+	<aliaslocation lat="43.2798" lng="5.32508">
+		<aliasid>33</aliasid>
+		<aliascountryandplace>France, Chateau D'If, Marseille</aliascountryandplace>
+		<movie>
+			<titleid>8</titleid>
+			<title>The Count of Monte Cristo</title>
+			<maltalocation>
+				<locationsiteId>46</locationsiteId>
+				<locationplaceandsite>St Mary's Tower, Comino Island</locationplaceandsite>
+			</maltalocation>
+		</movie>
+	</aliaslocation>
+	<aliaslocation lat="32.0948" lng="20.1879">
+		<aliasid>34</aliasid>
+		<aliascountryandplace>Libya, Benghazi</aliascountryandplace>
+		<movie>
+			<titleid>1</titleid>
+			<title>13 Hours: The Secret Soldiers of Benghazi</title>
+			<maltalocation>
+				<locationsiteId>1</locationsiteId>
+				<locationplaceandsite>Valletta</locationplaceandsite>
+			</maltalocation>
+			<maltalocation>
+				<locationsiteId>2</locationsiteId>
+				<locationplaceandsite>Fort St Elmo, Valletta</locationplaceandsite>
+			</maltalocation>
+			<maltalocation>
+				<locationsiteId>16</locationsiteId>
+				<locationplaceandsite>Grandmaster's Palace, Valletta</locationplaceandsite>
+			</maltalocation>
+			<maltalocation>
+				<locationsiteId>44</locationsiteId>
+				<locationplaceandsite>Manoel Island, Gzira</locationplaceandsite>
+			</maltalocation>
+			<maltalocation>
+				<locationsiteId>108</locationsiteId>
+				<locationplaceandsite>Liesse Il-Belt Valletta,, Valletta</locationplaceandsite>
+			</maltalocation>
+			<maltalocation>
+				<locationsiteId>111</locationsiteId>
+				<locationplaceandsite>Triq il Bacir, Kordin</locationplaceandsite>
+			</maltalocation>
+			<maltalocation>
+				<locationsiteId>113</locationsiteId>
+				<locationplaceandsite>Kordin</locationplaceandsite>
+			</maltalocation>
+			<maltalocation>
+				<locationsiteId>114</locationsiteId>
+				<locationplaceandsite>Attard</locationplaceandsite>
+			</maltalocation>
+			<maltalocation>
+				<locationsiteId>115</locationsiteId>
+				<locationplaceandsite>Porte des Bombes, Floriana</locationplaceandsite>
+			</maltalocation>
+			<maltalocation>
+				<locationsiteId>116</locationsiteId>
+				<locationplaceandsite>Fort Manoel, Gzira</locationplaceandsite>
+			</maltalocation>
+		</movie>
+	</aliaslocation>
+	<aliaslocation>
+		<aliasid>35</aliasid>
+		<aliascountryandplace>Libya, US Diplomatic Outpost, Benghazi</aliascountryandplace>
+		<movie>
+			<titleid>1</titleid>
+			<title>13 Hours: The Secret Soldiers of Benghazi</title>
+			<maltalocation>
+				<locationsiteId>112</locationsiteId>
+				<locationplaceandsite>Triq Xu, Kordin</locationplaceandsite>
+			</maltalocation>
+		</movie>
+	</aliaslocation>
+	<aliaslocation lat="32.0572" lng="20.0878">
+		<aliasid>36</aliasid>
+		<aliascountryandplace>Libya, CIA Annex Benghazi</aliascountryandplace>
+		<movie>
+			<titleid>1</titleid>
+			<title>13 Hours: The Secret Soldiers of Benghazi</title>
+			<maltalocation>
+				<locationsiteId>109</locationsiteId>
+				<locationplaceandsite>Flower Power Garden Centre, Attard</locationplaceandsite>
+			</maltalocation>
+			<maltalocation>
+				<locationsiteId>110</locationsiteId>
+				<locationplaceandsite>Tiq Durumblat, Attard</locationplaceandsite>
+			</maltalocation>
+		</movie>
+	</aliaslocation>
+	<aliaslocation lat="32.6694" lng="13.1567">
+		<aliasid>37</aliasid>
+		<aliascountryandplace>Libya, Tripoli Airport</aliascountryandplace>
+		<movie>
+			<titleid>1</titleid>
+			<title>13 Hours: The Secret Soldiers of Benghazi</title>
+			<maltalocation>
+				<locationsiteId>9</locationsiteId>
+				<locationplaceandsite>Luqa Airport</locationplaceandsite>
+			</maltalocation>
+		</movie>
+	</aliaslocation>
+	<aliaslocation lat="31.7683" lng="35.2137">
+		<aliasid>38</aliasid>
+		<aliascountryandplace>Israel, Jerusalem</aliascountryandplace>
+		<movie>
+			<titleid>64</titleid>
+			<title>World War Z</title>
+			<maltalocation>
+				<locationsiteId>1</locationsiteId>
+				<locationplaceandsite>Valletta</locationplaceandsite>
+			</maltalocation>
+			<maltalocation>
+				<locationsiteId>2</locationsiteId>
+				<locationplaceandsite>Fort St Elmo, Valletta</locationplaceandsite>
+			</maltalocation>
+			<maltalocation>
+				<locationsiteId>31</locationsiteId>
+				<locationplaceandsite>Triton Fountain, Valletta</locationplaceandsite>
+			</maltalocation>
+			<maltalocation>
+				<locationsiteId>120</locationsiteId>
+				<locationplaceandsite>Waterfront car park, Valletta</locationplaceandsite>
+			</maltalocation>
+			<maltalocation>
+				<locationsiteId>121</locationsiteId>
+				<locationplaceandsite>Ordinance St, Valletta</locationplaceandsite>
+			</maltalocation>
+			<maltalocation>
+				<locationsiteId>122</locationsiteId>
+				<locationplaceandsite>St Joseph High Road, Hamrun</locationplaceandsite>
+			</maltalocation>
+			<maltalocation>
+				<locationsiteId>124</locationsiteId>
+				<locationplaceandsite>Triq il-Vittmi Furjanizi tal-Gwerra, Floriana</locationplaceandsite>
+			</maltalocation>
+		</movie>
+	</aliaslocation>
+	<aliaslocation lat="37.3891" lng="-5.98445">
+		<aliasid>39</aliasid>
+		<aliascountryandplace>Spain, Seville</aliascountryandplace>
 		<movie>
 			<titleid>63</titleid>
 			<title>Assassins Creed</title>
@@ -735,90 +611,34 @@
 				<locationplaceandsite>Fort Delimara, Marsaxlokk</locationplaceandsite>
 			</maltalocation>
 		</movie>
+	</aliaslocation>
+	<aliaslocation lat="31.8631" lng="35.2174">
+		<aliasid>40</aliasid>
+		<aliascountryandplace>Israel, Atarot airport, Jerusalem</aliascountryandplace>
 		<movie>
 			<titleid>64</titleid>
 			<title>World War Z</title>
-		</movie>
-		<movie>
-			<titleid>64</titleid>
-			<title>World War Z</title>
-			<maltalocation>
-				<locationsiteId>1</locationsiteId>
-				<locationplaceandsite>Valletta</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>2</locationsiteId>
-				<locationplaceandsite>Fort St Elmo, Valletta</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>31</locationsiteId>
-				<locationplaceandsite>Triton Fountain, Valletta</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>42</locationsiteId>
-				<locationplaceandsite>UNKNOWN</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>120</locationsiteId>
-				<locationplaceandsite>Waterfront car park, Valletta</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>121</locationsiteId>
-				<locationplaceandsite>Ordinance St, Valletta</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>122</locationsiteId>
-				<locationplaceandsite>St Joseph High Road, Hamrun</locationplaceandsite>
-			</maltalocation>
 			<maltalocation>
 				<locationsiteId>123</locationsiteId>
 				<locationplaceandsite>Mqabba</locationplaceandsite>
 			</maltalocation>
-			<maltalocation>
-				<locationsiteId>124</locationsiteId>
-				<locationplaceandsite>Triq il-Vittmi Furjanizi tal-Gwerra, Floriana</locationplaceandsite>
-			</maltalocation>
 		</movie>
+	</aliaslocation>
+	<aliaslocation lat="-6.16591" lng="39.2026">
+		<aliasid>41</aliasid>
+		<aliascountryandplace>Africa, Zanzibar</aliascountryandplace>
 		<movie>
-			<titleid>65</titleid>
-			<title>By The Sea</title>
-		</movie>
-		<movie>
-			<titleid>65</titleid>
-			<title>By The Sea</title>
+			<titleid>37</titleid>
+			<title>Shout at the Devil</title>
 			<maltalocation>
-				<locationsiteId>23</locationsiteId>
-				<locationplaceandsite>Gozo</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>28</locationsiteId>
-				<locationplaceandsite>St Pauls Square, Mdina</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>103</locationsiteId>
-				<locationplaceandsite>Ta' Cenc Hotel, Gozo</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>132</locationsiteId>
-				<locationplaceandsite>Mgarr ix-Xini, Gozo</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>134</locationsiteId>
-				<locationplaceandsite>Gharb, Gozo</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>135</locationsiteId>
-				<locationplaceandsite>Mgarr ix-Xini Tower, Gozo</locationplaceandsite>
+				<locationsiteId>125</locationsiteId>
+				<locationplaceandsite>Church St, St Paul's Bay</locationplaceandsite>
 			</maltalocation>
 		</movie>
-		<movie>
-			<titleid>66</titleid>
-			<title>Vendetta For The Saint</title>
-		</movie>
-		<movie>
-			<titleid>66</titleid>
-			<title>Vendetta For The Saint</title>
-		</movie>
+	</aliaslocation>
+	<aliaslocation lat="40.8518" lng="14.2681">
+		<aliasid>42</aliasid>
+		<aliascountryandplace>Italy, Naples</aliascountryandplace>
 		<movie>
 			<titleid>66</titleid>
 			<title>Vendetta For The Saint</title>
@@ -830,6 +650,42 @@
 				<locationsiteId>14</locationsiteId>
 				<locationplaceandsite>Grand Harbour, Valletta</locationplaceandsite>
 			</maltalocation>
+		</movie>
+	</aliaslocation>
+	<aliaslocation lat="40.5532" lng="14.2221">
+		<aliasid>43</aliasid>
+		<aliascountryandplace>Italy, Capri</aliascountryandplace>
+		<movie>
+			<titleid>66</titleid>
+			<title>Vendetta For The Saint</title>
+			<maltalocation>
+				<locationsiteId>66</locationsiteId>
+				<locationplaceandsite>Verdala Palace, Buskett</locationplaceandsite>
+			</maltalocation>
+			<maltalocation>
+				<locationsiteId>76</locationsiteId>
+				<locationplaceandsite>Parish Church of Mellieha, Mellieha</locationplaceandsite>
+			</maltalocation>
+			<maltalocation>
+				<locationsiteId>131</locationsiteId>
+				<locationplaceandsite>Melieha, Mellieha</locationplaceandsite>
+			</maltalocation>
+		</movie>
+	</aliaslocation>
+	<aliaslocation lat="38.1157" lng="13.3613">
+		<aliasid>44</aliasid>
+		<aliascountryandplace>Sicily, Palermo</aliascountryandplace>
+		<movie>
+			<titleid>65</titleid>
+			<title>By The Sea</title>
+			<maltalocation>
+				<locationsiteId>28</locationsiteId>
+				<locationplaceandsite>St Pauls Square, Mdina</locationplaceandsite>
+			</maltalocation>
+		</movie>
+		<movie>
+			<titleid>66</titleid>
+			<title>Vendetta For The Saint</title>
 			<maltalocation>
 				<locationsiteId>20</locationsiteId>
 				<locationplaceandsite>Mdina</locationplaceandsite>
@@ -839,20 +695,8 @@
 				<locationplaceandsite>St Pauls Square, Mdina</locationplaceandsite>
 			</maltalocation>
 			<maltalocation>
-				<locationsiteId>42</locationsiteId>
-				<locationplaceandsite>UNKNOWN</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
 				<locationsiteId>60</locationsiteId>
 				<locationplaceandsite>Main Gate, Mdina</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>66</locationsiteId>
-				<locationplaceandsite>Verdala Palace, Buskett</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>76</locationsiteId>
-				<locationplaceandsite>Parish Church of Mellieha, Mellieha</locationplaceandsite>
 			</maltalocation>
 			<maltalocation>
 				<locationsiteId>87</locationsiteId>
@@ -886,27 +730,39 @@
 				<locationsiteId>131</locationsiteId>
 				<locationplaceandsite>Melieha, Mellieha</locationplaceandsite>
 			</maltalocation>
-			<maltalocation>
-				<locationsiteId>131</locationsiteId>
-				<locationplaceandsite>Melieha, Mellieha</locationplaceandsite>
-			</maltalocation>
 		</movie>
+	</aliaslocation>
+	<aliaslocation lat="43.2548" lng="6.63785">
+		<aliasid>45</aliasid>
+		<aliascountryandplace>France, French Riveria</aliascountryandplace>
 		<movie>
-			<titleid>67</titleid>
-			<title>Agora</title>
+			<titleid>65</titleid>
+			<title>By The Sea</title>
 			<maltalocation>
-				<locationsiteId>21</locationsiteId>
-				<locationplaceandsite>Fort Ricasoli, Kalkara</locationplaceandsite>
+				<locationsiteId>23</locationsiteId>
+				<locationplaceandsite>Gozo</locationplaceandsite>
 			</maltalocation>
 			<maltalocation>
-				<locationsiteId>38</locationsiteId>
-				<locationplaceandsite>Valletta Ditch, St. Michael's Bastion, Valletta</locationplaceandsite>
+				<locationsiteId>103</locationsiteId>
+				<locationplaceandsite>Ta' Cenc Hotel, Gozo</locationplaceandsite>
 			</maltalocation>
 			<maltalocation>
-				<locationsiteId>42</locationsiteId>
-				<locationplaceandsite>UNKNOWN</locationplaceandsite>
+				<locationsiteId>132</locationsiteId>
+				<locationplaceandsite>Mgarr ix-Xini, Gozo</locationplaceandsite>
+			</maltalocation>
+			<maltalocation>
+				<locationsiteId>134</locationsiteId>
+				<locationplaceandsite>Gharb, Gozo</locationplaceandsite>
+			</maltalocation>
+			<maltalocation>
+				<locationsiteId>135</locationsiteId>
+				<locationplaceandsite>Mgarr ix-Xini Tower, Gozo</locationplaceandsite>
 			</maltalocation>
 		</movie>
+	</aliaslocation>
+	<aliaslocation lat="16.9371" lng="54.0123">
+		<aliasid>46</aliasid>
+		<aliascountryandplace>Oman, Salalah Port, Raysut</aliascountryandplace>
 		<movie>
 			<titleid>68</titleid>
 			<title>Captain Phillips</title>
@@ -915,25 +771,37 @@
 				<locationplaceandsite>Malta Freeport, Birzebbugia</locationplaceandsite>
 			</maltalocation>
 		</movie>
+	</aliaslocation>
+	<aliaslocation lat="37.2501" lng="15.2217">
+		<aliasid>47</aliasid>
+		<aliascountryandplace>Sicily, Augusta</aliascountryandplace>
 		<movie>
-			<titleid>70</titleid>
-			<title>The Devil's Double</title>
+			<titleid>17</titleid>
+			<title>Hell Boats</title>
+			<maltalocation>
+				<locationsiteId>15</locationsiteId>
+				<locationplaceandsite>Blue Grotto</locationplaceandsite>
+			</maltalocation>
+			<maltalocation>
+				<locationsiteId>139</locationsiteId>
+				<locationplaceandsite>Wied iz-Zurrieq, Qrendi</locationplaceandsite>
+			</maltalocation>
+			<maltalocation>
+				<locationsiteId>140</locationsiteId>
+				<locationplaceandsite>Fort St Rocco, Kalkara</locationplaceandsite>
+			</maltalocation>
+			<maltalocation>
+				<locationsiteId>141</locationsiteId>
+				<locationplaceandsite>Wied Babu, Zurrieq</locationplaceandsite>
+			</maltalocation>
 		</movie>
+	</aliaslocation>
+	<aliaslocation lat="33.2232" lng="43.6793">
+		<aliasid>48</aliasid>
+		<aliascountryandplace>Iraq</aliascountryandplace>
 		<movie>
 			<titleid>70</titleid>
 			<title>The Devil's Double</title>
-			<maltalocation>
-				<locationsiteId>21</locationsiteId>
-				<locationplaceandsite>Fort Ricasoli, Kalkara</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>42</locationsiteId>
-				<locationplaceandsite>UNKNOWN</locationplaceandsite>
-			</maltalocation>
-			<maltalocation>
-				<locationsiteId>42</locationsiteId>
-				<locationplaceandsite>UNKNOWN</locationplaceandsite>
-			</maltalocation>
 			<maltalocation>
 				<locationsiteId>144</locationsiteId>
 				<locationplaceandsite>Radisson Blu Resort and Spa, Golden Sands, Mellieha</locationplaceandsite>
@@ -943,6 +811,22 @@
 				<locationplaceandsite>Grand Hotel Excelsior, Floriana</locationplaceandsite>
 			</maltalocation>
 			<maltalocation>
+				<locationsiteId>150</locationsiteId>
+				<locationplaceandsite>Bridge (unkown rd), Mosta</locationplaceandsite>
+			</maltalocation>
+		</movie>
+	</aliaslocation>
+	<aliaslocation lat="33.3128" lng="44.3615">
+		<aliasid>49</aliasid>
+		<aliascountryandplace>Iraq, Baghdad</aliascountryandplace>
+		<movie>
+			<titleid>70</titleid>
+			<title>The Devil's Double</title>
+			<maltalocation>
+				<locationsiteId>21</locationsiteId>
+				<locationplaceandsite>Fort Ricasoli, Kalkara</locationplaceandsite>
+			</maltalocation>
+			<maltalocation>
 				<locationsiteId>147</locationsiteId>
 				<locationplaceandsite>Grand Hotel Excelsior, Floriana</locationplaceandsite>
 			</maltalocation>
@@ -950,9 +834,65 @@
 				<locationsiteId>149</locationsiteId>
 				<locationplaceandsite>Great Siege Rd, Floriana</locationplaceandsite>
 			</maltalocation>
+		</movie>
+	</aliaslocation>
+	<aliaslocation lat="32.0659" lng="34.7628">
+		<aliasid>50</aliasid>
+		<aliascountryandplace>Israel, Tel Aviv</aliascountryandplace>
+		<movie>
+			<titleid>27</titleid>
+			<title>Munich</title>
 			<maltalocation>
-				<locationsiteId>150</locationsiteId>
-				<locationplaceandsite>Bridge (unkown rd), Mosta</locationplaceandsite>
+				<locationsiteId>3</locationsiteId>
+				<locationplaceandsite>Sliema</locationplaceandsite>
+			</maltalocation>
+		</movie>
+	</aliaslocation>
+	<aliaslocation lat="37.9887" lng="23.7307">
+		<aliasid>51</aliasid>
+		<aliascountryandplace>Greece, Athens</aliascountryandplace>
+		<movie>
+			<titleid>27</titleid>
+			<title>Munich</title>
+			<maltalocation>
+				<locationsiteId>1</locationsiteId>
+				<locationplaceandsite>Valletta</locationplaceandsite>
+			</maltalocation>
+			<maltalocation>
+				<locationsiteId>51</locationsiteId>
+				<locationplaceandsite>Dry Docks, Cospicua</locationplaceandsite>
+			</maltalocation>
+			<maltalocation>
+				<locationsiteId>56</locationsiteId>
+				<locationplaceandsite>British Hotel, Valletta</locationplaceandsite>
+			</maltalocation>
+			<maltalocation>
+				<locationsiteId>108</locationsiteId>
+				<locationplaceandsite>Liesse Il-Belt Valletta,, Valletta</locationplaceandsite>
+			</maltalocation>
+		</movie>
+	</aliaslocation>
+	<aliaslocation lat="35.0197" lng="33.2265">
+		<aliasid>52</aliasid>
+		<aliascountryandplace>Cyprus, Olympic Hotel</aliascountryandplace>
+		<movie>
+			<titleid>27</titleid>
+			<title>Munich</title>
+			<maltalocation>
+				<locationsiteId>153</locationsiteId>
+				<locationplaceandsite>Primera Hotel, Bugibba</locationplaceandsite>
+			</maltalocation>
+		</movie>
+	</aliaslocation>
+	<aliaslocation lat="32.0085" lng="34.89">
+		<aliasid>53</aliasid>
+		<aliascountryandplace>Israel, Lod Airport</aliascountryandplace>
+		<movie>
+			<titleid>27</titleid>
+			<title>Munich</title>
+			<maltalocation>
+				<locationsiteId>9</locationsiteId>
+				<locationplaceandsite>Luqa Airport</locationplaceandsite>
 			</maltalocation>
 		</movie>
 	</aliaslocation>
