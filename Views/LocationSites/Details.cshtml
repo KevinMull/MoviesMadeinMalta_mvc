@@ -17,9 +17,10 @@
                  alt="@Model.LocationPlaceAndSiteName"
                  title="@Model.LocationPlaceAndSiteName" />
         </a>
-        <div class="imageContainer" id="map" style="width:400px;height:300px">
+        @*<div class="imageContainer" id="map" style=" width:400px;height:300px">*@
+            <div  id="map" style="float: left;  margin-right:20px; width:400px;height:300px">
+            </div>
         </div>
-    </div>
     
     @*GOOGLE MAP*@ 
     <script>
@@ -54,11 +55,7 @@
                 @foreach (MaltaMoviesMVCcore.Models.Scene item in ViewBag.Scenes)
                 {
                     <div style=" margin:5px; float:left; height:200px; overflow:hidden;">
-                        <h4> @item.Movie.Title</h4>
-
-                        @*Note 'Scene' is an alias mapped route in StartUp.cs for 'Details'*@
-                        @*<a class="modal-link"
-                            href="@Url.Action("Scene", "Scenes",new { id = item.SceneId })">*@
+                        <h4> @item.Movie.Title</h4>                      
 
                         <a href="@($"/images/scenes/large/{item.SceneId}.jpg")"
                            data-lightbox="scene" data-title="Movie: @item.Movie.Title -- Location: @item.LocationSite.LocationPlaceAndSiteName">
@@ -66,7 +63,7 @@
                             <img src="@($"/images/scenes/thumbs/{item.SceneId}.jpg")"
                                  alt="@item.Movie.Title - @item.LocationSite.LocationPlaceAndSiteName"
                                  title="@item.Movie.Title - @item.LocationSite.LocationPlaceAndSiteName"
-                                 width="250px" class="imgBox" />
+                                 height="150" width="250" class="imgBox" />
                         </a>
 
                     </div>
