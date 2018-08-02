@@ -43,16 +43,17 @@ html.lb-disable-scrolling {
 }
 
 .lb-outerContainer {
-  position: relative;
-  *zoom: 1;
-  width: 250px;
-  height: 250px;
-  margin: 0 auto;
-  border-radius: 4px;
-
-  /* Background color behind image.
+    position: relative;
+    *zoom: 1;
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+    border-radius: 4px;
+    margin-top: 10%; /*Added by KM to centralise on screen*/
+    
+    /* Background color behind image.
      This is visible during transitions. */
-  background-color: white;
+    background-color: white;
 }
 
 .lb-outerContainer:after {
@@ -167,7 +168,7 @@ html.lb-disable-scrolling {
 }
 
 .lb-data .lb-caption {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: bold;
   line-height: 1em;
 }
