@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="Description" content="Movies made in Malta, Gozo and Comino.  " />
-    <meta name="keywords" content="malta,movies,films,gozo,comino,locations,filmed in malta,made in malta,movies made malta" />
+    <meta name="keywords" content="malta,movies,films,malta movies,gozo,comino,locations,filmed in malta,made in malta,movies made malta" />
     <title>@ViewData["Title"] - Movies Made in Malta</title>
 
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
@@ -15,37 +15,29 @@
     <link href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.9.2/themes/blitzer/jquery-ui.css"
           rel="Stylesheet" type="text/css" />
 
+    <link rel="shortcut icon" href="~/favicon.ico" />
+
+    
+
     @*Lightbox cssand js*@
     <link href="~/lib/bootstrap/dist/css/lightbox.css" rel="stylesheet" />
     <script src="~/lib/bootstrap/dist/js/lightbox.js"></script>
 
-    @*need share buttons*@    
+    @*need share buttons*@
     <link href="~/lib/needShareButton/dist/needsharebutton.css" rel="stylesheet" />
-
-
-
-
-    @*<link rel="stylesheet" href="css/blueimp-gallery.min.css">*@
-
-    @*JavaScript files*@
-    @*@Scripts.Render("~/bundles/jquery")
-        <script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
-        <script src="~/Scripts/bootstrap-image-gallery.min.js"></script>*@
+    
+   
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-
         <link rel="stylesheet" href="~/css/site.css" />
-
-
-
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+        @*<link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />*@
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 
     </environment>
 
@@ -67,8 +59,8 @@
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">MOVIES MADE IN MALTA</a></li>
                     <li><a asp-area="" asp-controller="Movies" asp-action="Index">Movie List</a></li>
                     <li><a asp-area="" asp-controller="LocationSites" asp-action="Index">Locations</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Moviemap">Movie Map</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Aliasmap">Alias Map</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Moviemap">Malta Movie Map</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Aliasmap">World Alias Map</a></li>
                     <li><a asp-area="" asp-controller="Comments" asp-action="Index">Comments</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
