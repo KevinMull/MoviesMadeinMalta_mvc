@@ -27,29 +27,36 @@
             <div class="container-fluid">
 
                 @foreach (MaltaMoviesMVCcore.Models.Scene item in ViewBag.Scenes)
-                {          
+                {
+                     
 
-                    <div style=" margin:5px; float:left; height:150px; overflow:hidden; width:@strWidth;">
+                <div style=" margin:5px; float:left; height:175px; overflow:hidden; width:@strWidth;">
 
-                        @*Note 'Scene' is an alias mapped route in StartUp.cs for 'Details'*@
-                        @*<a class="modal-link"
-                           href="@Url.Action("Scene", "Scenes",new { id = item.SceneId })">*@
-                           
-                            <a href="@($"/images/scenes/large/{item.SceneId}.jpg")"
-                               data-lightbox="scene" 
-                               data-title="Movie: @item.Movie.Title -- Location: @item.LocationSite.LocationPlaceAndSiteName">
+                    @*Note 'Scene' is an alias mapped route in StartUp.cs for 'Details'*@
+                    @*<a class="modal-link"
+        href="@Url.Action("Scene", "Scenes",new { id = item.SceneId })">*@
 
-                                <img src="@($"/images/scenes/thumbs/{item.SceneId}.jpg")"
-                                     alt="@item.LocationSite.LocationPlaceAndSiteName"
-                                     title="@item.LocationSite.LocationPlaceAndSiteName"
-                                     width=@strWidth
-                                     class="imgBox" />
-                            </a>
-</div>
+                    <a href="@($"/images/scenes/large/{item.SceneId}.jpg")"
+                       data-lightbox="scene"
+                       data-title="Movie: @item.Movie.Title -- Location: @item.LocationSite.LocationPlaceAndSiteName">
+
+                        <img src="@($"/images/scenes/thumbs/{item.SceneId}.jpg")"
+                             alt="@item.LocationSite.LocationPlaceAndSiteName"
+                             title="@item.LocationSite.LocationPlaceAndSiteName"
+                             width=@strWidth
+                             class="imgBox" />
+                    </a>
+                    @item.LocationSite.LocationPlaceAndSiteName
+
+                </div>
 
                 }
+
             </div>
-        </div>
+                </div>
+                      
+           
+        
     }
 }
 
