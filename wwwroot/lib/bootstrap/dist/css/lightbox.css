@@ -45,11 +45,15 @@ html.lb-disable-scrolling {
 .lb-outerContainer {
     position: relative;
     *zoom: 1;
+    /*top:50%;
+    left:50%;*/
     width: 250px;
     height: 250px;
     margin: 0 auto;
     border-radius: 4px;
-    margin-top: 10%; /*Added by KM to centralise on screen*/
+    /*margin: auto;*/
+    
+    margin-top: 100px; /*Added by KM to centralise on screen*/
     
     /* Background color behind image.
      This is visible during transitions. */
