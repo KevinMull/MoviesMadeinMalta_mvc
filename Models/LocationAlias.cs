@@ -19,26 +19,24 @@ namespace MaltaMoviesMVCcore.Models
         
         public string LocationAliasPlace { get; set; }
         public double? Latitude { get; set; }
-        public double? Longitude { get; set; }
-        public string MapInfoHtml { get; set; }
-        //public string LatLong { get; set; }
+        public double? Longitude { get; set; }       
 
-        public string LatLong
-        {
-            get
-            {
-                return Latitude.ToString() + ", " + Longitude.ToString();
-            }
-        }
 
         [DisplayName("Movie Location")]
-        public string LocationAliasCountryAndPlace
+        public override string ToString () //LocationAliasCountryAndPlace
         {
-            get
-            {
+           
                 return LocationAliasCountry.ToString() + ", " + LocationAliasPlace.ToString();
-            }
+            
         }
+
+        //public string LocationAliasCountryAndPlace
+        //{
+        //    get
+        //    {
+        //        return LocationAliasCountry.ToString() + ", " + LocationAliasPlace.ToString();
+        //    }
+        //}
 
         public ICollection<Scene> Scenes { get; set; }
     }

@@ -29,15 +29,16 @@ namespace MaltaMoviesMVCcore.Models
 
 
          [DisplayName("Title")]
-        public string TitleAndYear
+        public override string ToString() 
         {
-            get
-            {
-                return Title + " (" + TitleYear + ")";
-            }
+            return Title + " (" + TitleYear + ")";
+            //get
+            //{
+            //    return Title + " (" + TitleYear + ")";
+            //}
         }
 
         public ICollection<Scene> Scenes { get; set; }
-        //public List<Scene> Scenes { get; set; }
+        
     }
 }

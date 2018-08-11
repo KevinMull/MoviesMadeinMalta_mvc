@@ -23,7 +23,7 @@ namespace MaltaMoviesMVCcore.Models
         public double? Latitude { get; set; }
         public double? Longitude { get; set; }
 
-        public string MapInfoHtml { get; set; }
+       
 
         public string LatLong
         {
