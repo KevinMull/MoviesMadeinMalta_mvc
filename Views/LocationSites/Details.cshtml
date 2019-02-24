@@ -13,13 +13,16 @@
         <a href="@($"/images/locations/hires/{Model.LocationSiteId}.jpg")"
            data-lightbox="location-1" data-title="@Model.LocationPlaceAndSiteName">
 
-            <img src="@($"/images/locations/{Model.LocationSiteId}.jpg")"
-                 alt="@Model.LocationPlaceAndSiteName"
-                 title="@Model.LocationPlaceAndSiteName" 
-                 class="img-responsive" />
+            <div class="imageContainer">
+                <img src="@($"/images/locations/{Model.LocationSiteId}.jpg")"
+                     alt="@Model.LocationPlaceAndSiteName"
+                     title="@Model.LocationPlaceAndSiteName"
+                     class="img-responsive" />
+            </div>
         </a>
-        @*<div class="imageContainer" id="map" style=" width:400px;height:300px">*@
-            <div  id="map" style="float: left;  margin-right:20px; width:400px;height:300px">
+        
+        <div class="imageContainer" id="map" style=" width:400px;height:300px">
+            @*<div class="imageContainer" id="map" style="float: left;  margin-right:20px; width:400px;height:300px">*@
             </div>
         </div>
     
