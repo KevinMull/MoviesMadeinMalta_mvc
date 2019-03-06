@@ -17,7 +17,7 @@
 
     <link rel="shortcut icon" href="~/favicon.ico" />
 
-    
+
 
     @*Lightbox cssand js*@
     <link href="~/lib/bootstrap/dist/css/lightbox.css" rel="stylesheet" />
@@ -25,19 +25,21 @@
 
     @*need share buttons*@
     <link href="~/lib/needShareButton/dist/needsharebutton.css" rel="stylesheet" />
-    
-   
 
-    <environment include="Development">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+
+    @*<environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
-    </environment>
+    </environment>*@
     <environment exclude="Development">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        @*<link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />*@
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
         <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
 
     </environment>
 
