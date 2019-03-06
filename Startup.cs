@@ -24,7 +24,8 @@ namespace MaltaMoviesMVCcore
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            //services.AddMvc();
+            services.AddMvc().AddJsonOptions(x => x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
             services.AddDbContext<MaltaMoviesContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("MaltaMoviesContext")));
         }
@@ -77,6 +78,19 @@ namespace MaltaMoviesMVCcore
                    template: "Scenes/Scene/{id?}",
                    defaults: new { controller = "Scenes", action = "Details" }
                );
+
+                //Custom route for Movies api
+               // routes.MapRoute(
+               //    name: "MovieApi",
+               //    template: "api/movies",
+               //    defaults: new { controller = "Moviesapi", action = "Index" }
+               //);
+                //Custom route for Movie by id api
+               // routes.MapRoute(
+               //    name: "MoviesApiId",
+               //    template: "api/movies/{id}",
+               //    defaults: new { controller = "Moviesapi", action = "Details" }
+               //);
 
                 routes.MapRoute(
                     name: "default",

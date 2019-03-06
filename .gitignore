@@ -3,3 +3,5 @@
 ################################################################################
 
 /Controllers/ValuesController.cs
+/Controllers/NoteController.cs
+/Models/Note.cs
