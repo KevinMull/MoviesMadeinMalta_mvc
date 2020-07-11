@@ -38,7 +38,7 @@ namespace MaltaMoviesMVCcore.Models
             //}
         }
 
-        public ICollection<Scene> Scenes { get; set; }
+       public ICollection<Scene> Scenes { get; set; }
         
     }
 }

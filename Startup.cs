@@ -28,14 +28,23 @@ namespace MaltaMoviesMVCcore
             services.AddMvc().AddJsonOptions(x => x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
             services.AddDbContext<MaltaMoviesContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("MaltaMoviesContext")));
+
+            services.AddLogging(loggingBuilder =>
+            {
+                loggingBuilder.AddConfiguration(Configuration.GetSection("Logging"));
+                loggingBuilder.AddConsole();
+                loggingBuilder.AddDebug();
+            });
         }
-                   
-        
+
+       
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
-            loggerFactory.AddDebug();
+//#pragma warning disable CS0618 // Type or member is obsolete
+//            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+//#pragma warning restore CS0618 // Type or member is obsolete
+//             loggerFactory.AddDebug();
 
             if (env.IsDevelopment())
 

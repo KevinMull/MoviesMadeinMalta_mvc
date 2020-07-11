@@ -8,10 +8,11 @@ namespace MaltaMoviesMVCcore.Models
     public partial class Scene
     {
         [Key]
-        public int SceneId { get; set; }
-        [ForeignKey("TitleId")]
+        public int SceneId { get; set; }        
         public int? TitleId { get; set; } // foreign key from Movie
+        [ForeignKey("LocationSiteId")]
         public int? LocationSiteId { get; set; }
+        [ForeignKey("LocationAliasId")]
         public int? LocationAliasId { get; set; }
         public string Notes { get; set; }
         public int? SceneOrder { get; set; }
@@ -19,6 +20,7 @@ namespace MaltaMoviesMVCcore.Models
 
         public LocationAlias LocationAlias { get; set; }
         public LocationSite LocationSite { get; set; }
-        public Movie Movie { get; set; }
+        [ForeignKey("TitleId")]
+        public virtual Movie Movie { get; set; }
     }
 }

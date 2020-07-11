@@ -55,7 +55,7 @@ namespace MaltaMoviesMVCcore.Controllers
                 .Where(s => s.TitleId == id)
                 .Include(s => s.LocationSite)
                 .Include(s => s.LocationSite.LocationPlace)
-                .OrderBy(s => s.SceneOrder).ToList();
+                .OrderBy(s => s.SceneOrder).ToList(); // Getting 'invalid column 'MovieTitleId'
 
             if (movie == null)
             {

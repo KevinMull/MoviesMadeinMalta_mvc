@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MaltaMoviesMVCcore.Models
 {
     public partial class LocationSite
     {
-        public LocationSite()
-        {
-            Scenes = new HashSet<Scene>();
-        }
+        //public LocationSite()
+        //{
+        //    Scenes = new HashSet<Scene>();
+        //}
 
         [Key]
         public int LocationSiteId { get; set; }
@@ -18,6 +19,7 @@ namespace MaltaMoviesMVCcore.Models
         [DisplayName("Location Site")]
         [Required]
         public string LocationSiteName { get; set; }
+        [ForeignKey("LocationPlaceId")]
         public int? LocationPlaceId { get; set; }
       
         public double? Latitude { get; set; }
