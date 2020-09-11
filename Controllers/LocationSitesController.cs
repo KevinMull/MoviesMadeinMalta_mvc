@@ -23,9 +23,6 @@ namespace MaltaMoviesMVCcore.Controllers
         public async Task<IActionResult> Index(string searchString)
         {
             var locations = from l in _context.LocationSites
-                            //TODO: inner join on scnes
-                            //join s in _context.Scenes
-                            //on l.LocationSiteId equals s.LocationSiteId
                             .Include("LocationPlace")                            
                             orderby l.LocationPlace.LocationPlaceName, l.LocationSiteName
                             where l.LocationSiteId  != 55 // Excl 'Behind the Scenes'
@@ -45,9 +42,7 @@ namespace MaltaMoviesMVCcore.Controllers
             {
                 locations = locations.Where(l => l.LocationSiteName.Contains(searchString) ||  l.LocationPlace.LocationPlaceName.Contains(searchString));
             }
-            locations = locations.OrderBy(l => l.LocationPlace.LocationPlaceName);
-
-
+           
             return View(await locations.ToListAsync());
         }
 
@@ -69,8 +64,7 @@ namespace MaltaMoviesMVCcore.Controllers
                 .Include(s => s.LocationSite)
                 .Include(s => s.LocationSite.LocationPlace)
                 .Include(s => s.Movie)
-                .OrderBy(s => s.Movie.Title).ToList();
-             //   .OrderBy(s => s.SceneOrder).ToList();
+                .OrderBy(s => s.Movie.Title).ToList();             
 
             //ViewBag.Scenes = from s in _context.Scenes
             //                 orderby s.SceneOrder
