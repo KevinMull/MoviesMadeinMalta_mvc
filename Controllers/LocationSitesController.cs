@@ -27,7 +27,7 @@ namespace MaltaMoviesMVCcore.Controllers
                             //join s in _context.Scenes
                             //on l.LocationSiteId equals s.LocationSiteId
                             .Include("LocationPlace")                            
-                            //orderby l.LocationPlace.LocationPlaceName, l.LocationSiteName
+                            orderby l.LocationPlace.LocationPlaceName, l.LocationSiteName
                             where l.LocationSiteId  != 55 // Excl 'Behind the Scenes'
                             where l.LocationSiteId != 94 // Excl 'N/A'
                             select l;
@@ -37,6 +37,7 @@ namespace MaltaMoviesMVCcore.Controllers
             //   .Include(l => l.LocationPlace)
             //   .OrderBy(l => l.LocationPlace.LocationPlaceName)
             //   .ThenBy(l => l.LocationSiteName);
+            //   select l;
 
 
             // Search wildcard by LocationSiteName or LocationPlaceName
