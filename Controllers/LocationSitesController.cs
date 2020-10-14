@@ -27,6 +27,7 @@ namespace MaltaMoviesMVCcore.Controllers
                             orderby l.LocationPlace.LocationPlaceName, l.LocationSiteName
                             where l.LocationSiteId  != 55 // Excl 'Behind the Scenes'
                             where l.LocationSiteId != 94 // Excl 'N/A'
+                            where l.LocationPlace.LocationId == GlobalSettings.LocationId
                             select l;
 
             //LAMDA way

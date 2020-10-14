@@ -6,8 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MaltaMoviesMVCcore.Models;
-
-
+using Microsoft.Extensions.Options;
 
 namespace MaltaMoviesMVCcore.Controllers
 {
@@ -19,6 +18,7 @@ namespace MaltaMoviesMVCcore.Controllers
         {
             _context = context;
         }
+        
 
         // GET: Movies
         //With optional search string
@@ -37,6 +37,7 @@ namespace MaltaMoviesMVCcore.Controllers
                                 select s.TitleId)
                                 .Contains(m.TitleId)
                          where m.ExcludeTitle == false
+                         where m.LocationId == GlobalSettings.LocationId
                          select m;
 
             if (!String.IsNullOrEmpty(searchString))

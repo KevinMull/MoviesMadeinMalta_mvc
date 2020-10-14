@@ -34,9 +34,10 @@ namespace MaltaMoviesMVCcore.Models
         //public bool? NewTitle { get; set; }
         public bool? ExcludeTitle { get; set; }
         public bool? Widescreen { get; set; }
+        public int LocationId { get; set; } //1=MALTA, 2=MANCHESTER
 
 
-         [DisplayName("Title")]
+        [DisplayName("Title")]
         public override string ToString() 
         {
             return Title + " (" + TitleYear + ")";

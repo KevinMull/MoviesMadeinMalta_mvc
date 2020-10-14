@@ -35,6 +35,7 @@ namespace MaltaMoviesMVCcore
                 loggingBuilder.AddConsole();
                 loggingBuilder.AddDebug();
             });
+
         }
 
        
@@ -110,14 +111,12 @@ namespace MaltaMoviesMVCcore
                     name: "MovieTitle",
                     template: "Movies/{Title}",
                     defaults: new { controller = "Movies", action = "Title" }
-                        );
-
-
-                
+                        );                
             }
 
            );
            
         }
+        
     }
 }
