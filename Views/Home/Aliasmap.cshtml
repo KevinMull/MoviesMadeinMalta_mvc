@@ -47,16 +47,16 @@
                     infowincontent += "<strong><li>" + movietitleurl + "</li></strong>";
 
                     // malta locations               
-                    var maltalocations = movies[i].getElementsByTagName('maltalocation');
-                    if (maltalocations.length > 0)
+                    var actuallocations = movies[i].getElementsByTagName('actuallocation');
+                    if (actuallocations.length > 0)
                         infowincontent += "<ul>";
                                         
-                    for (var j = 0; j < maltalocations.length; j++) {
-                            var locationplaceandsite = maltalocations[j].getElementsByTagName('locationplaceandsite')[0].childNodes[0].nodeValue;
+                    for (var j = 0; j < actuallocations.length; j++) {
+                            var locationplaceandsite = actuallocations[j].getElementsByTagName('locationplaceandsite')[0].childNodes[0].nodeValue;
                             infowincontent += "<li>" + locationplaceandsite + "</li>";
                        
                     }
-                    if (maltalocations.length > 0)
+                    if (actuallocations.length > 0)
                         infowincontent += "</ul>";
 
                 }
@@ -67,12 +67,12 @@
            
                 
                                            
-                       //if (maltalocations.length > 0)
+                       //if (actuallocations.length > 0)
                        //     infowincontent += "<ul>";
 
-                    //for (var j = 0; j < maltalocations.length; j++) {
+                    //for (var j = 0; j < actuallocations.length; j++) {
                         
-                    //  var locationplaceandsite = maltalocations[j].getElementsByTagName('locationplaceandsite')[0].childNodes[0].nodeValue;
+                    //  var locationplaceandsite = actuallocations[j].getElementsByTagName('locationplaceandsite')[0].childNodes[0].nodeValue;
                        
                     //    infowincontent += "<li>" + locationplaceandsite + "</li>";
 
