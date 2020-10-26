@@ -21,13 +21,18 @@ namespace MaltaMoviesMVCcore.Controllers
         // GET: LocationSites
         //With optional search string
         public async Task<IActionResult> Index(string searchString)
-        {
+
+           {
             var locations = from l in _context.LocationSites
                             .Include("LocationPlace")                            
                             orderby l.LocationPlace.LocationPlaceName, l.LocationSiteName
                             where l.LocationSiteId  != 55 // Excl 'Behind the Scenes'
                             where l.LocationSiteId != 94 // Excl 'N/A'
                             where l.LocationPlace.LocationId == GlobalSettings.LocationId
+                            // Only list location sites that actually have a scene 
+                            where (from s in _context.Scenes
+                                   select s.LocationSiteId)
+                                .Contains(l.LocationSiteId)
                             select l;
 
             //LAMDA way
@@ -47,15 +52,13 @@ namespace MaltaMoviesMVCcore.Controllers
             return View(await locations.ToListAsync());
         }
 
-        // GET: LocationSites/Details/5
+        // BY ID ...GET: LocationSites/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
-
-            // LAMBDA
             var locationSite = await _context.LocationSites
                 .Include(l => l.LocationPlace)
                 .SingleOrDefaultAsync(l => l.LocationSiteId == id);
@@ -65,7 +68,7 @@ namespace MaltaMoviesMVCcore.Controllers
                 .Include(s => s.LocationSite)
                 .Include(s => s.LocationSite.LocationPlace)
                 .Include(s => s.Movie)
-                .OrderBy(s => s.Movie.Title).ToList();             
+                .OrderBy(s => s.Movie.Title).ToList();
 
             //ViewBag.Scenes = from s in _context.Scenes
             //                 orderby s.SceneOrder
@@ -84,6 +87,32 @@ namespace MaltaMoviesMVCcore.Controllers
 
             return View(locationSite);
         }
+
+       // BY Name(string) ...GET: LocationSites/Details/VallettaFortStElmo
+        //public async Task<IActionResult> Details(string locationSiteName)
+        //{
+        //    if (locationSiteName == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    var locationSite = await _context.LocationSites
+        //        .Include(l => l.LocationPlace)
+        //        .SingleOrDefaultAsync(l => l.LocationSiteName == locationSiteName);
+
+        //    ViewBag.Scenes = _context.Scenes
+        //        .Where(s => s.LocationSiteId == locationSite.LocationSiteId)
+        //        .Include(s => s.LocationSite)
+        //        .Include(s => s.LocationSite.LocationPlace)
+        //        .Include(s => s.Movie)
+        //        .OrderBy(s => s.Movie.Title).ToList();
+
+        //    if (locationSite == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    return View(locationSite);
+        //}
 
         // GET: LocationSites/Create
         public IActionResult Create()

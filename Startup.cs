@@ -67,19 +67,26 @@ namespace MaltaMoviesMVCcore
 
                 //Custom route for Location Details ('Location')
                 routes.MapRoute(
-                   name: "Location",
-                   template: "Locations/Location/{id?}",
+                   name: "LocationSite",
+                   template: "Location/{LocationSiteId}",
                    defaults: new { controller = "LocationSites", action = "Details" }
                );
 
 
-                
-                    //Custom route for Movie title Index ('Title')
-                    routes.MapRoute(
-                       name: "Title",
-                       template: "Movies/Title/{id?}",
-                       defaults: new { controller = "Movies", action = "Details" }
-                   );
+
+                // //Custom route for Movie title Index ('Title')
+                // routes.MapRoute(
+                //    name: "Title",
+                //    template: "Movies/Title/{title}",
+                //    defaults: new { controller = "Movies", action = "Details" }
+                //);
+
+                //Custom route for Movie title Index ('Title')
+               // routes.MapRoute(
+               //    name: "Title",
+               //    template: "Movies/Title/{id?}",
+               //    defaults: new { controller = "Movies", action = "Details" }
+               //);
 
                 //Custom route for Scene Details ('Scene')
 
@@ -107,11 +114,11 @@ namespace MaltaMoviesMVCcore
                     template: "{controller=Home}/{action=Index}/{id?}");
 
                     //TODO:
-                    routes.MapRoute(
-                    name: "MovieTitle",
-                    template: "Movies/{Title}",
-                    defaults: new { controller = "Movies", action = "Title" }
-                        );                
+                    //routes.MapRoute(
+                    //name: "MovieTitle",
+                    //template: "Movies/{Title}",
+                    //defaults: new { controller = "Movies", action = "Title" }
+                    //    );                
             }
 
            );
