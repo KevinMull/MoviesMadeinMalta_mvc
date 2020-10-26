@@ -19,7 +19,7 @@ namespace MaltaMoviesMVCcore.Controllers
         }
 
         // GET: LocationSites
-        //With optional search string
+        //With optional search string        
         public async Task<IActionResult> Index(string searchString)
 
            {
@@ -52,7 +52,8 @@ namespace MaltaMoviesMVCcore.Controllers
             return View(await locations.ToListAsync());
         }
 
-        // BY ID ...GET: LocationSites/Details/5
+        // BY ID ...GET: LocationSites/5 -- Overrides default routemap in startup.cs
+        [Route("[controller]/{id}")]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)

@@ -51,8 +51,9 @@ namespace MaltaMoviesMVCcore.Controllers
         }
 
 
-        // GET: Movies/Details/5
+        // GET: Movies/Details/5 -- Overrides default routemap in startup.cs
         //  public async Task<IActionResult> Details(int? id)
+        [Route("[controller]/{id}")]
         public  IActionResult Details(int? id)
         {
             if (id == null)

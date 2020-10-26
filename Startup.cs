@@ -63,7 +63,7 @@ namespace MaltaMoviesMVCcore
                    name: "default",
                    template: "{controller=Home}/{action=Index}/{id?}"
                    );
-
+                 
                 //Custom route for LocationSites Index ('Locations')
                 routes.MapRoute(
                    name: "Locations",
