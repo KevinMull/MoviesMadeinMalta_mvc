@@ -58,6 +58,12 @@ namespace MaltaMoviesMVCcore
             app.UseStaticFiles();
             app.UseMvc(routes =>
             {
+
+                routes.MapRoute(
+                   name: "default",
+                   template: "{controller=Home}/{action=Index}/{id?}"
+                   );
+
                 //Custom route for LocationSites Index ('Locations')
                 routes.MapRoute(
                    name: "Locations",
@@ -109,9 +115,7 @@ namespace MaltaMoviesMVCcore
                //    defaults: new { controller = "Moviesapi", action = "Details" }
                //);
 
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+               
 
                     //TODO:
                     //routes.MapRoute(
