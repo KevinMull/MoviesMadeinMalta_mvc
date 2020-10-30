@@ -1,0 +1,49 @@
+﻿@model MaltaMoviesMVCcore.Models.LocationSite
+
+@{
+    ViewData["Title"] = "Unknown Locations";
+
+
+}
+<p>&nbsp;</p>
+<h2 class="movie-scenes">Unknown Locations</h2>
+<article>
+    <p>
+        If you can help identify any of the 'unknown' locations below, please <a href="&#109&#97;il&#116;&#111;&#58;kevm&#117;l&#108;65&#64;g&#109;ail&#46;co&#109;?&#115u&#98;&#106;&#101;ct&#61;Movies%20Made%20In%20Malta%20Unknown%20Locations%3A%20">contact me</a> with the actual location and 'scene id' shown in brackets.
+    </p>
+
+    </article>
+
+
+    @{if (Model.Scenes.Count() > 0)
+        {
+
+            
+            <div class="jumbotron">
+                <div class="container-fluid">
+
+                    @foreach (MaltaMoviesMVCcore.Models.Scene item in ViewBag.Scenes)
+                    {
+                        <div style=" margin:5px; float:left; height:200px; overflow:hidden;">
+                            <H5> @item.Movie.Title (@item.SceneId)</H5>
+                            <a href="@($"/images/scenes/large/{item.SceneId}.jpg")"
+                               data-lightbox="scene" data-title="Movie: @item.Movie.Title,- Id:@item.SceneId, - @item.Notes">
+
+                                <img src="@($"/images/scenes/thumbs/{item.SceneId}.jpg")"
+                                     alt="@item.Movie.Title - @item.SceneId"
+                                     title="@item.Movie.Title - (@item.SceneId)"
+                                     height="150" width="250" class="imgBox" />
+                            </a>
+
+
+                        </div>
+
+                    }
+                </div>
+            </div>
+        }
+    }
+    <div>
+
+        <a asp-action="Index">Back to Location List</a>
+    </div>

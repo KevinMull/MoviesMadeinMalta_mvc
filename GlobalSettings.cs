@@ -8,7 +8,7 @@ namespace MaltaMoviesMVCcore
     public static class GlobalSettings
     {
         //1=MALTA, 2=MANCHESTER
-        public const int LocationId = 1;
+        public const int RegionId = 1;
 
     }
 }

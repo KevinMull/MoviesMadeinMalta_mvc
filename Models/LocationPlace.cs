@@ -19,7 +19,7 @@ namespace MaltaMoviesMVCcore.Models
         [Required]
         public string LocationPlaceName { get; set; }
 
-        public int LocationId { get; set; }
+        public int RegionId { get; set; }
 
         public ICollection<LocationSite> LocationSites { get; set; }
     }

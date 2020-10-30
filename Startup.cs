@@ -74,25 +74,25 @@ namespace MaltaMoviesMVCcore
                 //Custom route for Location Details ('Location')
                 routes.MapRoute(
                    name: "LocationSite",
-                   template: "Location/{LocationSiteId}",
+                   template: "Location/{id}",
                    defaults: new { controller = "LocationSites", action = "Details" }
                );
 
 
 
                 // //Custom route for Movie title Index ('Title')
-                // routes.MapRoute(
-                //    name: "Title",
-                //    template: "Movies/Title/{title}",
-                //    defaults: new { controller = "Movies", action = "Details" }
-                //);
+                routes.MapRoute(
+                   name: "Title",
+                   template: "Movies/{Id}",
+                   defaults: new { controller = "Movies", action = "Details" }
+               );
 
                 //Custom route for Movie title Index ('Title')
-               // routes.MapRoute(
-               //    name: "Title",
-               //    template: "Movies/Title/{id?}",
-               //    defaults: new { controller = "Movies", action = "Details" }
-               //);
+                // routes.MapRoute(
+                //    name: "Title",
+                //    template: "Movies/Title/{id?}",
+                //    defaults: new { controller = "Movies", action = "Details" }
+                //);
 
                 //Custom route for Scene Details ('Scene')
 

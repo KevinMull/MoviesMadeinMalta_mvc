@@ -5,8 +5,11 @@
     ViewData["Title"] = "Locations";
 }
 
-
 <h2 class="movie-title">Locations&nbsp; &nbsp;  </h2>
+
+
+<p>&nbsp;</p>
+
 
 <div class="search-box">
     <form asp-controller="LocationSites" asp-action="Index" method="get">
@@ -15,45 +18,52 @@
 
     </form>
 </div>
+<p>&nbsp;</p>
+
+<article>
+    <p>
+        <a asp-action="Unknown" asp-route-id="42">Unknown Locations</a> Can you Help?
+    </p>
+    </article>
 
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-
-}
-
-@{ string search = Context.Request.Query["SearchString"];
-    if (search != null)
+    @using (Html.BeginForm())
     {
-        <p>Results for '@search'. @Model.Count() record(s) found</p>;
+        @Html.AntiForgeryToken()
 
     }
-}
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.LocationPlaceAndSiteName)
-            </th>
-
-
-
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
+    @{ string search = Context.Request.Query["SearchString"];
+        if (search != null)
         {
-            <tr>
-                <td>
-                    <a asp-action="Details" asp-route-id="@item.LocationSiteId">@item.LocationPlaceAndSiteName</a>
+            <p>Results for '@search'. @Model.Count() record(s) found</p>;
 
-                </td>
+        }
+    }
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.LocationPlaceAndSiteName)
+                </th>
+
+
 
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.LocationSiteId">@item.LocationPlaceAndSiteName</a>
 
-<a href="#top">Back to top</a>
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a href="#top">Back to top</a>

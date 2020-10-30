@@ -28,7 +28,7 @@ namespace MaltaMoviesMVCcore.Controllers
                             orderby l.LocationPlace.LocationPlaceName, l.LocationSiteName
                             where l.LocationSiteId  != 55 // Excl 'Behind the Scenes'
                             where l.LocationSiteId != 94 // Excl 'N/A'
-                            where l.LocationPlace.LocationId == GlobalSettings.LocationId
+                            where l.LocationPlace.RegionId == GlobalSettings.RegionId
                             // Only list location sites that actually have a scene 
                             where (from s in _context.Scenes
                                    select s.LocationSiteId)
@@ -89,7 +89,35 @@ namespace MaltaMoviesMVCcore.Controllers
             return View(locationSite);
         }
 
-       // BY Name(string) ...GET: LocationSites/Details/VallettaFortStElmo
+        // Get only 'Unknown locations'   
+       // [Route("[controller]/{id}")]
+        public async Task<IActionResult> Unknown(int? id)
+        {
+            // int unknownId = 22; //Malta
+            // int unknownId = 67; //Manchester
+
+            var locationSite = await _context.LocationSites
+                .Include(l => l.LocationPlace)
+                .SingleOrDefaultAsync(l => l.LocationSiteId == id);
+
+            ViewBag.Scenes = _context.Scenes
+                .Where(s => s.LocationSiteId == id)
+                .Include(s => s.LocationSite)
+                .Include(s => s.LocationSite.LocationPlace)
+                .Include(s => s.Movie)
+                .OrderBy(s => s.Movie.Title).ToList();
+
+         
+
+            if (locationSite == null)
+            {
+                return NotFound();
+            }
+
+            return View(locationSite);
+        }
+
+        // BY Name(string) ...GET: LocationSites/Details/VallettaFortStElmo
         //public async Task<IActionResult> Details(string locationSiteName)
         //{
         //    if (locationSiteName == null)

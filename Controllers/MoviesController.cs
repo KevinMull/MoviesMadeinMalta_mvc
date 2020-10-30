@@ -37,7 +37,7 @@ namespace MaltaMoviesMVCcore.Controllers
                                 select s.TitleId)
                                 .Contains(m.TitleId)
                          where m.ExcludeTitle == false
-                         where m.LocationId == GlobalSettings.LocationId
+                         where m.RegionId == GlobalSettings.RegionId
                          select m;
 
             if (!String.IsNullOrEmpty(searchString))
@@ -51,10 +51,10 @@ namespace MaltaMoviesMVCcore.Controllers
         }
 
 
-        // GET: Movies/Details/5 -- Overrides default routemap in startup.cs
+        // GET by TitleiD : Movies/Details/5 
         //  public async Task<IActionResult> Details(int? id)
         [Route("[controller]/{id}")]
-        public  IActionResult Details(int? id)
+        public IActionResult Details(int? id)
         {
             if (id == null)
             {
@@ -67,50 +67,31 @@ namespace MaltaMoviesMVCcore.Controllers
                 .Where(s => s.TitleId == id)
                 .Include(s => s.LocationSite)
                 .Include(s => s.LocationSite.LocationPlace)
-                .OrderBy(s => s.SceneOrder).ToList(); 
+                .OrderBy(s => s.SceneOrder).ToList();
 
             if (movie == null)
             {
                 return NotFound();
             }
 
-          
-             return View(movie);
-          
+            return View(movie);
         }
 
-
-
-        //OLD
-        //public async Task<IActionResult> Details(int? id)
+        // GET by Title  : Movies/Details/Munich 
+        //[Route("[controller]/{Title}")]
+        //public IActionResult Details(string title)
         //{
-        //    if (id == null)
+        //    if (title == null)
         //    {
         //        return NotFound();
         //    }
 
-        //    //var movie = await _context.Movies
-        //    //    .SingleOrDefaultAsync(m => m.TitleId == id);
-        //    var movie = await _context.Set<Movie>().Include(x => x.Scenes);
-        //    if (movie == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    return View(movie);
-        //}
-
-        //TODO:
-
-        //      [Route("Movies/{Title}")]
-        //public IActionResult Title(string Title)
-        //{
-        //    if (Title == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    var movie =  _context.Movies.Where(m => m.Title == Title).ToList();
+        //   Movie movie = _context.Movies.Find(title);
+        //    ViewBag.Scenes = _context.Scenes
+        //        .Where(s => s.TitleId == movie.TitleId)
+        //        .Include(s => s.LocationSite)
+        //        .Include(s => s.LocationSite.LocationPlace)
+        //        .OrderBy(s => s.SceneOrder).ToList(); 
 
         //    if (movie == null)
         //    {
