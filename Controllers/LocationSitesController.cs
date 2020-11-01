@@ -28,6 +28,7 @@ namespace MaltaMoviesMVCcore.Controllers
                             orderby l.LocationPlace.LocationPlaceName, l.LocationSiteName
                             where l.LocationSiteId  != 55 // Excl 'Behind the Scenes'
                             where l.LocationSiteId != 94 // Excl 'N/A'
+                            where l.LocationSiteId != 42 // Excl 'Unknowns'
                             where l.LocationPlace.RegionId == GlobalSettings.RegionId
                             // Only list location sites that actually have a scene 
                             where (from s in _context.Scenes
