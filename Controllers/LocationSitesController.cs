@@ -53,18 +53,20 @@ namespace MaltaMoviesMVCcore.Controllers
             return View(await locations.ToListAsync());
         }
 
-        // BY ID ...GET: LocationSites/5 -- Overrides default routemap in startup.cs
-        [Route("[controller]/{id}")]
-        public async Task<IActionResult> Details(int? id)
+        // BY Id and SiteName 
+        [Route("[controller]/{id}/{locationsitename}", Name = "GetLocationSiteName")]
+        public async Task<IActionResult> Details(int id, string locationsitename)
         {
-            if (id == null)
+
+            var locationSite = await _context.LocationSites
+               .Include(l => l.LocationPlace)
+               .SingleOrDefaultAsync(l => l.LocationSiteId == id);
+
+            if (locationSite == null)
             {
                 return NotFound();
             }
-            var locationSite = await _context.LocationSites
-                .Include(l => l.LocationPlace)
-                .SingleOrDefaultAsync(l => l.LocationSiteId == id);
-
+           
             ViewBag.Scenes = _context.Scenes
                 .Where(s => s.LocationSiteId == id)
                 .Include(s => s.LocationSite)
@@ -72,26 +74,53 @@ namespace MaltaMoviesMVCcore.Controllers
                 .Include(s => s.Movie)
                 .OrderBy(s => s.Movie.Title).ToList();
 
-            //ViewBag.Scenes = from s in _context.Scenes
-            //                 orderby s.SceneOrder
-            //                 where s.LocationSiteId == id
-            //                 //join m in _context.Movies on s.TitleId equals m.TitleId
-            //                 select new {m.TitleId
-            //                      //, m.Title
-            //                     , s.SceneId                                 
-            //                     , s.LocationSite.LocationPlace
-            //                        };
+            // Get the actual friendly version of the title.
+            string friendlyTitle = FriendlyUrlHelper.GetFriendlyTitle(locationSite.LocationSiteName);
 
-            if (locationSite == null)
+            // Compare the title with the friendly title.
+            if (!string.Equals(friendlyTitle, locationsitename, StringComparison.Ordinal))
             {
-                return NotFound();
+                // If the title is null, empty or does not match the friendly title, return a 301 Permanent
+                // Redirect to the correct friendly URL.
+                return this.RedirectToRoutePermanent("GetLocationSiteName", new { id = id, locationsitename = friendlyTitle });
             }
+
+
+
 
             return View(locationSite);
         }
 
+        // BY ID ...GET: LocationSites/5  ** ORIG by Id only ***
+        //[Route("[controller]/{id}")]
+        //public async Task<IActionResult> Details(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    var locationSite = await _context.LocationSites
+        //        .Include(l => l.LocationPlace)
+        //        .SingleOrDefaultAsync(l => l.LocationSiteId == id);
+
+        //    ViewBag.Scenes = _context.Scenes
+        //        .Where(s => s.LocationSiteId == id)
+        //        .Include(s => s.LocationSite)
+        //        .Include(s => s.LocationSite.LocationPlace)
+        //        .Include(s => s.Movie)
+        //        .OrderBy(s => s.Movie.Title).ToList();
+
+
+        //    if (locationSite == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    return View(locationSite);
+        //}
+
         // Get only 'Unknown locations'   
-       // [Route("[controller]/{id}")]
+        // [Route("[controller]/{id}")]
         public async Task<IActionResult> Unknown(int? id)
         {
             // int unknownId = 22; //Malta

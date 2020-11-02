@@ -24,11 +24,7 @@ namespace MaltaMoviesMVCcore.Controllers
         //With optional search string
         public async Task<IActionResult> Index(string searchString)
         {
-            //var movies = from m in _context.Movies
-            //                        orderby m.ParsedTitle
-            //                         where m.ExcludeTitle==false
-            //                         select m ;
-
+            
             // Only list movie titles that actually have a scene
             // i.e T-SQL'  'SELECT * FROM Movies WHERE TitleId IN(SELECT TitledId FROM Scenes)'
             var movies = from m in _context.Movies
@@ -45,61 +41,44 @@ namespace MaltaMoviesMVCcore.Controllers
                 movies = movies.Where(m=>m.Title.Contains(searchString));
             }
             
-
             //return View(await _context.Movies.ToListAsync());
             return View(await movies.ToListAsync());
         }
-
-
-        // GET by TitleiD : Movies/Details/5 
-        //  public async Task<IActionResult> Details(int? id)
-        [Route("[controller]/{id}")]
-        public IActionResult Details(int? id)
+        
+              
+        //[Route("[controller]/{id}")]
+        [HttpGet("[controller]/{id}/{title}", Name = "GetMovie")]
+        public IActionResult Details(int id, string title)
         {
-            if (id == null)
+
+            Movie movie = _context.Movies.Find(id);
+            if (movie == null)
             {
                 return NotFound();
             }
-            //var movie = await  _context.Set<Movie>().Include(x => x.Scenes);
 
-            Movie movie = _context.Movies.Find(id);
+                        
             ViewBag.Scenes = _context.Scenes
                 .Where(s => s.TitleId == id)
                 .Include(s => s.LocationSite)
                 .Include(s => s.LocationSite.LocationPlace)
                 .OrderBy(s => s.SceneOrder).ToList();
 
-            if (movie == null)
+            
+            // Get the actual friendly version of the title.
+            string friendlyTitle = FriendlyUrlHelper.GetFriendlyTitle(movie.Title);
+
+            // Compare the title with the friendly title.
+            if (!string.Equals(friendlyTitle, title, StringComparison.Ordinal))
             {
-                return NotFound();
+                // If the title is null, empty or does not match the friendly title, return a 301 Permanent
+                // Redirect to the correct friendly URL.
+                return this.RedirectToRoutePermanent("GetMovie", new { id = id, title = friendlyTitle });
             }
 
             return View(movie);
         }
-
-        // GET by Title  : Movies/Details/Munich 
-        //[Route("[controller]/{Title}")]
-        //public IActionResult Details(string title)
-        //{
-        //    if (title == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //   Movie movie = _context.Movies.Find(title);
-        //    ViewBag.Scenes = _context.Scenes
-        //        .Where(s => s.TitleId == movie.TitleId)
-        //        .Include(s => s.LocationSite)
-        //        .Include(s => s.LocationSite.LocationPlace)
-        //        .OrderBy(s => s.SceneOrder).ToList(); 
-
-        //    if (movie == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    return View(movie);
-        //}
-
+      
 
         //DISABLE CRUD
         // GET: Movies/Create

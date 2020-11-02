@@ -71,28 +71,28 @@ namespace MaltaMoviesMVCcore
                    defaults: new { controller = "LocationSites", action = "Index" }
                );
 
-                //Custom route for Location Details ('Location')
+                //Custom route for Location Details 
                 routes.MapRoute(
                    name: "LocationSite",
-                   template: "Location/{id}",
-                   defaults: new { controller = "LocationSites", action = "Details" }
+                   template: "{controller}/{action=Details}/{id?}/{title}",
+                   defaults: new { controller = "LocationSites" }
                );
 
 
 
-                // //Custom route for Movie title Index ('Title')
-                routes.MapRoute(
-                   name: "Title",
-                   template: "Movies/{Id}",
-                   defaults: new { controller = "Movies", action = "Details" }
-               );
+               // Standard
+               // routes.MapRoute(
+               //    name: "MovieId",
+               //    template: "Movies/{id}",
+               //    defaults: new { controller = "Movies", action = "Details" }
+               //);
 
                 //Custom route for Movie title Index ('Title')
-                // routes.MapRoute(
-                //    name: "Title",
-                //    template: "Movies/Title/{id?}",
-                //    defaults: new { controller = "Movies", action = "Details" }
-                //);
+                routes.MapRoute(
+                   name: "MovieTitle",
+                   template: "{controller}/{action=Details}/{id?}/{title}",
+                   defaults: new { controller = "Movies" }
+               );
 
                 //Custom route for Scene Details ('Scene')
 
@@ -114,15 +114,7 @@ namespace MaltaMoviesMVCcore
                //    template: "api/movies/{id}",
                //    defaults: new { controller = "Moviesapi", action = "Details" }
                //);
-
-               
-
-                    //TODO:
-                    //routes.MapRoute(
-                    //name: "MovieTitle",
-                    //template: "Movies/{Title}",
-                    //defaults: new { controller = "Movies", action = "Title" }
-                    //    );                
+                       
             }
 
            );
