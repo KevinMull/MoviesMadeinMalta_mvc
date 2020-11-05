@@ -27,7 +27,8 @@ namespace MaltaMoviesMVCcore.Controllers
                             .Include("LocationSites")
                             orderby l.LocationPlaceName
                             where l.LocationPlaceId != 41 // Excl 'Behind the Scenes'
-                            where l.LocationPlaceId != 94 // Excl 'N/A'                            
+                            where l.LocationPlaceId != 94 // Excl 'N/A'  
+                            where l.RegionId == GlobalSettings.RegionId
                             select l;
            
             //var locationplaces = _context
