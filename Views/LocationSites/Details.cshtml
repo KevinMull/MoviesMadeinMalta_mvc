@@ -59,7 +59,7 @@
                 @foreach (MaltaMoviesMVCcore.Models.Scene item in ViewBag.Scenes)
                 {
                     <div style=" margin:5px; float:left; height:200px; overflow:hidden;">
-                        <h5> @item.Movie.Title</h5>                      
+                        <h5><strong>@item.Movie.ToString()</strong></h5>                      
 
                         <a href="@($"/images/scenes/large/{item.SceneId}.jpg")"
                            data-lightbox="scene" data-title="Movie: @item.Movie.Title -- Location: @item.LocationSite.LocationPlaceAndSiteName">

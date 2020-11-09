@@ -120,11 +120,11 @@ namespace MaltaMoviesMVCcore.Controllers
         //}
 
         // Get only 'Unknown locations'   
-        // [Route("[controller]/{id}")]
+        [Route("[controller]/[action]/{id}")]
         public async Task<IActionResult> Unknown(int? id)
         {
-            // int unknownId = 22; //Malta
-            // int unknownId = 67; //Manchester
+            // int unknown LocationSiteId = 42; //Malta
+            // int unknown LocationSiteId = 186; //Manchester
 
             var locationSite = await _context.LocationSites
                 .Include(l => l.LocationPlace)
