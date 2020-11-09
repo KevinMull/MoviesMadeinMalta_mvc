@@ -1,0 +1,104 @@
+﻿@{
+    ViewData["Title"] = "Malta Movie Map";
+}
+<h2>Malta Movie Map - Filming Locations used in Malta</h2>
+
+<div id="map" style="width: 780px; height: 600px"></div>
+
+
+<script type="text/javascript">
+
+
+    function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+            center: new google.maps.LatLng(35.933134, 14.3768843),// MALTA
+            //   center: new google.maps.LatLng(-33.863276, 151.207977), // OZ
+            gestureHandling: 'greedy', // Enable zooming with mouse within window
+            zoom: 11
+        });
+        var infoWindow = new google.maps.InfoWindow;
+
+
+        downloadUrl('/data/locations_movies.xml', function (data) {
+            var xml = data.responseXML;
+
+
+            var markers = xml.documentElement.getElementsByTagName('location');
+            Array.prototype.forEach.call(markers, function (markerElem) {
+
+                var siteid = markerElem.getElementsByTagName('siteid')[0].childNodes[0];
+                var placeandsitename = markerElem.getElementsByTagName('placeandsitename')[0].childNodes[0];
+                //Build the  dynamic url for the infoWindow
+                var locationurl = "<a href='/Locations/Location/" + siteid.nodeValue + "' target='_blank'>" + placeandsitename.nodeValue + "</a>";
+
+                //Build the image thumb url for the infoWindow
+                var locationthumburl = "<a href='/Locations/Location/" + siteid.nodeValue + "' target='_blank'><img src='/images/locations/" + siteid.nodeValue + ".jpg' width='166' height='150'></a>";
+
+
+                var point = new google.maps.LatLng(
+                    parseFloat(markerElem.getAttribute('lat')),
+                    parseFloat(markerElem.getAttribute('lng')));
+
+
+                var movies = xml.documentElement.getElementsByTagName('movie');
+                var infowincontent = '<p><strong>' + locationurl + '</strong></p>';
+                infowincontent += '<p>' + locationthumburl + '</p>';
+
+                // movie titles
+                var movies = markerElem.getElementsByTagName('movie');
+                if (movies.length > 0)
+                    infowincontent += "<ul>";
+                for (var i = 0; i < movies.length; i++) {
+                    var title = movies[i].getElementsByTagName('title')[0].childNodes[0].nodeValue;
+                    var titleid = movies[i].getElementsByTagName('titleid')[0].childNodes[0].nodeValue;
+                    var movietitleurl = "<a href='/Movies/Title/" + titleid + "' target='_blank'>" + title + "</a>";
+                    infowincontent += "<li>" + movietitleurl + "</li>";
+
+                }
+                if (movies.length > 0)
+                    infowincontent += "</ul>";
+
+
+                var marker = new google.maps.Marker({
+                    map: map,
+                    position: point,
+                    icon: '/images/icons/clapper.png',
+                    title: placeandsitename.nodeValue
+                });
+
+
+                marker.addListener('click', function () {
+                    infoWindow.setContent(infowincontent);
+                    infoWindow.open(map, marker);
+                });
+            });
+        });
+    }
+
+
+    function downloadUrl(url, callback) {
+        var request = window.ActiveXObject ?
+            new ActiveXObject('Microsoft.XMLHTTP') :
+            new XMLHttpRequest;
+
+        request.onreadystatechange = function () {
+            if (request.readyState == 4) {
+                request.onreadystatechange = doNothing;
+                callback(request, request.status);
+            }
+        };
+
+        request.open('GET', url, true);
+        request.send(null);
+    }
+
+    function doNothing() { }
+
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2NceVpHdaJdEUGVdWC8qM_0nYVl8RsSQ&callback=initMap">
+</script>
+
+
+
+

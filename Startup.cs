@@ -71,6 +71,8 @@ namespace MaltaMoviesMVCcore
                    defaults: new { controller = "LocationSites", action = "Index" }
                );
 
+
+
                 //Custom route for Location Details 
                 routes.MapRoute(
                    name: "LocationSite",

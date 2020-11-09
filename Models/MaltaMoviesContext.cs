@@ -12,6 +12,7 @@ namespace MaltaMoviesMVCcore.Models
         public virtual DbSet<LocationSite> LocationSites { get; set; }
         public virtual DbSet<Movie> Movies { get; set; }
         public virtual DbSet<Scene> Scenes { get; set; }
+        public virtual DbSet<Region> Regions { get; set; }
 
         public MaltaMoviesContext(DbContextOptions<MaltaMoviesContext> options)
             : base(options)

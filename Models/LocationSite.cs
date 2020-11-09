@@ -8,11 +8,7 @@ namespace MaltaMoviesMVCcore.Models
 {
     public partial class LocationSite
     {
-        //public LocationSite()
-        //{
-        //    Scenes = new HashSet<Scene>();
-        //}
-
+        
         [Key]
         public int LocationSiteId { get; set; }
 

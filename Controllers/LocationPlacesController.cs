@@ -9,100 +9,119 @@ using MaltaMoviesMVCcore.Models;
 
 namespace MaltaMoviesMVCcore.Controllers
 {
-    public class LocationSitesController : Controller
+    public class LocationPlacesController : Controller
     {
         private readonly MaltaMoviesContext _context;
 
-        public LocationSitesController(MaltaMoviesContext context)
+        public LocationPlacesController(MaltaMoviesContext context)
         {
             _context = context;
         }
 
-        // GET: LocationSites
-        //With optional search string    
+       
         [HttpGet("[controller]/{regionName}")]
         public async Task<IActionResult> Index(string searchString, string regionName)
 
            {
-            var locations = from l in _context.LocationSites
-                            .Include(l => l.LocationPlace)
-                            orderby l.LocationPlace.LocationPlaceName, l.LocationSiteName
-                            where l.LocationSiteId  != 55 // Excl 'Behind the Scenes'
-                            where l.LocationSiteId != 94 // Excl 'N/A'
-                            where l.LocationSiteId != 42 // Excl 'Unknowns'
-                            where l.LocationSiteId != 186 // Excl 'Unknowns'
-                            //where l.LocationPlace.RegionId == GlobalSettings.RegionId
-                            where l.LocationPlace.RegionName == regionName
+            var locations = from lp in _context.LocationPlaces
+                            .Include(lp => lp.LocationSites)
+                            .Include(s => s.LocationSites)
+                            orderby lp.LocationPlaceName
+                            where lp.LocationPlaceId != 26 // Excl 'Behind the Scenes'
+                            where lp.LocationPlaceId != 41 // Excl 'N/A'
+                            where lp.LocationPlaceId != 22 // Excl 'Unknowns' 1
+                            where lp.LocationPlaceId != 67 // Excl 'Unknowns' 2
+                            where lp.RegionName == regionName
                             // Only list location sites that actually have a scene 
-                            where (from s in _context.Scenes
-                                   select s.LocationSiteId)
-                                .Contains(l.LocationSiteId)
-                            select l;
-
-            //LAMDA way
-            //var locations = _context.LocationSites
-            //   .Include(l => l.LocationPlace)
-            //   .OrderBy(l => l.LocationPlace.LocationPlaceName)
-            //   .ThenBy(l => l.LocationSiteName);
-            //   select l;
-
+                            //where (from s in _context.Scenes
+                            //       select s.LocationSiteId)
+                            //    .Contains(lp.LocationSites.LocationSiteId)
+                            select lp;
+           
 
             // Search wildcard by LocationSiteName or LocationPlaceName
             if (!String.IsNullOrEmpty(searchString))
             {
-                locations = locations.Where(l => l.LocationSiteName.Contains(searchString) ||  l.LocationPlace.LocationPlaceName.Contains(searchString));
+                locations = locations.Where(lp =>  lp.LocationPlaceName.Contains(searchString));
             }
-           
+
             return View(await locations.ToListAsync());
         }
 
-        // BY Id and SiteName 
-        [Route("[controller]/{id}/{locationsitename}", Name = "GetLocationSiteName")]
-        public async Task<IActionResult> Details(int id, string locationsitename)
+        // BY Id and PlceName 
+        [Route("[controller]/{id}/{locationplacename}", Name = "GetLocationPlaceName")]
+        public async  Task<IActionResult> Details(int id, string locationplacename)
         {
 
-            var locationSite = await _context.LocationSites
-               .Include(l => l.LocationPlace)
-               .SingleOrDefaultAsync(l => l.LocationSiteId == id);
+            var locationPlace = await _context.LocationPlaces
+               //.Include(lp => lp.LocationPlace)
+               .SingleOrDefaultAsync(lp => lp.LocationPlaceId == id);
 
-            if (locationSite == null)
+            
+
+            if (locationPlace == null)
             {
                 return NotFound();
             }
-           
+
             ViewBag.Scenes = _context.Scenes
-                .Where(s => s.LocationSiteId == id)
+                .Include(lp => lp.LocationSite)
+                .Where(lp => lp.LocationSite.LocationPlaceId == id)
                 .Include(s => s.LocationSite)
-                .Include(s => s.LocationSite.LocationPlace)
                 .Include(s => s.Movie)
                 .OrderBy(s => s.Movie.Title).ToList();
 
             // Get the actual friendly version of the title.
-            string friendlyTitle = FriendlyUrlHelper.GetFriendlyTitle(locationSite.LocationSiteName);
+            string friendlyTitle = FriendlyUrlHelper.GetFriendlyTitle(locationplacename);
 
             // Compare the title with the friendly title.
-            if (!string.Equals(friendlyTitle, locationsitename, StringComparison.Ordinal))
+            if (!string.Equals(friendlyTitle, locationplacename, StringComparison.Ordinal))
             {
                 // If the title is null, empty or does not match the friendly title, return a 301 Permanent
                 // Redirect to the correct friendly URL.
-                return this.RedirectToRoutePermanent("GetLocationSiteName", new { id = id, locationsitename = friendlyTitle });
+                return this.RedirectToRoutePermanent("GetLocationPlaceName", new { id = id, locationplacename = friendlyTitle });
             }
 
 
 
 
-            return View(locationSite);
+            return View(locationPlace);
         }
 
+        // BY ID ...GET: LocationSites/5  ** ORIG by Id only ***
+        //[Route("[controller]/{id}")]
+        //public async Task<IActionResult> Details(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    var locationSite = await _context.LocationSites
+        //        .Include(l => l.LocationPlace)
+        //        .SingleOrDefaultAsync(l => l.LocationSiteId == id);
+
+        //    ViewBag.Scenes = _context.Scenes
+        //        .Where(s => s.LocationSiteId == id)
+        //        .Include(s => s.LocationSite)
+        //        .Include(s => s.LocationSite.LocationPlace)
+        //        .Include(s => s.Movie)
+        //        .OrderBy(s => s.Movie.Title).ToList();
 
 
+        //    if (locationSite == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    return View(locationSite);
+        //}
 
         // Get only 'Unknown locations'   
-        [Route("[controller]/[action]/{id}")]      
+        // [Route("[controller]/{id}")]
         public async Task<IActionResult> Unknown(int? id)
         {
-            // int unknown LocationSiteId = 42; //Malta
-            // int unknown LocationSiteId = 186; //Manchester
+            // int unknownId = 22; //Malta
+            // int unknownId = 67; //Manchester
 
             var locationSite = await _context.LocationSites
                 .Include(l => l.LocationPlace)
@@ -125,8 +144,31 @@ namespace MaltaMoviesMVCcore.Controllers
             return View(locationSite);
         }
 
+        // BY Name(string) ...GET: LocationSites/Details/VallettaFortStElmo
+        //public async Task<IActionResult> Details(string locationSiteName)
+        //{
+        //    if (locationSiteName == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    var locationSite = await _context.LocationSites
+        //        .Include(l => l.LocationPlace)
+        //        .SingleOrDefaultAsync(l => l.LocationSiteName == locationSiteName);
 
-      
+        //    ViewBag.Scenes = _context.Scenes
+        //        .Where(s => s.LocationSiteId == locationSite.LocationSiteId)
+        //        .Include(s => s.LocationSite)
+        //        .Include(s => s.LocationSite.LocationPlace)
+        //        .Include(s => s.Movie)
+        //        .OrderBy(s => s.Movie.Title).ToList();
+
+        //    if (locationSite == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    return View(locationSite);
+        //}
 
         // GET: LocationSites/Create
         public IActionResult Create()

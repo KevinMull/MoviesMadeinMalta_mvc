@@ -1,0 +1,44 @@
+﻿@model MaltaMoviesMVCcore.Models.LocationPlace 
+
+@{
+    ViewData["Title"] = "Locations";
+
+}
+
+
+<h2>Location - @Model.LocationPlaceName - Movies made here</h2>
+
+
+@{if (Model.LocationSites.Count() > 0)
+    {
+               
+        <div class="jumbotron">
+            <div class="container-fluid">
+
+                @foreach (MaltaMoviesMVCcore.Models.Scene item in ViewBag.Scenes)
+                {
+                <div style=" margin:5px; float:left; height:220px; overflow:hidden;">
+                    <h5><strong>@item.Movie.ToString()</strong></h5>
+
+                    <a href="@($"/images/scenes/large/{item.SceneId}.jpg")"
+                       data-lightbox="scene" data-title="Movie: @item.Movie.Title -- Location: @item.LocationSite.LocationPlaceAndSiteName">
+
+                        <img src="@($"/images/scenes/thumbs/{item.SceneId}.jpg")"
+                             alt="@item.Movie.Title - @item.LocationSite.LocationPlaceAndSiteName"
+                             title="@item.Movie.Title - @item.LocationSite.LocationPlaceAndSiteName"
+                             height="150" width="250" class="imgBox" />
+                    </a>
+
+                    <h5> @item.LocationSite.LocationSiteName</h5>
+
+                </div>
+
+                }
+            </div>
+        </div>
+    }
+}
+        <p>
+            <a asp-route-regionName="@Model.RegionName" asp-controller="LocationSites" asp-action="Index">Back to Locations List</a>
+
+       </p>

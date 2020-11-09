@@ -18,11 +18,12 @@ namespace MaltaMoviesMVCcore.Controllers
         {
             _context = context;
         }
-        
+
 
         // GET: Movies
         //With optional search string
-        public async Task<IActionResult> Index(string searchString)
+        [HttpGet("[controller]/{regionName}")]
+        public async Task<IActionResult> Index(string searchString, string regionName)
         {
             
             // Only list movie titles that actually have a scene
@@ -33,7 +34,8 @@ namespace MaltaMoviesMVCcore.Controllers
                                 select s.TitleId)
                                 .Contains(m.TitleId)
                          where m.ExcludeTitle == false
-                         where m.RegionId == GlobalSettings.RegionId
+                        // where m.RegionId == GlobalSettings.RegionId
+                         where m.RegionName == regionName
                          select m;
 
             if (!String.IsNullOrEmpty(searchString))
@@ -43,6 +45,7 @@ namespace MaltaMoviesMVCcore.Controllers
             
             //return View(await _context.Movies.ToListAsync());
             return View(await movies.ToListAsync());
+            
         }
         
               

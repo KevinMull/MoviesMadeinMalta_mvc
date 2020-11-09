@@ -2,13 +2,14 @@
 
 <a name="top"></a>
 @{
-    ViewData["Title"] = "Locations";
+    // Get the last part of Request. Path '/MOVIES/MALTA'
+    string path = Context.Request.Path.Value.ToString();
+    string regionname = path.Substring(path.LastIndexOf("/") + 1).ToUpper();
+    ViewData["Title"] = "Locations"  + @regionname;
 }
 
-<h2 class="movie-title">Locations&nbsp; &nbsp;  </h2>
-
-
-<p>&nbsp;</p>
+<h2 class="movie-title">Movie Locations - @regionname </h2>
+<img src="~/images/icons/regionlogo_small_@{@regionname}.png" />
 
 
 <div class="search-box">
@@ -24,46 +25,44 @@
     <p>
         <a asp-action="Unknown" asp-route-id="42">Unknown Locations</a> Can you help identify any of them?
     </p>
-    </article>
+</article>
 
 
-    @using (Html.BeginForm())
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+}
+
+
+@{ string search = Context.Request.Query["SearchString"];
+    if (search != null)
     {
-        @Html.AntiForgeryToken()
+        <p>Results for '@search'. @Model.Count() record(s) found</p>;
 
     }
+}
 
-    @{ string search = Context.Request.Query["SearchString"];
-        if (search != null)
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.LocationPlaceAndSiteName)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
         {
-            <p>Results for '@search'. @Model.Count() record(s) found</p>;
-
-        }
-    }
-
-    <table class="table">
-        <thead>
             <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.LocationPlaceAndSiteName)
-                </th>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.LocationSiteId" asp-route-locationsitename="@item.LocationSiteName">@item.LocationPlaceAndSiteName</a>
 
-
+                </td>
 
             </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        <a asp-action="Details" asp-route-id="@item.LocationSiteId" asp-route-locationsitename="@item.LocationSiteName">@item.LocationPlaceAndSiteName</a>
+        }
+    </tbody>
+</table>
 
-                    </td>
-
-                </tr>
-            }
-        </tbody>
-    </table>
-
-    <a href="#top">Back to top</a>
+<a href="#top">Back to top</a>

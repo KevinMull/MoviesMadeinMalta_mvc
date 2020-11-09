@@ -7,7 +7,7 @@
 }
 
 
-<h2>Malta Location - @Model.LocationPlaceAndSiteName</h2>
+<h2>Location - @Model.LocationPlaceAndSiteName - Movies made here</h2>
 <div class="jumbotron">
     <div class="container-fluid">
         <a href="@($"/images/locations/hires/{Model.LocationSiteId}.jpg")"
@@ -52,14 +52,14 @@
 @{if (Model.Scenes.Count() > 0)
     {
 
-        <h2 class="movie-scenes">Movies made here</h2>
+     
         <div class="jumbotron">
             <div class="container-fluid">
 
                 @foreach (MaltaMoviesMVCcore.Models.Scene item in ViewBag.Scenes)
                 {
                     <div style=" margin:5px; float:left; height:200px; overflow:hidden;">
-                        <h5> @item.Movie.Title</h5>                      
+                        <h5><strong>@item.Movie.ToString() </strong></h5>                      
 
                         <a href="@($"/images/scenes/large/{item.SceneId}.jpg")"
                            data-lightbox="scene" data-title="Movie: @item.Movie.Title -- Location: @item.LocationSite.LocationPlaceAndSiteName">
@@ -77,7 +77,7 @@
         </div>
     }
 }
-<div>
+        <p>
+            <a asp-route-regionName="@Model.LocationPlace.RegionName.ToString()" asp-controller="LocationSites" asp-action="Index">Back to Locations List</a>
 
-    <a asp-action="Index">Back to Location List</a>
-</div>
+        </p>

@@ -1,0 +1,53 @@
+﻿@model IEnumerable<MaltaMoviesMVCcore.Models.LocationPlace>
+
+<a name="top"></a>
+@{
+    // Get the last part of Request. Path '/MOVIES/MALTA'
+    string path = Context.Request.Path.Value.ToString();
+    string regionname = path.Substring(path.LastIndexOf("/") + 1).ToUpper();
+    ViewData["Title"] = "Locations "  + @regionname;
+}
+
+<h2 class="movie-title">Movie Locations - @regionname &nbsp; </h2>
+<img src="~/images/icons/regionlogo_small_@{@regionname}.png" />
+
+
+
+<article>
+    <p>
+        <a asp-action="Unknown" asp-route-id="42">Unknown Locations</a> Can you help identify any of them?
+    </p>
+</article>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+}
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <strong>Location</strong>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.LocationPlaceId" asp-route-locationplacename="@item.LocationPlaceName">@item.LocationPlaceName</a>
+
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="#top">Back to top</a>
