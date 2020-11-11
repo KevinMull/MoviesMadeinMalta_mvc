@@ -3,6 +3,10 @@
 @{
     ViewData["Title"] = "Location";
 
+    var strWidth = "310px"; //widesdcreen default (2.35 = 354px, 1.85= 276px)
+    var strHeight = "190px";
+    
+
 
 }
 
@@ -20,13 +24,13 @@
                      class="img-responsive" />
             </div>
         </a>
-        
+
         <div class="imageContainer" id="map" style=" width:400px;height:300px">
             @*<div class="imageContainer" id="map" style="float: left;  margin-right:20px; width:400px;height:300px">*@
-            </div>
         </div>
-    
-    @*GOOGLE MAP*@ 
+    </div>
+
+    @*GOOGLE MAP*@
     <script>
         function myMap() {
             //var myCenter = new google.maps.LatLng(35.88885, 14.51199
@@ -48,9 +52,11 @@
 
 </div>
 
+@*Start thumbnails / carousel*@
 
 @{if (Model.Scenes.Count() > 0)
     {
+        int x = 0;
 
         <h2 class="movie-scenes">Movies made here</h2>
         <div class="jumbotron">
@@ -58,21 +64,85 @@
 
                 @foreach (MaltaMoviesMVCcore.Models.Scene item in ViewBag.Scenes)
                 {
-                    <div style=" margin:5px; float:left; height:200px; width:310px; overflow:hidden;">
-                        <h5><strong>@item.Movie.ToString()</strong></h5>                      
-
-                        <a href="@($"/images/scenes/large/{item.SceneId}.jpg")"
-                           data-lightbox="scene" data-title="Movie: @item.Movie.Title -- Location: @item.LocationSite.LocationPlaceAndSiteName">
-
-                            <img src="@($"/images/scenes/thumbs/{item.SceneId}.jpg")"
+                    
+                <div data-toggle="modal" data-target="#myModal" style=" margin:5px; float:left;  height:200px; width:310px;  word-wrap:break-word;">
+                    <h5><strong>@item.Movie.ToString()</strong></h5>                   
+                    <figure>
+                        <a href="#myGallery" data-slide-to="@(x)">
+                            <img class="img-thumbnail"
                                  alt="@item.Movie.Title - @item.LocationSite.LocationPlaceAndSiteName"
                                  title="@item.Movie.Title - @item.LocationSite.LocationPlaceAndSiteName"
-                                  class="imgBox" />
+                                 src="@($"/images/scenes/thumbs/{item.SceneId}.jpg")">
+                            <br />
                         </a>
+                        @*<figcaption>@item.LocationSite.LocationPlaceAndSiteName</figcaption>*@
+                    </figure>
 
-                    </div>
+                </div>
+                  
+
+                    {
+                        x++;
+                    }
 
                 }
+
+                @*</ul>*@
+
+            </div>
+        </div>
+        <!--begin modal window-->
+        <div class="modal fade" id="myModal" aria-hidden="true">
+            <div class="modal-dialog-centered">
+                <div class="modal-content" style="width:auto; ">
+                    <div class="modal-header" hidden="hidden">
+                        @*<div class="pull-left">My Gallery Title</div>*@
+                        @*<button type="button" class="close" data-dismiss="modal" title="Close"> <span class="glyphicon glyphicon-remove"></span></button>*@
+                    </div>
+                    <div class="modal-body" >
+                        <!--CAROUSEL CODE GOES HERE-->
+                        <!--begin carousel-->
+                        <div id="myGallery" class="carousel slide" data-interval="false">
+                            <div class="carousel-inner" >
+                                @foreach (MaltaMoviesMVCcore.Models.Scene item in ViewBag.Scenes)
+                                {
+                                    <div class="@(item == Model.Scenes.First() ? "item active" : "item")">
+                                        <img src="@($"/images/scenes/large/{item.SceneId}.jpg")"
+                                             alt="@item.Movie.Title - (@item.LocationSite.LocationPlaceAndSiteName)"
+                                             title="@item.Movie.Title - (@item.LocationSite.LocationPlaceAndSiteName)"
+                                             >
+                                        @*<div class="carousel-caption">
+
+                                            </div>*@
+                                        <div class="modal-header">
+                                            <strong>Title:</strong> '@item.Movie.Title' -  <strong>Location:</strong> @item.LocationSite.LocationPlaceAndSiteName - @item.Notes
+                                        </div>
+                                    </div>
+                                }
+
+                                <!--end carousel-inner-->
+                            </div>
+
+                            <!--Begin Previous and Next buttons-->
+                            <a class="left carousel-control"
+                               href="#myGallery" role="button"
+                               data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                            <a class="right carousel-control" href="#myGallery" role="button" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                            <!--end carousel-->
+                            <!--end modal-body-->
+
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn-sm close" type="button" data-dismiss="modal">Close</button>
+                            <!--end modal-footer-->
+                        </div>
+                        <!--end modal-content-->
+                    </div>
+                    <!--end modal-dialoge-->
+                </div>
+                <!--end myModal-->
             </div>
         </div>
     }
