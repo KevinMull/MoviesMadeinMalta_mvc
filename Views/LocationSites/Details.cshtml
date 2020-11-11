@@ -58,7 +58,7 @@
 
                 @foreach (MaltaMoviesMVCcore.Models.Scene item in ViewBag.Scenes)
                 {
-                    <div style=" margin:5px; float:left; height:200px; overflow:hidden;">
+                    <div style=" margin:5px; float:left; height:200px; width:310px; overflow:hidden;">
                         <h5><strong>@item.Movie.ToString()</strong></h5>                      
 
                         <a href="@($"/images/scenes/large/{item.SceneId}.jpg")"
@@ -67,7 +67,7 @@
                             <img src="@($"/images/scenes/thumbs/{item.SceneId}.jpg")"
                                  alt="@item.Movie.Title - @item.LocationSite.LocationPlaceAndSiteName"
                                  title="@item.Movie.Title - @item.LocationSite.LocationPlaceAndSiteName"
-                                 height="150" width="250" class="imgBox" />
+                                  class="imgBox" />
                         </a>
 
                     </div>
