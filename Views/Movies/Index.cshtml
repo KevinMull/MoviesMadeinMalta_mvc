@@ -63,14 +63,12 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.TitleYear)
-            </th>
+            </th>            
             <th>
-                @*@Html.DisplayNameFor(model => model.ImdbUrl)*@
-
+                Locations
             </th>
-
-
             <th></th>
+
         </tr>
     </thead>
     <tbody>
@@ -84,17 +82,13 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.TitleYear)
                 </td>
-                <td>                   
-                    <a href="@item.ImdbUrl" target="_blank"><img src="/images/icons/imdb.png" alt=""></a>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LocationPlacesCommaSeparated)
                 </td>
 
 
                 <td>
-
-                    @*<a asp-action="Edit" asp-route-id="@item.TitleId">Edit</a> |*@
-                    @*<a asp-action="Details" asp-route-id="@item.TitleId">Details</a>*@
-
-
+                    <a href="@item.ImdbUrl" target="_blank"><img src="/images/icons/imdb.png" alt=""></a>                   
                 </td>
             </tr>
         }

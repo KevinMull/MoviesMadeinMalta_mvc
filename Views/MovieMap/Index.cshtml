@@ -12,7 +12,7 @@
     function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
             center: new google.maps.LatLng(35.933134, 14.3768843),// MALTA
-            //   center: new google.maps.LatLng(-33.863276, 151.207977), // OZ
+           
             gestureHandling: 'greedy', // Enable zooming with mouse within window
             zoom: 11
         });
@@ -29,10 +29,11 @@
                 var siteid = markerElem.getElementsByTagName('siteid')[0].childNodes[0];
                 var placeandsitename = markerElem.getElementsByTagName('placeandsitename')[0].childNodes[0];
                 //Build the  dynamic url for the infoWindow
-                var locationurl = "<a href='/Locations/Location/" + siteid.nodeValue + "' target='_blank'>" + placeandsitename.nodeValue + "</a>";
+                var locationurl = "<a href='/LocationSites/" + siteid.nodeValue + "/" + placeandsitename.nodeValue + "' target='_blank'>" + placeandsitename.nodeValue + "</a>";
 
+                // i.e  http://localhost:51588/LocationSites/15/blue-grotto
                 //Build the image thumb url for the infoWindow
-                var locationthumburl = "<a href='/Locations/Location/" + siteid.nodeValue + "' target='_blank'><img src='/images/locations/" + siteid.nodeValue + ".jpg' width='166' height='150'></a>";
+                var locationthumburl = "<a href='/LocationSites/" + siteid.nodeValue + "/" + placeandsitename.nodeValue + "' target='_blank'><img src='/images/locations/" + siteid.nodeValue + ".jpg' width='166' height='150'></a>";
 
 
                 var point = new google.maps.LatLng(
@@ -51,7 +52,7 @@
                 for (var i = 0; i < movies.length; i++) {
                     var title = movies[i].getElementsByTagName('title')[0].childNodes[0].nodeValue;
                     var titleid = movies[i].getElementsByTagName('titleid')[0].childNodes[0].nodeValue;
-                    var movietitleurl = "<a href='/Movies/Title/" + titleid + "' target='_blank'>" + title + "</a>";
+                    var movietitleurl = "<a href='/Movies/" + titleid + "/" + title + "' target='_blank'>" + title + "</a>";
                     infowincontent += "<li>" + movietitleurl + "</li>";
 
                 }

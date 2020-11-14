@@ -2300,8 +2300,8 @@ th {
   text-align: left;
 }
 .table {
-    /*width: 100%;*/
-    width: 50%;
+    width: 100%;
+    /*width: 50%;*/
     max-width: 100%;
     margin-bottom: 20px;
 }

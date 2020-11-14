@@ -5,3 +5,6 @@
 /Controllers/ValuesController.cs
 /Controllers/NoteController.cs
 /Models/Note.cs
+/wwwroot/data/locations_movies_old.xml
+/wwwroot/data/locations_movies_malta.xml
+/wwwroot/data/locations_aliases_malta.xml
