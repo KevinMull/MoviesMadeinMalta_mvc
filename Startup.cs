@@ -10,6 +10,7 @@ using MaltaMoviesMVCcore.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
+
 namespace MaltaMoviesMVCcore
 {
     public class Startup

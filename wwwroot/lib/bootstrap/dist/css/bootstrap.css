@@ -117,7 +117,9 @@ img {
 .search-box {
     display: inline-block;
     vertical-align: text-bottom;
-    
+    float: right;
+    padding: 2px;
+    margin-top: 10px;
 }
 
 /*End KM*/
@@ -1259,7 +1261,7 @@ h2,
 .h2,
 h3,
 .h3 {
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: 10px;
 }
 h1 small,
@@ -1631,15 +1633,10 @@ pre code {
 }
 @media (min-width: 992px) {
   .container {
-    width: 970px;
+    width: 1050px;  /*MAIN PAGE WIDTH KM*/
   }
 }
-@media (min-width: 1200px) {
-  .container {
-    /*width: 1170px*/
-    width: 1050px;
-  }
-}
+
 .container-fluid {
     /*padding-right: 15px;*/
     padding-left: 5px;

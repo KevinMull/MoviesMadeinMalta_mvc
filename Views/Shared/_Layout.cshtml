@@ -1,4 +1,5 @@
 ﻿<!DOCTYPE html>
+@*@model MaltaMoviesMVCcore.Models.Movie*@
 <html>
 <head>
     <meta charset="utf-8" />
@@ -48,43 +49,87 @@
     <!--Inverted Navbar Start Here-->
     <!--<nav> tag  start with classes .navbar and .navbar-inverse -->
     <nav class="navbar navbar-inverse navbar-fixed-top">
-       
-            <div class="container">
-                <!--Navbar Header Start Here-->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <!--Navbar Header End Here-->
-                </div>
-                <div class="navbar-collapse collapse">
-                    <!--Menu Start Here-->
-                    <ul class="nav navbar-nav">
-                        <li><img src="~/images/icons/made_in_malta_logo_small.png" /></li>
-                        <li><a asp-area="" asp-controller="Home" asp-action="Index">MOVIES MADE IN MALTA</a></li>
-                        <li><a asp-area="" asp-controller="Movies" asp-action="Index">Movie List</a></li>
-                        <li><a asp-area="" asp-controller="LocationSites" asp-action="Index">Locations</a></li>
-                        <li><a asp-area="" asp-controller="MovieMap" asp-action="Index">Malta Movie Map</a></li>
-                        <li><a asp-area="" asp-controller="AliasMap" asp-action="Index">World Alias Map</a></li>
-                        <li><a asp-area="" asp-controller="Comments" asp-action="Index">Comments</a></li>
-                        <li><a asp-area="" asp-controller="About" asp-action="Index">About</a></li>
-                        <li><a asp-area="" asp-controller="Contact" asp-action="Index">Contact</a></li>
-                    </ul>
+
+        <div class="container">
+            <!--Navbar Header Start Here-->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!--Navbar Header End Here-->
+            </div>
+            <div class="navbar-collapse collapse">
+                <!--Menu Start Here-->
+                <ul class="nav navbar-nav">
+                    <li><img src="~/images/icons/made_in_malta_logo_small.png" /></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Index">MOVIES MADE IN MALTA</a></li>
+                    <li><a asp-area="" asp-controller="Movies" asp-action="Index">Movie List</a></li>
+                    <li><a asp-area="" asp-controller="LocationSites" asp-action="Index">Locations</a></li>
+                    <li><a asp-area="" asp-controller="MovieMap" asp-action="Index">Malta Movie Map</a></li>
+                    <li><a asp-area="" asp-controller="AliasMap" asp-action="Index">World Alias Map</a></li>
+                    <li><a asp-area="" asp-controller="Comments" asp-action="Index">Comments</a></li>
+                    <li><a asp-area="" asp-controller="About" asp-action="Index">About</a></li>
+                    <li><a asp-area="" asp-controller="Contact" asp-action="Index">Contact</a></li>
+                    @*<li><a asp-area="" asp-controller="Search" asp-action="Index">Search</a></li>*@
+                </ul>
+                @*<div>
+                    <div class="search-box" style="color:#9d9d9d">
+                        <form asp-controller="Movies" asp-action="Index" method="get">
+                            @Html.TextBoxFor(model => model.Title, new {name = "searchString" })
+                            
+                             <input type="submit" value="submit" />
+                        </form>
+                    </div>
 
                     <div id="share-button-1" class="need-share-button-default" data-share-icon-style="box"
-                         data-share-position="bottomCenter" data-share-networks="Mailto,Twitter,Pinterest,Facebook,Googleplus,linkedin">
+                         data-share-position="center" data-share-networks="Mailto,Twitter,Pinterest,Facebook,Googleplus,linkedin">
                     </div>
-                </div>
-            </div>
 
-            <script src="~/lib/needShareButton/dist/needsharebutton.js"></script>
+                </div>*@
+
+            </div>
+        </div>
+
+        <script src="~/lib/needShareButton/dist/needsharebutton.js"></script>
+        <script>
+            new needShareDropdown(document.getElementById('share-button-1'));
+        </script>
+
+        @section scripts{
+
+            <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
             <script>
-                new needShareDropdown(document.getElementById('share-button-1'));
+                $(document).ready(function () {
+                    $("#Title").autocomplete({
+                        minLength: 3,
+                        source: function (request, response) {
+                            $.ajax({
+                                url: "/Search/SearchMovie",
+                                type: "POST",
+                                dataType: "json",
+                                data: { Prefix: request.term },
+                                success: function (data) {
+                                    response($.map(data, function (item) {
+                                        return { label: item.Title, value: item.Title };
+                                    }))
+
+                                }
+                            })
+                        },
+                        messages: {
+                            noResults: "",
+                            results: function (count) {
+                                return count + (count > 1 ? ' results' : ' result ') + ' found';
+                            }
+                        }
+                    });
+                })
             </script>
-</nav>
+            }
+        </nav>
     <div class="container body-content">
         @RenderBody()
         <hr />

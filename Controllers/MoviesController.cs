@@ -22,7 +22,7 @@ namespace MaltaMoviesMVCcore.Controllers
 
         // GET: Movies
         //With optional search string
-        public async Task<IActionResult> Index(string searchString)
+        public async Task<IActionResult> Index(string title)
         {
             
             // Only list movie titles that actually have a scene
@@ -36,11 +36,11 @@ namespace MaltaMoviesMVCcore.Controllers
                          where m.RegionId == GlobalSettings.RegionId
                          select m;
 
-            if (!String.IsNullOrEmpty(searchString))
+            if (!String.IsNullOrEmpty(title))
             {
-                movies = movies.Where(m=>m.Title.Contains(searchString));
+                movies = movies.Where(m => m.Title.Contains(title));
             }
-            
+
             //return View(await _context.Movies.ToListAsync());
             return View(await movies.ToListAsync());
         }
@@ -56,7 +56,6 @@ namespace MaltaMoviesMVCcore.Controllers
             {
                 return NotFound();
             }
-
                         
             ViewBag.Scenes = _context.Scenes
                 .Where(s => s.TitleId == id)
@@ -78,7 +77,28 @@ namespace MaltaMoviesMVCcore.Controllers
 
             return View(movie);
         }
-      
+
+        
+
+        // [HttpPost("[controller]/[action]/")]
+        //public JsonResult Search(string Prefix)
+        //{
+
+        //    //var movies = from m in _context.Movies
+        //    //             orderby m.ParsedTitle
+        //    //             where (from s in _context.Scenes
+        //    //                    select s.TitleId)
+        //    //                    .Contains(m.TitleId)
+        //    //             where m.ExcludeTitle == false
+        //    //             where m.RegionId == GlobalSettings.RegionId
+        //    //             select m;
+
+        //    //var movies = (from m in _context.Movies
+        //    //              where m.Title.StartsWith(Prefix)
+        //    //                 select new { m.Title });
+        //    //return Json(movies);
+        //}
+
 
         //DISABLE CRUD
         // GET: Movies/Create
@@ -186,36 +206,8 @@ namespace MaltaMoviesMVCcore.Controllers
         //    return RedirectToAction(nameof(Index));
         //}
 
-        private bool MovieExists(int id)
-        {
-            return _context.Movies.Any(e => e.TitleId == id);
-        }
 
 
-        //TODO:
-        [HttpPost]
-        public  JsonResult AutoComplete(string prefix)
-        {
-            //Auto complete search
-            var  movies = (from m in _context.Movies
-                        // where m.ExcludeTitle == false
-                         where m.Title.StartsWith(prefix)
-                         //select m;
-                         select new
-                         {
-                             label = m.Title,
-                             val= m.TitleId
-                             
-                         }).ToList();
 
-            return Json(_context.Movies.ToList());
-    
-        }
-        [HttpPost]
-        public ActionResult Search(string Title, string TitleId)
-        {
-            ViewBag.Message = "Title: " + Title + " TitleId: " + TitleId;
-            return View();
-        }
     }
 }

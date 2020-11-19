@@ -7,63 +7,61 @@
 
 <h2 class="movie-title">Locations&nbsp; &nbsp;  </h2>
 
-
-<p>&nbsp;</p>
-
-
 <div class="search-box">
     <form asp-controller="LocationSites" asp-action="Index" method="get">
-        Search: <input type="text" id="txtSearch" name="SearchString">
-        <input type="submit" value="submit" />
-
+        <input type="text" id="title" name="title" placeholder="Search Location" />
+        <button type="submit">
+            <span class="glyphicon glyphicon-search"></span>Search
+        </button>
     </form>
 </div>
-<p>&nbsp;</p>
 
 <article>
     <p>
         <a asp-action="Unknown" asp-route-id="42">Unknown Locations</a> Can you help identify any of them?
     </p>
-    </article>
+</article>
 
-
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
-
-    }
-
-    @{ string search = Context.Request.Query["SearchString"];
-        if (search != null)
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.LocationPlaceAndSiteName)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
         {
-            <p>Results for '@search'. @Model.Count() record(s) found</p>;
-
-        }
-    }
-
-    <table class="table">
-        <thead>
             <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.LocationPlaceAndSiteName)
-                </th>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.LocationSiteId" asp-route-locationsitename="@item.LocationSiteName">@item.LocationPlaceAndSiteName</a>
 
-
-
+                </td>
             </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        <a asp-action="Details" asp-route-id="@item.LocationSiteId" asp-route-locationsitename="@item.LocationSiteName">@item.LocationPlaceAndSiteName</a>
+        }
+    </tbody>
+</table>
+@section scripts{
 
-                    </td>
 
-                </tr>
-            }
-        </tbody>
-    </table>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#title").autocomplete({
+                source: "/api/locations/search",
+                minLength: 3
+                // messages: {
+                //    noResults: "",
+                //    results: function (count) {
+                //        return count + (count > 1 ? ' results' : ' result ') + ' found';
+                //    }
+                //}
+            })
 
-    <a href="#top">Back to top</a>
+        })
+    </script>
+}
+
+<a href="#top">Back to top</a>

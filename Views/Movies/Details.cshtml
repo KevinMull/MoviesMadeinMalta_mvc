@@ -17,7 +17,7 @@
 <div class="jumbotron">
     <div class="container-fluid">
         <h2>@Model.ToString()</h2>
-        <img src="@($"/images/titles/{@Model.TitleId}.jpg")" class="img-responsive" alt="@Model.Title" title="@Model.Title" />
+        <img src="@($"/images/titles/{@Model.TitleId}.jpg")" class="img-responsive pull-left" style="margin-right:6px;margin-bottom:6px" alt="@Model.Title" title="@Model.Title" />
         <div>@Html.DisplayFor(model => model.Summary)</div>
     </div>
 </div>

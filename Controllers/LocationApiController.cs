@@ -25,37 +25,10 @@ namespace MaltaMoviesMVCcore.Controllers
         {
             var locations = from l in _context.LocationPlaces
                             .Include("LocationSites")
-                            orderby l.LocationPlaceName
-                            where l.LocationPlaceId != 41 // Excl 'Behind the Scenes'
-                            where l.LocationPlaceId != 94 // Excl 'N/A'  
+                            orderby l.LocationPlaceName                          
+                            where l.LocationPlaceId != 41 // Excl 'N/A'  
                             where l.RegionId == GlobalSettings.RegionId
                             select l;
-           
-            //var locationplaces = _context
-            //    .LocationPlaces
-            //    .Include("LocationSites")
-            //        .Select(lp => new LocationPlace
-            //        {
-            //            LocationPlaceId = lp.LocationPlaceId,
-            //            LocationPlaceName = lp.LocationPlaceName,
-            //            LocationSites = lp.LocationSites.Select(ls => new LocationSite
-            //            {
-            //                LocationSiteId = ls.LocationSiteId,
-            //                LocationSiteName = ls.LocationSiteName
-
-            //            })
-            //        })
-            //    });
-
-
-
-            //orderby lp.LocationPlaceName
-            //where lp.LocationPlaceId != 41 // Excl 'Behind the Scenes'
-            //where lp.LocationPlaceId != 94 // Excl 'N/A'                            
-            //select lp;
-
-            //locations = locations.OrderBy(l => l.LocationPlaceName);
-
 
             return Json(await locations.ToListAsync());
         }
@@ -73,25 +46,63 @@ namespace MaltaMoviesMVCcore.Controllers
             var locationSite = await _context.LocationPlaces
                 .Include(l => l.LocationSites)
                 .SingleOrDefaultAsync(l => l.LocationPlaceId == id);
-
-            //ViewBag.Scenes = _context.Scenes
-            //    .Where(s => s.LocationSiteId == id)
-            //    .Include(s => s.LocationSite)
-            //    .Include(s => s.LocationSite.LocationPlace)
-            //    .Include(s => s.Movie)
-            //    .OrderBy(s => s.Movie.Title).ToList();
             
 
             if (locationSite == null)
             {
-                return NotFound();
-            }
+                return NotFound();            }
 
             return Json(locationSite);
         }
 
-       
+        [Produces("application/json")]
+        [HttpGet("search")]
+        public async Task<IActionResult> Search()
+        {
 
-       
+            try
+            {
+                string term = HttpContext.Request.Query["term"].ToString();
+
+                //LINQ QUERY WAY
+                //var locations = from l in _context.LocationSites
+                //            .Include("LocationPlace")
+                //                    //    orderby l.LocationPlace.LocationPlaceName, l.LocationSiteName
+                //                where l.LocationSiteId != 94 // Excl 'N/A'
+                //                where l.LocationSiteId != 42 // Excl 'Unknowns'
+                //                where l.LocationSiteName.Contains(term)
+                //                where l.LocationPlace.RegionId == GlobalSettings.RegionId
+                //                // Only list location sites that actually have a scene 
+                //                //where (from s in _context.Scenes
+                //                //       select s.LocationSiteId)
+                //                //    .Contains(l.LocationSiteId)
+                //                select l;
+                //return Ok(locations.ToList);
+
+
+                // LINQ METHOD LAMBDA WAY
+                var locations = _context.LocationSites
+                             
+                             .Where(l => l.LocationSiteName.Contains(term) || l.LocationPlace.LocationPlaceName.Contains(term))
+                             .Where(l => l.LocationSiteId != 94) // Excl 'N/A'
+                             .Where(l => l.LocationSiteId != 42) // Excl 'Unknowns'
+                             .Where(l => l.LocationPlace.RegionId == GlobalSettings.RegionId)
+                             // Only list location sites that actually have a scene
+                             .Where(l => _context.Scenes.Select(s => s.LocationSiteId).Contains(l.LocationSiteId))
+                            .Select(l=>l.LocationSiteName).ToList();
+                return Ok(locations);
+
+
+            }
+            catch
+            {
+                return BadRequest();
+            }
+
+        }
+
+
+
+
     }
 }

@@ -20,13 +20,12 @@ namespace MaltaMoviesMVCcore.Controllers
 
         // GET: LocationSites
         //With optional search string        
-        public async Task<IActionResult> Index(string searchString)
+        public async Task<IActionResult> Index(string title)
 
            {
             var locations = from l in _context.LocationSites
                             .Include("LocationPlace")                            
-                            orderby l.LocationPlace.LocationPlaceName, l.LocationSiteName
-                            where l.LocationSiteId  != 55 // Excl 'Behind the Scenes'
+                            orderby l.LocationPlace.LocationPlaceName, l.LocationSiteName                           
                             where l.LocationSiteId != 94 // Excl 'N/A'
                             where l.LocationSiteId != 42 // Excl 'Unknowns'
                             where l.LocationPlace.RegionId == GlobalSettings.RegionId
@@ -36,20 +35,12 @@ namespace MaltaMoviesMVCcore.Controllers
                                 .Contains(l.LocationSiteId)
                             select l;
 
-            //LAMDA way
-            //var locations = _context.LocationSites
-            //   .Include(l => l.LocationPlace)
-            //   .OrderBy(l => l.LocationPlace.LocationPlaceName)
-            //   .ThenBy(l => l.LocationSiteName);
-            //   select l;
-
-
-            // Search wildcard by LocationSiteName or LocationPlaceName
-            if (!String.IsNullOrEmpty(searchString))
+            if (!String.IsNullOrEmpty(title))
             {
-                locations = locations.Where(l => l.LocationSiteName.Contains(searchString) ||  l.LocationPlace.LocationPlaceName.Contains(searchString));
+                locations = locations.Where(l => l.LocationSiteName.Contains(title) || l.LocationPlace.LocationPlaceName.Contains(title));
+              //  locations = locations.Where(l => l.LocationPlaceAndSiteName.Contains(title));
             }
-           
+
             return View(await locations.ToListAsync());
         }
 
@@ -147,31 +138,7 @@ namespace MaltaMoviesMVCcore.Controllers
             return View(locationSite);
         }
 
-        // BY Name(string) ...GET: LocationSites/Details/VallettaFortStElmo
-        //public async Task<IActionResult> Details(string locationSiteName)
-        //{
-        //    if (locationSiteName == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    var locationSite = await _context.LocationSites
-        //        .Include(l => l.LocationPlace)
-        //        .SingleOrDefaultAsync(l => l.LocationSiteName == locationSiteName);
-
-        //    ViewBag.Scenes = _context.Scenes
-        //        .Where(s => s.LocationSiteId == locationSite.LocationSiteId)
-        //        .Include(s => s.LocationSite)
-        //        .Include(s => s.LocationSite.LocationPlace)
-        //        .Include(s => s.Movie)
-        //        .OrderBy(s => s.Movie.Title).ToList();
-
-        //    if (locationSite == null)
-        //    {
-        //        return NotFound();
-        //    }
-
-        //    return View(locationSite);
-        //}
+       
 
         // GET: LocationSites/Create
         public IActionResult Create()

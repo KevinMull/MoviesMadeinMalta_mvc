@@ -67,13 +67,6 @@ namespace MaltaMoviesMVCcore.Controllers
                          }
                          ;
 
-           
-            //ViewBag.Scenes = _context.Scenes
-            //    .Where(s => s.TitleId == id)
-            //    .Include(s => s.LocationSite)
-            //    .Include(s => s.LocationSite.LocationPlace)
-            //    .OrderBy(s => s.SceneOrder).ToList();
-
             if (movie == null)
             {
                 return NotFound();
@@ -83,7 +76,33 @@ namespace MaltaMoviesMVCcore.Controllers
           
         }
 
-       
+        //Search using ALAX 
+        [Produces("application/json")]
+        [HttpGet("search")]
+        public async Task<IActionResult> Search()
+        {
+
+            try
+            {
+                string term = HttpContext.Request.Query["term"].ToString();
+
+                var movies = _context.Movies
+                              .Where(m => m.Title.Contains(term))
+                              .Where (m => m.ExcludeTitle == false)
+                              .Where (m => m.RegionId == GlobalSettings.RegionId)
+                              .Select(m => m.Title).ToList();
+
+                return Ok(movies);
+                // await
+            }
+            catch
+            {
+                return BadRequest();
+            }
+            
+        }
+
+
 
     }
 }
