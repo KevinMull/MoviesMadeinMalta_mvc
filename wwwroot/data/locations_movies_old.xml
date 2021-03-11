@@ -1,0 +1,4 @@
+Msg 313, Level 16, State 2, Server DELL-XPS-8700\MSSQLSERVER14, Line 8
+An insufficient number of arguments were supplied for the procedure or function dbo.fn_GetPlaceAndSite.
+Msg 6803, Level 16, State 1, Server DELL-XPS-8700\MSSQLSERVER14, Line 8
+FOR XML EXPLICIT requires the first column to hold positive integers that represent XML tag IDs.
