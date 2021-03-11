@@ -6,62 +6,100 @@
 }
 
 <h2 class="movie-title">Locations&nbsp; &nbsp;  </h2>
+@*@using (Html.BeginForm("Index", "LocationSites", FormMethod.Post))*@
 
-<div class="search-box">
-    <form asp-controller="LocationSites" asp-action="Index" method="get">
-        <input type="text" id="title" name="title" placeholder="Search Location" />
-        <button type="submit">
-            <span class="glyphicon glyphicon-search"></span>Search
-        </button>
-    </form>
-</div>
+    <div class="search-box">
+        <form asp-controller="LocationSites" asp-action="Index">
+            @*<input type="text" id="LocationSiteName" placeholder="Search Location" />*@
+            @*<input type="hidden" id="hfLocationSiteName" name="LocationSiteId" />*@
+            @*<button type="submit">
+                <span class="glyphicon glyphicon-search"></span>Search
+            </button>*@
 
-<article>
-    <p>
-        <a asp-action="Unknown" asp-route-id="42">Unknown Locations</a> Can you help identify any of them?
-    </p>
-</article>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.LocationPlaceAndSiteName)
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
+        </form>
+    </div>
+
+
+    @*@using (Html.BeginForm("Index", "LocationSites", FormMethod.Post))
         {
+            <input type="text" id="txtLocationSite" name="LocationSiteName" />
+            <input type="hidden" id="hfLocationSite" name="LocationSiteId" />
+            <br /><br />
+            <input type="submit" id="btnSubmit" value="Submit" />
+            <br /><br />
+            @ViewBag.Message
+        }*@
+
+
+
+    <article>
+        <p>
+            <a asp-action="Unknown" asp-route-id="42">Unknown Locations</a> Can you help identify any of them?
+        </p>
+    </article>
+
+    <table class="table">
+        <thead>
             <tr>
-                <td>
-                    <a asp-action="Details" asp-route-id="@item.LocationSiteId" asp-route-locationsitename="@item.LocationSiteName">@item.LocationPlaceAndSiteName</a>
-
-                </td>
+                <th>
+                    @Html.DisplayNameFor(model => model.LocationPlaceAndSiteName)
+                </th>
             </tr>
-        }
-    </tbody>
-</table>
-@section scripts{
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.LocationSiteId" asp-route-locationsitename="@item.LocationSiteName">@item.LocationPlaceAndSiteName</a>
 
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    @section scripts{
 
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script>
-        $(document).ready(function () {
-            $("#title").autocomplete({
-                source: "/api/locations/search",
-                minLength: 3
-                // messages: {
-                //    noResults: "",
-                //    results: function (count) {
-                //        return count + (count > 1 ? ' results' : ' result ') + ' found';
-                //    }
-                //}
+        @*<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">*@
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("#LocationSiteName").autocomplete({
+                    // source: "/api/locations/search",
+                    source: function (request, response) {
+                        $.ajax({
+                            url: "/api/locations",
+                            type: "POST",                           
+                            // dataType: "json",
+                            data: { "Prefix": request.term },
+                            success: function (data) {
+                                response($.map(data, function (item) {
+                                    return { label: item.LocationSiteName, value: item.LocationSiteName };
+                                }))
+                            }
+                            
+                        })
+                    },
+                    messages: {
+                        noResults: "",
+                        results: function (count) {
+                            return count + (count > 1 ? ' results' : ' result ') + ' found';
+                        }
+
+                        //select: function (e, i) {
+                        //    $("#hfLocationSiteName").val(i.item.value);
+                        //    //  $("#intLocationSiteId").val(i.item.LocationSiteId);
+                        //},
+                        //  minLength: 3
+                    }
+                    
+                   
+                });
             })
+        </script>
 
-        })
-    </script>
-}
+    }
 
-<a href="#top">Back to top</a>
+    <a href="#top">Back to top</a>

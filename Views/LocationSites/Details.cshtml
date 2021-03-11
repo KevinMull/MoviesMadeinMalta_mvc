@@ -5,33 +5,83 @@
 
     var strWidth = "310px"; //widesdcreen default (2.35 = 354px, 1.85= 276px)
     var strHeight = "190px";
-    
+
 
 
 }
 
 
-<h2>Malta Location - @Model.LocationPlaceAndSiteName</h2>
-<div class="jumbotron">
-    <div class="container-fluid">
-        <a href="@($"/images/locations/hires/{Model.LocationSiteId}.jpg")"
-           data-lightbox="location-1" data-title="@Model.LocationPlaceAndSiteName">
+@section scripts{
 
-            <div class="imageContainer">
-                <img src="@($"/images/locations/{Model.LocationSiteId}.jpg")"
-                     alt="@Model.LocationPlaceAndSiteName"
-                     title="@Model.LocationPlaceAndSiteName"
-                     class="img-responsive" />
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#LocationSiteName").autocomplete({
+                // source: "/api/locations/search",
+                source: function (request, response) {
+                    $.ajax({
+                        url: "/api/locations/",
+                        type: "POST",
+                        // dataType: "json",
+                        data: { "Prefix":request.term },
+                        success: function (data) {
+                            response($.map(data, function (item) {
+                                return { label:item.LocationSiteName, value: item.LocationSiteId };
+                            }))
+
+                        }
+
+                    })
+
+                }
+
+            });
+        })
+    </script>
+    }
+
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal" style="border: 1px solid #DED8D8; width: 450px; height: 305px;padding-left:15px;">
+            <h2>Autocomplete with keyValuePair</h2>
+            <div class="form-group">
+
+                <div class="col-md-12">
+                    @Html.EditorFor(model => model.LocationSiteName, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
             </div>
-        </a>
 
-        <div class="imageContainer" id="map" style=" width:400px;height:300px">
-            @*<div class="imageContainer" id="map" style="float: left;  margin-right:20px; width:400px;height:300px">*@
         </div>
-    </div>
+    }
 
-    @*GOOGLE MAP*@
-    <script>
+
+    <h2>Malta Location - @Model.LocationPlaceAndSiteName</h2>
+    <div class="jumbotron">
+        <div class="container-fluid">
+            <a href="@($"/images/locations/hires/{Model.LocationSiteId}.jpg")"
+               data-lightbox="location-1" data-title="@Model.LocationPlaceAndSiteName">
+
+                <div class="imageContainer">
+                    <img src="@($"/images/locations/{Model.LocationSiteId}.jpg")"
+                         alt="@Model.LocationPlaceAndSiteName"
+                         title="@Model.LocationPlaceAndSiteName"
+                         class="img-responsive" />
+                </div>
+            </a>
+
+            <div class="imageContainer" id="map" style=" width:400px;height:300px">
+                @*<div class="imageContainer" id="map" style="float: left;  margin-right:20px; width:400px;height:300px">*@
+            </div>
+        </div>
+
+        @*GOOGLE MAP*@
+        <script>
         function myMap() {
             //var myCenter = new google.maps.LatLng(35.88885, 14.51199
             //var sValue = document.getElementById('strLatLong').textContent;
@@ -46,108 +96,107 @@
             });
             marker.setMap(map);
         }
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2NceVpHdaJdEUGVdWC8qM_0nYVl8RsSQ&callback=myMap">
-    </script>
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2NceVpHdaJdEUGVdWC8qM_0nYVl8RsSQ&callback=myMap">
+        </script>
 
-</div>
+    </div>
 
-@*Start thumbnails / carousel*@
+    @*Start thumbnails / carousel*@
 
-@{if (Model.Scenes.Count() > 0)
-    {
-        int x = 0;
+    @{if (Model.Scenes.Count() > 0)
+        {
+            int x = 0;
 
-        <h2 class="movie-scenes">Movies made here</h2>
-        <div class="jumbotron">
-            <div class="container-fluid">
+            <h2 class="movie-scenes">Movies made here</h2>
+            <div class="jumbotron">
+                <div class="container-fluid">
 
-                @foreach (MaltaMoviesMVCcore.Models.Scene item in ViewBag.Scenes)
-                {
-                    
-                <div data-toggle="modal" data-target="#myModal" style=" margin:5px; float:left;  height:200px; width:310px;  word-wrap:break-word;">
-                    <h5><strong>@item.Movie.ToString()</strong></h5>                   
-                    <figure>
-                        <a href="#myGallery" data-slide-to="@(x)">
-                            <img class="img-thumbnail"
-                                 alt="@item.Movie.Title - @item.LocationSite.LocationPlaceAndSiteName"
-                                 title="@item.Movie.Title - @item.LocationSite.LocationPlaceAndSiteName"
-                                 src="@($"/images/scenes/thumbs/{item.SceneId}.jpg")">
-                            <br />
-                        </a>
-                        @*<figcaption>@item.LocationSite.LocationPlaceAndSiteName</figcaption>*@
-                    </figure>
-
-                </div>
-                  
-
+                    @foreach (MaltaMoviesMVCcore.Models.Scene item in ViewBag.Scenes)
                     {
-                        x++;
+
+                        <div data-toggle="modal" data-target="#myModal" style=" margin:5px; float:left;  height:200px; width:310px;  word-wrap:break-word;">
+                            <h5><strong>@item.Movie.ToString()</strong></h5>
+                            <figure>
+                                <a href="#myGallery" data-slide-to="@(x)">
+                                    <img class="img-thumbnail"
+                                         alt="@item.Movie.Title - @item.LocationSite.LocationPlaceAndSiteName"
+                                         title="@item.Movie.Title - @item.LocationSite.LocationPlaceAndSiteName"
+                                         src="@($"/images/scenes/thumbs/{item.SceneId}.jpg")">
+                                    <br />
+                                </a>
+                                @*<figcaption>@item.LocationSite.LocationPlaceAndSiteName</figcaption>*@
+                            </figure>
+
+                        </div>
+
+
+                        {
+                            x++;
+                        }
+
                     }
 
-                }
+                    @*</ul>*@
 
-                @*</ul>*@
-
-            </div>
-        </div>
-        <!--begin modal window-->
-        <div class="modal fade" id="myModal" aria-hidden="true">
-            <div class="modal-dialog-centered">
-                <div class="modal-content" style="width:auto; ">
-                    <div class="modal-header" hidden="hidden">
-                        @*<div class="pull-left">My Gallery Title</div>*@
-                        @*<button type="button" class="close" data-dismiss="modal" title="Close"> <span class="glyphicon glyphicon-remove"></span></button>*@
-                    </div>
-                    <div class="modal-body" >
-                        <!--CAROUSEL CODE GOES HERE-->
-                        <!--begin carousel-->
-                        <div id="myGallery" class="carousel slide" data-interval="false">
-                            <div class="carousel-inner" >
-                                @foreach (MaltaMoviesMVCcore.Models.Scene item in ViewBag.Scenes)
-                                {
-                                    <div class="@(item == Model.Scenes.First() ? "item active" : "item")">
-                                        <img src="@($"/images/scenes/large/{item.SceneId}.jpg")"
-                                             alt="@item.Movie.Title - (@item.LocationSite.LocationPlaceAndSiteName)"
-                                             title="@item.Movie.Title - (@item.LocationSite.LocationPlaceAndSiteName)"
-                                             >
-                                        @*<div class="carousel-caption">
-
-                                            </div>*@
-                                        <div class="modal-header">
-                                            <strong>Title:</strong> '@item.Movie.Title' -  <strong>Location:</strong> @item.LocationSite.LocationPlaceAndSiteName - @item.Notes
-                                        </div>
-                                    </div>
-                                }
-
-                                <!--end carousel-inner-->
-                            </div>
-
-                            <!--Begin Previous and Next buttons-->
-                            <a class="left carousel-control"
-                               href="#myGallery" role="button"
-                               data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-                            <a class="right carousel-control" href="#myGallery" role="button" data-slide="next">
-                                <span class="glyphicon glyphicon-chevron-right"></span>
-                            </a>
-                            <!--end carousel-->
-                            <!--end modal-body-->
-
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn-sm close" type="button" data-dismiss="modal">Close</button>
-                            <!--end modal-footer-->
-                        </div>
-                        <!--end modal-content-->
-                    </div>
-                    <!--end modal-dialoge-->
                 </div>
-                <!--end myModal-->
             </div>
-        </div>
-    }
-}
-<div>
+            <!--begin modal window-->
+            <div class="modal fade" id="myModal" aria-hidden="true">
+                <div class="modal-dialog-centered">
+                    <div class="modal-content" style="width:auto; ">
+                        <div class="modal-header" hidden="hidden">
+                            @*<div class="pull-left">My Gallery Title</div>*@
+                            @*<button type="button" class="close" data-dismiss="modal" title="Close"> <span class="glyphicon glyphicon-remove"></span></button>*@
+                        </div>
+                        <div class="modal-body">
+                            <!--CAROUSEL CODE GOES HERE-->
+                            <!--begin carousel-->
+                            <div id="myGallery" class="carousel slide" data-interval="false">
+                                <div class="carousel-inner">
+                                    @foreach (MaltaMoviesMVCcore.Models.Scene item in ViewBag.Scenes)
+                                    {
+                                        <div class="@(item == Model.Scenes.First() ? "item active" : "item")">
+                                            <img src="@($"/images/scenes/large/{item.SceneId}.jpg")"
+                                                 alt="@item.Movie.Title - (@item.LocationSite.LocationPlaceAndSiteName)"
+                                                 title="@item.Movie.Title - (@item.LocationSite.LocationPlaceAndSiteName)">
+                                            @*<div class="carousel-caption">
 
-    <a asp-action="Index">Back to Location List</a>
-</div>
+                                                </div>*@
+                                            <div class="modal-header">
+                                                <strong>Title:</strong> '@item.Movie.Title' -  <strong>Location:</strong> @item.LocationSite.LocationPlaceAndSiteName - @item.Notes
+                                            </div>
+                                        </div>
+                                    }
+
+                                    <!--end carousel-inner-->
+                                </div>
+
+                                <!--Begin Previous and Next buttons-->
+                                <a class="left carousel-control"
+                                   href="#myGallery" role="button"
+                                   data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                                <a class="right carousel-control" href="#myGallery" role="button" data-slide="next">
+                                    <span class="glyphicon glyphicon-chevron-right"></span>
+                                </a>
+                                <!--end carousel-->
+                                <!--end modal-body-->
+
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn-sm close" type="button" data-dismiss="modal">Close</button>
+                                <!--end modal-footer-->
+                            </div>
+                            <!--end modal-content-->
+                        </div>
+                        <!--end modal-dialoge-->
+                    </div>
+                    <!--end myModal-->
+                </div>
+            </div>
+        }
+    }
+    <div>
+
+        <a asp-action="Index">Back to Location List</a>
+    </div>

@@ -80,8 +80,10 @@
     <script>
         $(document).ready(function () {
             $("#title").autocomplete({
-                source: "/api/movies/search",
-                minLength: 3
+                source: "/api/movies/search"
+                
+                
+                ,minLength: 3
                 // messages: {
                 //    noResults: "",
                 //    results: function (count) {
@@ -89,7 +91,8 @@
                 //    }
                 //}
             })
-           
+
+                //.Select(m => "<a href='""/movies/'"" + m.TitleId +"'/'" + m.Title + "'>'" + m.Title).ToList();
         })
     </script>
 }
