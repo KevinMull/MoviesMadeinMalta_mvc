@@ -21,7 +21,7 @@ namespace MaltaMoviesMVCcore.Models
         [DisplayName("Year")]
         public int? TitleYear { get; set; }
         //public string TitleAndYear { get; set; } // see  public override string ToString()
-       
+
         public string ImdbId { get; set; }
         public string ImdbUrl
         {
@@ -35,20 +35,17 @@ namespace MaltaMoviesMVCcore.Models
         public bool? ExcludeTitle { get; set; }
         public bool? Widescreen { get; set; }
         public int RegionId { get; set; } //1=MALTA, 2=MANCHESTER
-        public string RegionName { get; set; }
-      
+        public string RegionName { get; set; }// MALTA, MANCHESTER
+        public string LocationPlacesCommaSeparated { get; set; }
 
 
         [DisplayName("Title")]
-        public override string ToString() 
+        public override string ToString()
         {
-            return Title + " (" + TitleYear + ")";
-           
+            return Title + " (" + TitleYear + ")";            
         }
 
+        public ICollection<Scene> Scenes { get; set; }
 
-
-       public ICollection<Scene> Scenes { get; set; }
-        
     }
 }

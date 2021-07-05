@@ -23,7 +23,8 @@ namespace MaltaMoviesMVCcore.Controllers
         // GET: Movies
         //With optional search string
         [HttpGet("[controller]/{regionName}")]
-        public async Task<IActionResult> Index(string searchString, string regionName)
+        //public async Task<IActionResult> Index(string searchString, string regionName)
+         public async Task<IActionResult> Index(string title, string regionName)
         {
             
             // Only list movie titles that actually have a scene
@@ -38,12 +39,11 @@ namespace MaltaMoviesMVCcore.Controllers
                          where m.RegionName == regionName
                          select m;
 
-            if (!String.IsNullOrEmpty(searchString))
+            if (!String.IsNullOrEmpty(title))
             {
-                movies = movies.Where(m=>m.Title.Contains(searchString));
-            }
-            
-            //return View(await _context.Movies.ToListAsync());
+                movies = movies.Where(m=>m.Title.Contains(title));
+            }            
+           
             return View(await movies.ToListAsync());
             
         }
@@ -85,36 +85,36 @@ namespace MaltaMoviesMVCcore.Controllers
 
         
 
-        private bool MovieExists(int id)
-        {
-            return _context.Movies.Any(e => e.TitleId == id);
-        }
+        //private bool MovieExists(int id)
+        //{
+        //    return _context.Movies.Any(e => e.TitleId == id);
+        //}
 
 
        
-        [HttpPost]
-        public  JsonResult AutoComplete(string prefix)
-        {
-            //Auto complete search
-            var  movies = (from m in _context.Movies
-                        // where m.ExcludeTitle == false
-                         where m.Title.StartsWith(prefix)
-                         //select m;
-                         select new
-                         {
-                             label = m.Title,
-                             val= m.TitleId
+        //[HttpPost]
+        //public  JsonResult AutoComplete(string prefix)
+        //{
+        //    //Auto complete search
+        //    var  movies = (from m in _context.Movies
+        //                // where m.ExcludeTitle == false
+        //                 where m.Title.StartsWith(prefix)
+        //                 //select m;
+        //                 select new
+        //                 {
+        //                     label = m.Title,
+        //                     val= m.TitleId
                              
-                         }).ToList();
+        //                 }).ToList();
 
-            return Json(_context.Movies.ToList());
+        //    return Json(_context.Movies.ToList());
     
-        }
-        [HttpPost]
-        public ActionResult Search(string Title, string TitleId)
-        {
-            ViewBag.Message = "Title: " + Title + " TitleId: " + TitleId;
-            return View();
-        }
+        //}
+        //[HttpPost]
+        //public ActionResult Search(string Title, string TitleId)
+        //{
+        //    ViewBag.Message = "Title: " + Title + " TitleId: " + TitleId;
+        //    return View();
+        //}
     }
 }
