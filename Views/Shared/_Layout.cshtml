@@ -68,8 +68,26 @@
                 <ul class="nav navbar-nav">
                     <li><img src="~/images/icons/made_in_malta_logo_small.png" /></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">MOVIES MADE IN MALTA</a></li>
-                    <li><a asp-area="" asp-controller="Movies" asp-action="Index">Movie List</a></li>
-                    <li><a asp-area="" asp-controller="LocationSites" asp-action="Index">Locations</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            Movie List
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a asp-area="" asp-controller="Movies" asp-route-regionName="malta" asp-action="Index">MALTA</a></li>
+                            <li><a asp-area="" asp-controller="Movies" asp-route-regionName="manchester" asp-action="Index">MANCHESTER</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            Locations
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a asp-area="" asp-controller="LocationSites" asp-route-regionName="malta" asp-action="Index">MALTA</a></li>
+                            <li><a asp-area="" asp-controller="LocationPlaces" asp-route-regionName="manchester" asp-action="Index">MANCHESTER</a></li>
+                        </ul>
+                    </li>
                     <li><a asp-area="" asp-controller="MovieMap" asp-action="Index">Malta Movie Map</a></li>
                     <li><a asp-area="" asp-controller="AliasMap" asp-action="Index">World Alias Map</a></li>
                     <li><a asp-area="" asp-controller="Comments" asp-action="Index">Comments</a></li>

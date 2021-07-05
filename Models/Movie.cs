@@ -21,7 +21,7 @@ namespace MaltaMoviesMVCcore.Models
         [DisplayName("Year")]
         public int? TitleYear { get; set; }
         //public string TitleAndYear { get; set; } // see  public override string ToString()
-       
+
         public string ImdbId { get; set; }
         public string ImdbUrl
         {
@@ -40,18 +40,12 @@ namespace MaltaMoviesMVCcore.Models
 
 
         [DisplayName("Title")]
-        public override string ToString() 
+        public override string ToString()
         {
             return Title + " (" + TitleYear + ")";
-            //get
-            //{
-            //    return Title + " (" + TitleYear + ")";
-            //}
         }
 
+        public ICollection<Scene> Scenes { get; set; }
 
-
-       public ICollection<Scene> Scenes { get; set; }
-        
     }
 }

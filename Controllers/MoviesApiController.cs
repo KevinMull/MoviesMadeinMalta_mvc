@@ -90,6 +90,7 @@ namespace MaltaMoviesMVCcore.Controllers
                               .Where(m => m.Title.Contains(term))
                               .Where (m => m.ExcludeTitle == false)
                               .Where (m => m.RegionId == GlobalSettings.RegionId)
+                              //TODO need to add a global variable for RegionId isntead of a const
                               .Select(m => m.Title).ToList();
 
                 return Ok(movies);

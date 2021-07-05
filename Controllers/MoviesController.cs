@@ -33,6 +33,7 @@ namespace MaltaMoviesMVCcore.Controllers
                                 .Contains(m.TitleId)
                          where m.ExcludeTitle == false
                          where m.RegionId == GlobalSettings.RegionId
+                        // where m.RegionName == regionName
                          select m;
 
             if (!String.IsNullOrEmpty(title))
@@ -76,11 +77,43 @@ namespace MaltaMoviesMVCcore.Controllers
 
             return View(movie);
         }
-             
+
+        //private bool MovieExists(int id)
+        //{
+        //    return _context.Movies.Any(e => e.TitleId == id);
+        //}
 
 
 
-   
+        //[HttpPost]
+        //public  JsonResult AutoComplete(string prefix)
+        //{
+        //    //Auto complete search
+        //    var  movies = (from m in _context.Movies
+        //                // where m.ExcludeTitle == false
+        //                 where m.Title.StartsWith(prefix)
+        //                 //select m;
+        //                 select new
+        //                 {
+        //                     label = m.Title,
+        //                     val= m.TitleId
+
+        //                 }).ToList();
+
+        //    return Json(_context.Movies.ToList());
+
+        //}
+        //[HttpPost]
+        //public ActionResult Search(string Title, string TitleId)
+        //{
+        //    ViewBag.Message = "Title: " + Title + " TitleId: " + TitleId;
+        //    return View();
+        //}
+
+
+
+
+
 
 
 
