@@ -19,9 +19,8 @@ namespace MaltaMoviesMVCcore.Controllers
             _context = context;
         }
         
-
-        // GET: Movies
-        //With optional search string
+        
+        //-- FULL LIST or with optional search string
         public async Task<IActionResult> Index(string title)
         {
             
@@ -45,7 +44,7 @@ namespace MaltaMoviesMVCcore.Controllers
             return View(await movies.ToListAsync());
         }
         
-              
+        // -- TITLE BY ID --       
         //[Route("[controller]/{id}")]
         [HttpGet("[controller]/{id}/{title}", Name = "GetMovie")]
         public IActionResult Details(int id, string title)
