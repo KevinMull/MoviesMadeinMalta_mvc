@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<aliaslocations>
+	<aliaslocation>
+		<aliasid>56</aliasid>
+		<aliascountryandplace>UK, Salford</aliascountryandplace>
+		<movie>
+			<titleid>77</titleid>
+			<title>East is East</title>
+			<actuallocation>
+				<locationsiteId>178</locationsiteId>
+				<locationplaceandsite>Bowness St (Redeveloped), Openshaw</locationplaceandsite>
+			</actuallocation>
+			<actuallocation>
+				<locationsiteId>179</locationsiteId>
+				<locationplaceandsite>Toxteth St (Redeveloped), Openshaw</locationplaceandsite>
+			</actuallocation>
+		</movie>
+	</aliaslocation>
+	<aliaslocation>
+		<aliasid>57</aliasid>
+		<aliascountryandplace>UK, Bradford</aliascountryandplace>
+		<movie>
+			<titleid>77</titleid>
+			<title>East is East</title>
+			<actuallocation>
+				<locationsiteId>177</locationsiteId>
+				<locationplaceandsite>Metro Cinema, Ashton Under Lyne</locationplaceandsite>
+			</actuallocation>
+		</movie>
+	</aliaslocation>
+	<aliaslocation>
+		<aliasid>58</aliasid>
+		<aliascountryandplace>UK, Bishop David School for the Deaf</aliascountryandplace>
+		<movie>
+			<titleid>80</titleid>
+			<title>Mandy (aka Crash of Silence)</title>
+			<actuallocation>
+				<locationsiteId>197</locationsiteId>
+				<locationplaceandsite>Henshaws Asylum for the Deaf and Dumb (demolished), Old Trafford</locationplaceandsite>
+			</actuallocation>
+		</movie>
+	</aliaslocation>
+	<aliaslocation lat="40.7495" lng="-73.9869">
+		<aliasid>59</aliasid>
+		<aliascountryandplace>USA, Manhattan, New York City</aliascountryandplace>
+		<movie>
+			<titleid>81</titleid>
+			<title>Alfie</title>
+			<actuallocation>
+				<locationsiteId>198</locationsiteId>
+				<locationplaceandsite>Soap St, Northern Quarter</locationplaceandsite>
+			</actuallocation>
+			<actuallocation>
+				<locationsiteId>199</locationsiteId>
+				<locationplaceandsite>Thomas St 30-32, Northern Quarter</locationplaceandsite>
+			</actuallocation>
+			<actuallocation>
+				<locationsiteId>200</locationsiteId>
+				<locationplaceandsite>Thomas St 11-29, Northern Quarter</locationplaceandsite>
+			</actuallocation>
+		</movie>
+	</aliaslocation>
+	<aliaslocation lat="53.4741" lng="-2.24751">
+		<aliasid>60</aliasid>
+		<aliascountryandplace>UK, Hacienda Nightclub, Manchester</aliascountryandplace>
+		<movie>
+			<titleid>85</titleid>
+			<title>24 Hour Party People</title>
+			<actuallocation>
+				<locationsiteId>217</locationsiteId>
+				<locationplaceandsite>Albion Works warehouse (demolished), Ancoats</locationplaceandsite>
+			</actuallocation>
+			<actuallocation>
+				<locationsiteId>224</locationsiteId>
+				<locationplaceandsite>Whitworth St W 79, Manchester</locationplaceandsite>
+			</actuallocation>
+		</movie>
+	</aliaslocation>
+	<aliaslocation lat="53.4677" lng="-2.25434">
+		<aliasid>61</aliasid>
+		<aliascountryandplace>UK, Russell Club, Hulme Manchester</aliascountryandplace>
+		<movie>
+			<titleid>85</titleid>
+			<title>24 Hour Party People</title>
+			<actuallocation>
+				<locationsiteId>218</locationsiteId>
+				<locationplaceandsite>Pear Tree Court, Salford</locationplaceandsite>
+			</actuallocation>
+			<actuallocation>
+				<locationsiteId>219</locationsiteId>
+				<locationplaceandsite>Oxford St 65a, Manchester</locationplaceandsite>
+			</actuallocation>
+		</movie>
+	</aliaslocation>
+	<aliaslocation lat="53.4739" lng="-2.23809">
+		<aliasid>62</aliasid>
+		<aliascountryandplace>UK, Factory Records Office</aliascountryandplace>
+		<movie>
+			<titleid>85</titleid>
+			<title>24 Hour Party People</title>
+			<actuallocation>
+				<locationsiteId>215</locationsiteId>
+				<locationplaceandsite>Beehive Mill, Jersey St, Ancoats</locationplaceandsite>
+			</actuallocation>
+		</movie>
+	</aliaslocation>
+	<aliaslocation lat="51.4995" lng="-0.126998">
+		<aliasid>63</aliasid>
+		<aliascountryandplace>UK, Houses of Parliamnent, London</aliascountryandplace>
+		<movie>
+			<titleid>101</titleid>
+			<title>Sherlock Holmes</title>
+			<actuallocation>
+				<locationsiteId>226</locationsiteId>
+				<locationplaceandsite>Manchester Town Hall, Manchester</locationplaceandsite>
+			</actuallocation>
+		</movie>
+	</aliaslocation>
+	<aliaslocation lat="51.5312" lng="-0.39883">
+		<aliasid>64</aliasid>
+		<aliascountryandplace>UK, London</aliascountryandplace>
+		<movie>
+			<titleid>97</titleid>
+			<title>Official Secrets</title>
+			<actuallocation>
+				<locationsiteId>248</locationsiteId>
+				<locationplaceandsite>Barbirolli Square, Manchester</locationplaceandsite>
+			</actuallocation>
+		</movie>
+		<movie>
+			<titleid>101</titleid>
+			<title>Sherlock Holmes</title>
+			<actuallocation>
+				<locationsiteId>226</locationsiteId>
+				<locationplaceandsite>Manchester Town Hall, Manchester</locationplaceandsite>
+			</actuallocation>
+			<actuallocation>
+				<locationsiteId>227</locationsiteId>
+				<locationplaceandsite>Back Piccadilly Mangle St, Northern Quarter</locationplaceandsite>
+			</actuallocation>
+			<actuallocation>
+				<locationsiteId>228</locationsiteId>
+				<locationplaceandsite>Bunsen St, Northern Quarter</locationplaceandsite>
+			</actuallocation>
+			<actuallocation>
+				<locationsiteId>229</locationsiteId>
+				<locationplaceandsite>Courtyard off Hilton St, Northern Quarter</locationplaceandsite>
+			</actuallocation>
+		</movie>
+	</aliaslocation>
+	<aliaslocation lat="51.5155" lng="-0.10393">
+		<aliasid>65</aliasid>
+		<aliascountryandplace>UK, Old Bailey, London</aliascountryandplace>
+		<movie>
+			<titleid>97</titleid>
+			<title>Official Secrets</title>
+			<actuallocation>
+				<locationsiteId>243</locationsiteId>
+				<locationplaceandsite>Chancery Lane, Manchester</locationplaceandsite>
+			</actuallocation>
+		</movie>
+	</aliaslocation>
+</aliaslocations>

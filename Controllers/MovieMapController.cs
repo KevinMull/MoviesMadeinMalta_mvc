@@ -14,6 +14,15 @@ namespace MaltaMoviesMVCcore.Controllers
         {
             return View();
         }
+        public IActionResult Maltamoviemap()
+        {
+            return View();
+        }
+
+        public IActionResult Manchestermoviemap()
+        {
+            return View();
+        }
 
 
 

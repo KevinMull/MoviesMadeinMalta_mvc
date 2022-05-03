@@ -29,10 +29,12 @@ namespace MaltaMoviesMVCcore.Controllers
                                     orderby m.ParsedTitle
                                     where m.ExcludeTitle==false
                                     where m.RegionId == GlobalSettings.RegionId
-                                     //inc only titles with secnes
-                                    where (from s in _context.Scenes
-                                    select s.TitleId)
-                                    .Contains(m.TitleId)
+                                    
+                                    //inc only titles with secnes
+                                    //where (from s in _context.Scenes
+                                    //select s.TitleId)
+                                    //.Contains(m.TitleId)
+
                                     select new {
                                                  m.TitleId
                                                  ,title = m.ParsedTitle 

@@ -27,13 +27,16 @@ namespace MaltaMoviesMVCcore.Controllers
          public async Task<IActionResult> Index(string title, string regionName)
         {
             
-            // Only list movie titles that actually have a scene
+            
             // i.e T-SQL'  'SELECT * FROM Movies WHERE TitleId IN(SELECT TitledId FROM Scenes)'
             var movies = from m in _context.Movies
                          orderby m.ParsedTitle
-                         where (from s in _context.Scenes
-                                select s.TitleId)
-                                .Contains(m.TitleId)
+
+                         // Only list movie titles that actually have a scene
+                         //where (from s in _context.Scenes
+                         //       select s.TitleId)
+                         //       .Contains(m.TitleId)
+
                          where m.ExcludeTitle == false
                         // where m.RegionId == GlobalSettings.RegionId
                          where m.RegionName == regionName

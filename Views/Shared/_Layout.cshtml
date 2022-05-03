@@ -62,39 +62,81 @@
             <div class="navbar-collapse collapse">
                 <!--Menu Start Here-->
                 <ul class="nav navbar-nav">
-                    <li><img src="~/images/icons/made_in_malta_logo_small.png" /></li>
+                    @*<li><img src="~/images/icons/made_in_malta_logo_small.png" /></li>*@
+                    <li><a asp-route-regionName="malta" asp-controller="Movies" asp-action="Index">
+                    <img src="~/images/icons/made_in_malta_logo_small.png" width="30"
+                         alt="Maltese Cross"
+                         title="Maltese Cross"
+                          />
+                         </a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">MOVIES MADE IN MALTA AND MANCHESTER</a></li>
-                    <li><img src="~/images/icons/made_in_manchester_logo_small.png" /></li>
+                    @*<li><img src="~/images/icons/made_in_manchester_logo_small.png" /></li>*@
+                    <li><a asp-route-regionName="manchester" asp-controller="Movies" asp-action="Index">
+            <img src="~/images/icons/made_in_manchester_logo_small.png" width="30"
+                    alt=""Manchester bee"
+                    title="Manchester bee"
+                    />
+                    </a></li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                             Movie List
                             <span class="caret"></span>
                         </a>
-                        <ul class="dropdown-menu">
-                            <li><a asp-area="" asp-controller="Movies" asp-route-regionName="malta" asp-action="Index">MALTA</a></li>
-                            <li><a asp-area="" asp-controller="Movies" asp-route-regionName="manchester" asp-action="Index">MANCHESTER</a></li>
+                        @*MOVIE LIST*@
+                        <ul class="dropdown-menu" width="100">
+                            <li>
+                                <div>
+                                    <a asp-area="" asp-controller="Movies" asp-route-regionName="malta" asp-action="Index">Malta</a>
+                                    <img src="~/images/icons/malta_cross_50.png" width="13" />
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a asp-area="" asp-controller="Movies" asp-route-regionName="manchester" asp-action="Index">Manchester</a>
+                                    <img src="~/images/icons/regionlogo_small_MANCHESTER.png" width="13" />
+                                </div>
+                            </li>
+
                         </ul>
                     </li>
+                    @*LOCATIONS LIST*@
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                             Locations
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a asp-area="" asp-controller="LocationSites" asp-route-regionName="malta" asp-action="Index">MALTA</a></li>
-                            <li><a asp-area="" asp-controller="LocationPlaces" asp-route-regionName="manchester" asp-action="Index">MANCHESTER</a></li>
+                            @*<li><a asp-area="" asp-controller="LocationSites" asp-route-regionName="malta" asp-action="Index">MALTA</a></li>
+                <li><a asp-area="" asp-controller="LocationPlaces" asp-route-regionName="manchester" asp-action="Index">MANCHESTER</a></li>*@
+                            <li>
+                                <div>
+                                    <a asp-area="" asp-controller="LocationSites" asp-route-regionName="malta" asp-action="Index">Malta</a>
+                                    <img src="~/images/icons/malta_cross_50.png" width="13" />
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a asp-area="" asp-controller="LocationPlaces" asp-route-regionName="manchester" asp-action="Index">Manchester</a>
+                                    <img src="~/images/icons/regionlogo_small_MANCHESTER.png" width="13" />
+                                </div>
+                            </li>
                         </ul>
                     </li>
+
+                    @*MAPS*@
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                             Maps
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a asp-area="" asp-controller="MovieMap" asp-route-regionName="malta" asp-action="Index">MALTA MOVIE MAP</a></li>
-                            <li><a asp-area="" asp-controller="AliasMap" asp-route-regionName="malta" asp-action="Index">MALTA ALIAS MAP</a></li>
-                            <li><a asp-area="" asp-controller="MovieMap" asp-route-regionName="manchester" asp-action="Index">MANCHESTER MOVIE MAP</a></li>
-                            <li><a asp-area="" asp-controller="AliasMap" asp-route-regionName="manchester" asp-action="Index">MANCHESTER ALIAS MAP</a></li>
+                            <li><div><a asp-area="" asp-controller="MovieMap" asp-action="Maltamoviemap">Malta Movie Map</a>&nbsp;<img src="~/images/icons/malta_cross_50.png" width="13" /></div></li>
+                            <li><div><a asp-area="" asp-controller="AliasMap" asp-action="Maltaaliasmap">Malta Alias Map</a>&nbsp;<img src="~/images/icons/malta_cross_50.png" width="13" /></div></li>
+
+
+                            <li><div><a asp-area="" asp-controller="MovieMap" asp-action="Manchestermoviemap">Manchester Movie Map</a>&nbsp;<img src="~/images/icons/regionlogo_small_MANCHESTER.png" width="13" /></div></li>
+                            <li><div><a asp-area="" asp-controller="AliasMap" asp-action="Manchesteraliasmap">Manchester Alias Map</a>&nbsp;<img src="~/images/icons/regionlogo_small_MANCHESTER.png" width="13" /></div></li>
+
                         </ul>
                     </li>
                     <li><a asp-area="" asp-controller="Contact" asp-action="Index">Search</a></li>

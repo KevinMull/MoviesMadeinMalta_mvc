@@ -29,18 +29,42 @@ namespace MaltaMoviesMVCcore.Controllers
             return View();
         }
 
-        public IActionResult Moviemap()
-        {
+        //public IActionResult Moviemap()
+        //{
             
 
+        //    return View();
+        //}
+        public IActionResult Maltamoviemap() // not used
+        {
+
+
+            return View();
+        }
+        public IActionResult Manchestermoviemap()
+        {
+
+
             return View();
         }
 
-        public IActionResult Aliasmap()
+        public IActionResult Aliasmap() // notused
         {
 
             return View();
         }
+        public IActionResult Maltaaliasmap()
+        {
+
+            return View();
+        }
+
+        public IActionResult Manchesteraliasmap()
+        {
+
+            return View();
+        }
+
 
 
 

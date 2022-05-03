@@ -1,7 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Malta Movie Map";
 }
-<h2>Malta Movie Map - Filming Locations used in Malta</h2>
+<h2>Manchester Movie Map - Filming Locations used in Manchester</h2>
 
 <div id="map" style="width: 780px; height: 600px"></div>
 
@@ -11,7 +11,8 @@
 
     function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
-            center: new google.maps.LatLng(35.933134, 14.3768843),// MALTA
+            center: new google.maps.LatLng(53.4822369, -2.2526465),// Manchester
+             @*https://www.google.co.uk/maps/@53.4822369,-2.2526465,12z?hl=en*@ // MCR
             //   center: new google.maps.LatLng(-33.863276, 151.207977), // OZ
             gestureHandling: 'greedy', // Enable zooming with mouse within window
             zoom: 11
@@ -19,7 +20,7 @@
         var infoWindow = new google.maps.InfoWindow;
 
 
-        downloadUrl('/data/locations_movies.xml', function (data) {
+        downloadUrl('/data/locations_movies_manchester.xml', function (data) {
             var xml = data.responseXML;
 
 
